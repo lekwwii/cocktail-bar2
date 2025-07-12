@@ -9,11 +9,11 @@ module.exports = {
       colors: {
         'gold': '#CBA85F',
         'dark-navy': '#0C0C1C',
-        'black': '#000000',
+        'primary': '#0d1117',
       },
       fontFamily: {
         'serif': ['Playfair Display', 'Cormorant Garamond', 'serif'],
-        'sans': ['Inter', 'Lato', 'sans-serif'],
+        'sans': ['Inter', 'sans-serif'],
       },
       animation: {
         'fade-in-up': 'fade-in-up 1s ease-out',

@@ -5,11 +5,19 @@ const App = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    // Ensure page is fully loaded
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   const scrollToSection = (sectionId) => {
@@ -59,7 +67,7 @@ const App = () => {
         "Personalized service details",
         "Full event service"
       ],
-      image: "https://images.unsplash.com/flagged/photo-1571046423953-30c053888852?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjb2NrdGFpbHxlbnwwfHx8YmxhY2t8MTc1MjM1MzAwNXww&ixlib=rb-4.1.0&q=85"
+      image: "https://images.unsplash.com/flagged/photo-1571046423953-30c053888852?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBiYXJ8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTB8MA&ixlib=rb-4.1.0&q=85"
     }
   ];
 
@@ -75,14 +83,35 @@ const App = () => {
       name: "Corporate Event Manager",
       event: "Tech Company Launch",
       rating: 5,
-      text: "Professional, elegant, and exactly what we needed for our high-profile launch. The team exceeded all expectations.",
-      image: "https://images.pexels.com/photos/4862865/pexels-photo-4862865.jpeg"
+      text: "Professional, elegant, and exactly what we needed for our high-profile launch. The team exceeded all expectations with their sophisticated presentation.",
+      image: "https://images.unsplash.com/photo-1596351992649-8cea3853ba92?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBiYXJ8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTB8MA&ixlib=rb-4.1.0&q=85"
     },
     {
       name: "Isabella Rodriguez",
       event: "Private Birthday Celebration",
       rating: 5,
-      text: "THE BAR. transformed our simple gathering into an unforgettable luxury experience. Worth every euro!",
+      text: "THE BAR. transformed our simple gathering into an unforgettable luxury experience. The attention to detail and premium service was worth every euro!",
+      image: "https://images.unsplash.com/photo-1587223962930-cb7f31384c19?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxwcmVtaXVtJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTh8MA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+      name: "Viktor & Anna",
+      event: "Anniversary Celebration",
+      rating: 5,
+      text: "Incredible craftsmanship! Every cocktail was a work of art. The premium service and elegant presentation made our anniversary truly special.",
+      image: "https://images.unsplash.com/photo-1650814843722-2498e2aa8e3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxwcmVtaXVtJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTh8MA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+      name: "Prague Hotels Group",
+      event: "VIP Guest Events",
+      rating: 5,
+      text: "THE BAR. has become our go-to partner for luxury guest experiences. Consistently exceptional quality and service that matches our premium standards.",
+      image: "https://images.pexels.com/photos/4705928/pexels-photo-4705928.jpeg"
+    },
+    {
+      name: "Marie Novakova",
+      event: "Corporate Gala",
+      rating: 5,
+      text: "Outstanding professionalism and creativity. The custom cocktail menu perfectly complemented our event theme. Highly recommended for any premium occasion.",
       image: "https://images.pexels.com/photos/5550310/pexels-photo-5550310.jpeg"
     }
   ];
@@ -90,20 +119,30 @@ const App = () => {
   const galleryImages = [
     "https://images.unsplash.com/photo-1526894198609-10b3cdf45c52?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85",
     "https://images.unsplash.com/photo-1619296730225-3963e70354ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBjb2NrdGFpbHxlbnwwfHx8YmxhY2t8MTc1MjM1MzAwNXww&ixlib=rb-4.1.0&q=85",
-    "https://images.unsplash.com/photo-1597075687490-8f673c6c17f6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBjb2NrdGFpbHxlbnwwfHx8YmxhY2t8MTc1MjM1MzAwNXww&ixlib=rb-4.1.0&q=85",
+    "https://images.unsplash.com/photo-1596351992649-8cea3853ba92?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBiYXJ8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTB8MA&ixlib=rb-4.1.0&q=85",
+    "https://images.unsplash.com/photo-1587223962930-cb7f31384c19?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxwcmVtaXVtJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTh8MA&ixlib=rb-4.1.0&q=85",
+    "https://images.unsplash.com/photo-1650814843722-2498e2aa8e3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxwcmVtaXVtJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTh8MA&ixlib=rb-4.1.0&q=85",
     "https://images.unsplash.com/photo-1705944601084-3d8119490b26?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85",
-    "https://images.unsplash.com/photo-1573830539666-1f96afdf149f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85",
-    "https://images.pexels.com/photos/4862865/pexels-photo-4862865.jpeg"
+    "https://images.pexels.com/photos/4705928/pexels-photo-4705928.jpeg",
+    "https://images.pexels.com/photos/5550310/pexels-photo-5550310.jpeg",
+    "https://images.unsplash.com/flagged/photo-1571046423953-30c053888852?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBiYXJ8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTB8MA&ixlib=rb-4.1.0&q=85"
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-primary text-white overflow-x-hidden">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrollY > 50 ? 'bg-black/90 backdrop-blur-lg border-b border-gold/20' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrollY > 50 ? 'bg-primary/95 backdrop-blur-lg border-b border-gold/20' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-serif font-light text-gold tracking-wider">THE BAR.</h1>
+              <div className="flex items-center">
+                <img 
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgNUgzNVYxNUg1VjVaIiBzdHJva2U9IiNDQkE4NUYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPgo8cGF0aCBkPSJNNSAxNUgyMFYzNUg1VjE1WiIgc3Ryb2tlPSIjQ0JBODVGIIBZDHJVA2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KPHA+IGZpbGw9Im5vbmUiIGQ9Ik0yMCAxNUwzNSAxNUwzMCAyNUwyMCAyNVoiIHN0cm9rZT0iI0NCQTg1RiIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo="
+                  alt="THE BAR. Logo"
+                  className="h-8 w-8 mr-3"
+                />
+                <h1 className="text-xl font-serif font-light text-gold tracking-wider">THE BAR.</h1>
+              </div>
             </div>
             
             {/* Desktop Navigation */}
@@ -113,7 +152,7 @@ const App = () => {
                   <button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase())}
-                    className="text-white/80 hover:text-gold transition-colors duration-300 text-sm font-light tracking-wide"
+                    className="text-white/90 hover:text-gold transition-colors duration-300 text-base font-serif font-light tracking-wide px-2 py-1"
                   >
                     {item}
                   </button>
@@ -137,13 +176,13 @@ const App = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-black/95 backdrop-blur-lg">
+          <div className="md:hidden bg-primary/98 backdrop-blur-lg border-b border-gold/10">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {['Home', 'About', 'Packages', 'Gallery', 'Reviews', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase())}
-                  className="block px-3 py-2 text-white/80 hover:text-gold transition-colors duration-300 text-sm font-light tracking-wide w-full text-left"
+                  className="block px-3 py-2 text-white/80 hover:text-gold transition-colors duration-300 text-base font-serif font-light tracking-wide w-full text-left"
                 >
                   {item}
                 </button>
@@ -155,30 +194,30 @@ const App = () => {
 
       {/* Hero Section */}
       <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/80 z-10"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center transform scale-105"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ 
             backgroundImage: `url('https://images.unsplash.com/photo-1526894198609-10b3cdf45c52?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85')`,
-            transform: `translateY(${scrollY * 0.5}px)`
+            transform: `translateY(${scrollY * 0.3}px)`
           }}
         ></div>
         
-        <div className="relative z-20 text-center max-w-4xl mx-auto px-4">
-          <div className="opacity-0 animate-fade-in-up">
+        <div className={`relative z-20 text-center max-w-4xl mx-auto px-4 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div>
             <h1 className="text-5xl md:text-7xl font-serif font-light mb-6 text-white tracking-wide leading-tight">
-              THE BAR.<span className="text-gold">.</span>
+              THE BAR<span className="text-gold">.</span>
             </h1>
             <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
-            <p className="text-xl md:text-2xl font-light mb-8 text-white/90 leading-relaxed">
+            <p className="text-xl md:text-2xl font-serif font-light mb-8 text-white/95 leading-relaxed">
               Signature Cocktails. Mobile Bar. Unforgettable Moments.
             </p>
-            <p className="text-lg text-white/70 mb-12 max-w-2xl mx-auto">
+            <p className="text-lg text-white/75 mb-12 max-w-2xl mx-auto font-light">
               Premium cocktail catering in Prague bringing luxury, artistry, and unforgettable experiences to your most important events.
             </p>
             <button
               onClick={() => scrollToSection('contact')}
-              className="bg-gold hover:bg-gold/90 text-black px-8 py-4 text-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-gold/20"
+              className="bg-gold hover:bg-gold/90 text-primary px-8 py-4 text-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-gold/20"
             >
               Book Your Event
             </button>
@@ -196,7 +235,7 @@ const App = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-b from-black to-dark-navy">
+      <section id="about" className="py-20 bg-gradient-to-b from-primary to-dark-navy">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -204,27 +243,27 @@ const App = () => {
                 The Art of <span className="text-gold">Mixology</span>
               </h2>
               <div className="h-px w-16 bg-gold mb-8"></div>
-              <p className="text-lg text-white/80 mb-6 leading-relaxed">
+              <p className="text-lg text-white/85 mb-6 leading-relaxed font-light">
                 Based in the heart of Prague, THE BAR. represents the pinnacle of cocktail craftsmanship. We believe that every drink tells a story, and every event deserves perfection.
               </p>
-              <p className="text-lg text-white/80 mb-6 leading-relaxed">
+              <p className="text-lg text-white/85 mb-6 leading-relaxed font-light">
                 Our passion for mixology goes beyond simple cocktails. We create immersive experiences with signature ice sculptures, premium spirits, and theatrical presentation that transforms any gathering into an unforgettable celebration.
               </p>
-              <p className="text-lg text-white/80 mb-8 leading-relaxed">
+              <p className="text-lg text-white/85 mb-8 leading-relaxed font-light">
                 From intimate private parties to grand corporate events, we bring the luxury bar experience directly to you, complete with professional bartenders, premium equipment, and uncompromising attention to detail.
               </p>
               <div className="flex space-x-8">
                 <div className="text-center">
-                  <div className="text-3xl font-light text-gold mb-2">50+</div>
-                  <div className="text-sm text-white/60 uppercase tracking-wide">Premium Events</div>
+                  <div className="text-3xl font-light text-gold mb-2">150+</div>
+                  <div className="text-sm text-white/60 uppercase tracking-wide font-light">Premium Events</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-light text-gold mb-2">15+</div>
-                  <div className="text-sm text-white/60 uppercase tracking-wide">Signature Cocktails</div>
+                  <div className="text-3xl font-light text-gold mb-2">25+</div>
+                  <div className="text-sm text-white/60 uppercase tracking-wide font-light">Signature Cocktails</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-light text-gold mb-2">100%</div>
-                  <div className="text-sm text-white/60 uppercase tracking-wide">Client Satisfaction</div>
+                  <div className="text-sm text-white/60 uppercase tracking-wide font-light">Client Satisfaction</div>
                 </div>
               </div>
             </div>
@@ -234,8 +273,9 @@ const App = () => {
                   src="https://images.unsplash.com/photo-1619296730225-3963e70354ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBjb2NrdGFpbHxlbnwwfHx8YmxhY2t8MTc1MjM1MzAwNXww&ixlib=rb-4.1.0&q=85"
                   alt="Professional bartender crafting cocktails"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
               </div>
               <div className="absolute -bottom-6 -left-6 w-24 h-24 border border-gold/30 rounded-lg"></div>
               <div className="absolute -top-6 -right-6 w-16 h-16 border border-gold/20 rounded-lg"></div>
@@ -252,7 +292,7 @@ const App = () => {
               Our <span className="text-gold">Packages</span>
             </h2>
             <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
               Choose from our carefully crafted service packages, each designed to deliver an exceptional cocktail experience tailored to your event's needs.
             </p>
           </div>
@@ -263,9 +303,9 @@ const App = () => {
                 key={index}
                 className={`relative group ${pkg.featured ? 'lg:scale-105 lg:-mt-4' : ''}`}
               >
-                <div className={`bg-gradient-to-b from-black/80 to-dark-navy border ${pkg.featured ? 'border-gold/50' : 'border-white/10'} rounded-lg overflow-hidden hover:border-gold/30 transition-all duration-500 hover:scale-105`}>
+                <div className={`bg-gradient-to-b from-primary/80 to-dark-navy border ${pkg.featured ? 'border-gold/50' : 'border-white/10'} rounded-lg overflow-hidden hover:border-gold/30 transition-all duration-500 hover:scale-105`}>
                   {pkg.featured && (
-                    <div className="bg-gold text-black text-center py-2 text-sm font-medium tracking-wide">
+                    <div className="bg-gold text-primary text-center py-2 text-sm font-medium tracking-wide">
                       MOST POPULAR
                     </div>
                   )}
@@ -275,18 +315,19 @@ const App = () => {
                       src={pkg.image}
                       alt={pkg.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
                   </div>
 
                   <div className="p-8">
                     <h3 className="text-2xl font-serif font-light mb-2 text-white">{pkg.name}</h3>
                     <p className="text-3xl font-light text-gold mb-4">{pkg.price}</p>
-                    <p className="text-white/70 mb-6">{pkg.description}</p>
+                    <p className="text-white/75 mb-6 font-light">{pkg.description}</p>
                     
                     <ul className="space-y-3 mb-8">
                       {pkg.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-white/80">
+                        <li key={idx} className="flex items-center text-white/85 font-light">
                           <svg className="w-4 h-4 text-gold mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
@@ -298,8 +339,8 @@ const App = () => {
                     <button
                       onClick={() => scrollToSection('contact')}
                       className={`w-full py-3 text-center font-medium tracking-wide transition-all duration-300 ${pkg.featured 
-                        ? 'bg-gold hover:bg-gold/90 text-black' 
-                        : 'border border-gold text-gold hover:bg-gold hover:text-black'
+                        ? 'bg-gold hover:bg-gold/90 text-primary' 
+                        : 'border border-gold text-gold hover:bg-gold hover:text-primary'
                       }`}
                     >
                       Request Offer
@@ -313,14 +354,14 @@ const App = () => {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-20 bg-black">
+      <section id="gallery" className="py-20 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-white">
               Our <span className="text-gold">Gallery</span>
             </h2>
             <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
               Experience the artistry and elegance that defines every THE BAR. event through our curated collection of memorable moments.
             </p>
           </div>
@@ -332,8 +373,9 @@ const App = () => {
                   src={image}
                   alt={`Gallery image ${index + 1}`}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <svg className="w-12 h-12 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
@@ -346,21 +388,21 @@ const App = () => {
       </section>
 
       {/* Reviews Section */}
-      <section id="reviews" className="py-20 bg-gradient-to-b from-dark-navy to-black">
+      <section id="reviews" className="py-20 bg-gradient-to-b from-dark-navy to-primary">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-white">
               Client <span className="text-gold">Reviews</span>
             </h2>
             <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
               Don't just take our word for it - hear what our clients say about their unforgettable experiences with THE BAR.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((review, index) => (
-              <div key={index} className="bg-gradient-to-b from-black/60 to-dark-navy/80 border border-white/10 rounded-lg p-8 hover:border-gold/30 transition-all duration-300 hover:scale-105">
+              <div key={index} className="bg-gradient-to-b from-primary/60 to-dark-navy/80 border border-white/10 rounded-lg p-8 hover:border-gold/30 transition-all duration-300 hover:scale-105">
                 <div className="flex items-center mb-4">
                   {[...Array(review.rating)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
@@ -368,16 +410,17 @@ const App = () => {
                     </svg>
                   ))}
                 </div>
-                <p className="text-white/80 mb-6 italic leading-relaxed">"{review.text}"</p>
+                <p className="text-white/85 mb-6 italic leading-relaxed font-light">"{review.text}"</p>
                 <div className="flex items-center">
                   <img 
                     src={review.image}
                     alt={review.name}
                     className="w-12 h-12 rounded-full object-cover mr-4"
+                    loading="lazy"
                   />
                   <div>
                     <div className="text-white font-medium">{review.name}</div>
-                    <div className="text-gold text-sm">{review.event}</div>
+                    <div className="text-gold text-sm font-light">{review.event}</div>
                   </div>
                 </div>
               </div>
@@ -387,61 +430,61 @@ const App = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-black">
+      <section id="contact" className="py-20 bg-primary">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-white">
               Get In <span className="text-gold">Touch</span>
             </h2>
             <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
               Ready to elevate your event? Contact us to discuss your vision and let us create an unforgettable cocktail experience.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div className="bg-gradient-to-b from-dark-navy/50 to-black/50 border border-white/10 rounded-lg p-8">
+            <div className="bg-gradient-to-b from-dark-navy/50 to-primary/50 border border-white/10 rounded-lg p-8">
               <h3 className="text-2xl font-serif font-light mb-6 text-white">Send us a message</h3>
               <form className="space-y-6">
                 <div>
                   <input 
                     type="text" 
                     placeholder="Your Name" 
-                    className="w-full bg-black/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300"
+                    className="w-full bg-primary/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light"
                   />
                 </div>
                 <div>
                   <input 
                     type="email" 
                     placeholder="Email Address" 
-                    className="w-full bg-black/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300"
+                    className="w-full bg-primary/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light"
                   />
                 </div>
                 <div>
                   <input 
                     type="tel" 
                     placeholder="Phone Number" 
-                    className="w-full bg-black/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300"
+                    className="w-full bg-primary/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light"
                   />
                 </div>
                 <div>
                   <input 
                     type="text" 
                     placeholder="Event Type & Date" 
-                    className="w-full bg-black/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300"
+                    className="w-full bg-primary/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light"
                   />
                 </div>
                 <div>
                   <textarea 
                     rows="4" 
                     placeholder="Tell us about your event..." 
-                    className="w-full bg-black/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 resize-none"
+                    className="w-full bg-primary/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 resize-none font-light"
                   ></textarea>
                 </div>
                 <button 
                   type="submit"
-                  className="w-full bg-gold hover:bg-gold/90 text-black py-3 font-medium tracking-wide transition-all duration-300 hover:scale-105"
+                  className="w-full bg-gold hover:bg-gold/90 text-primary py-3 font-medium tracking-wide transition-all duration-300 hover:scale-105"
                 >
                   Send Message
                 </button>
@@ -457,54 +500,82 @@ const App = () => {
                     <svg className="w-6 h-6 text-gold mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span className="text-white/80">thebar.catering@gmail.com</span>
+                    <span className="text-white/85 font-light">thebar.catering@gmail.com</span>
                   </div>
                   <div className="flex items-center">
                     <svg className="w-6 h-6 text-gold mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    <span className="text-white/80">+420 775 505 805</span>
+                    <a 
+                      href="https://wa.me/420775505805"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/85 hover:text-gold transition-colors duration-300 font-light"
+                    >
+                      +420 775 505 805
+                    </a>
                   </div>
                   <div className="flex items-center">
                     <svg className="w-6 h-6 text-gold mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span className="text-white/80">Prague, Czech Republic</span>
+                    <span className="text-white/85 font-light">Prague, Czech Republic</span>
                   </div>
                 </div>
-              </div>
-
-              {/* WhatsApp CTA */}
-              <div className="bg-gradient-to-r from-green-600 to-green-500 rounded-lg p-6">
-                <h4 className="text-xl font-medium mb-3 text-white">Quick Response via WhatsApp</h4>
-                <p className="text-white/90 mb-4">Get instant answers to your questions and quick quotes for your event.</p>
-                <a 
-                  href="https://wa.me/420775505805"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center bg-white text-green-600 px-6 py-3 rounded font-medium hover:bg-white/90 transition-colors duration-300"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.570-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                  </svg>
-                  Chat on WhatsApp
-                </a>
               </div>
 
               {/* Social Media */}
               <div>
                 <h4 className="text-xl font-serif font-light mb-4 text-white">Follow Us</h4>
+                <div className="flex space-x-4">
+                  <a 
+                    href="https://instagram.com/thebar.catering"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-white/85 hover:text-gold transition-colors duration-300 bg-white/5 rounded-lg p-3 hover:bg-gold/10"
+                  >
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987S24.005 18.607 24.005 11.987C24.005 5.367 18.638.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C3.85 14.977 3.85 13.116 5.127 11.84c1.276-1.276 3.138-1.276 4.414 0s1.276 3.138 0 4.414c-.875.806-2.026 1.297-3.323 1.297-.367 0-.734-.042-1.089-.126z"/>
+                    </svg>
+                  </a>
+                  <a 
+                    href="https://www.facebook.com/profile.php?id=61578282090185"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-white/85 hover:text-gold transition-colors duration-300 bg-white/5 rounded-lg p-3 hover:bg-gold/10"
+                  >
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                  </a>
+                  <a 
+                    href="https://www.tiktok.com/@thebar.catering"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-white/85 hover:text-gold transition-colors duration-300 bg-white/5 rounded-lg p-3 hover:bg-gold/10"
+                  >
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19.321 5.562a5.122 5.122 0 01-.443-.258 6.228 6.228 0 01-1.137-.966c-.849-.849-1.342-1.85-1.342-3.062V1h-3.317v14.138c0 2.104-1.712 3.817-3.817 3.817-2.104 0-3.817-1.712-3.817-3.817s1.712-3.817 3.817-3.817c.394 0 .774.06 1.134.171V8.075a7.094 7.094 0 00-1.134-.092c-3.908 0-7.083 3.175-7.083 7.083S9.358 22.15 13.266 22.15s7.083-3.175 7.083-7.083V8.909a9.496 9.496 0 005.651 1.842V7.434a5.617 5.617 0 01-6.679-1.872z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Quick Contact */}
+              <div className="bg-gradient-to-r from-gold/20 to-gold/10 rounded-lg p-6 border border-gold/20">
+                <h4 className="text-xl font-medium mb-3 text-white font-serif">Quick Response</h4>
+                <p className="text-white/90 mb-4 font-light">Get instant answers via WhatsApp for immediate assistance and quick quotes.</p>
                 <a 
-                  href="https://instagram.com/thebar.catering"
+                  href="https://wa.me/420775505805"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-white/80 hover:text-gold transition-colors duration-300"
+                  className="inline-flex items-center bg-gold text-primary px-6 py-3 rounded font-medium hover:bg-gold/90 transition-colors duration-300"
                 >
-                  <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987S24.005 18.607 24.005 11.987C24.005 5.367 18.638.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C3.85 14.977 3.85 13.116 5.127 11.84c1.276-1.276 3.138-1.276 4.414 0s1.276 3.138 0 4.414c-.875.806-2.026 1.297-3.323 1.297-.367 0-.734-.042-1.089-.126z"/>
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.570-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
                   </svg>
-                  @thebar.catering
+                  WhatsApp
                 </a>
               </div>
             </div>
@@ -518,18 +589,18 @@ const App = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-2xl font-serif font-light text-gold mb-4">THE BAR.</h3>
-              <p className="text-white/70 leading-relaxed">
+              <p className="text-white/75 leading-relaxed font-light">
                 Premium cocktail catering in Prague, creating unforgettable moments through artistry, precision, and uncompromising quality.
               </p>
             </div>
             <div>
-              <h4 className="text-lg font-medium text-white mb-4">Quick Links</h4>
+              <h4 className="text-lg font-medium text-white mb-4 font-serif">Quick Links</h4>
               <div className="space-y-2">
                 {['About', 'Packages', 'Gallery', 'Reviews', 'Contact'].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className="block text-white/70 hover:text-gold transition-colors duration-300"
+                    className="block text-white/75 hover:text-gold transition-colors duration-300 font-light"
                   >
                     {item}
                   </button>
@@ -537,8 +608,8 @@ const App = () => {
               </div>
             </div>
             <div>
-              <h4 className="text-lg font-medium text-white mb-4">Contact</h4>
-              <div className="space-y-2 text-white/70">
+              <h4 className="text-lg font-medium text-white mb-4 font-serif">Contact</h4>
+              <div className="space-y-2 text-white/75 font-light">
                 <p>Prague, Czech Republic</p>
                 <p>+420 775 505 805</p>
                 <p>thebar.catering@gmail.com</p>
@@ -546,7 +617,7 @@ const App = () => {
             </div>
           </div>
           <div className="border-t border-white/10 mt-8 pt-8 text-center">
-            <p className="text-white/50">
+            <p className="text-white/50 font-light">
               © 2025 THE BAR. Premium Cocktail Catering. All rights reserved.
             </p>
           </div>
