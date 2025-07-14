@@ -169,7 +169,7 @@ const App = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-primary/98 backdrop-blur-lg border-b border-gold/10">
+          <div className="bg-primary/95 backdrop-blur-lg border-b border-primary/20">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {['Home', 'About', 'Packages', 'Gallery', 'Reviews', 'Contact'].map((item) => (
                 <button
