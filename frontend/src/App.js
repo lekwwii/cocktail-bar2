@@ -132,15 +132,15 @@ const App = () => {
     <div className="min-h-screen bg-primary text-white overflow-x-hidden">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrollY > 50 ? 'bg-primary/95 backdrop-blur-lg' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
           <div className="flex justify-between items-center h-20">
-            <div className="flex-shrink-0">
-              <h1 className="text-xl font-serif font-light text-gold tracking-wider">THE BAR.</h1>
+            <div className="flex-shrink-0 -ml-2">
+              <h1 className="text-3xl font-serif font-light text-gold tracking-widest">THE BAR.</h1>
             </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
+              <div className="flex items-baseline space-x-6">
                 {['Home', 'About', 'Packages', 'Gallery', 'Reviews', 'Contact'].map((item) => (
                   <button
                     key={item}
