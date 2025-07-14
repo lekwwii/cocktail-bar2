@@ -67,6 +67,15 @@ module.exports = {
         '2000': '2000ms',
         '3000': '3000ms',
       },
+      letterSpacing: {
+        'tighter': '-0.05em',
+        'tight': '-0.025em',
+        'normal': '0em',
+        'wide': '0.025em',
+        'wider': '0.05em',
+        'widest': '0.1em',
+        'ultra-wide': '0.15em',
+      },
     },
   },
   plugins: [
