@@ -129,7 +129,17 @@ const App = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-primary text-white overflow-x-hidden">
+    <div className="min-h-screen bg-primary text-white overflow-x-hidden relative">
+      {/* Vignette Frame Effect */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-transparent to-primary/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-primary/30"></div>
+        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold/20 via-gold/10 to-gold/20"></div>
+        <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-gold/20 via-gold/10 to-gold/20"></div>
+      </div>
+
+      {/* Main Content Container */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrollY > 50 ? 'bg-primary/95 backdrop-blur-lg' : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
