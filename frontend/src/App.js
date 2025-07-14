@@ -139,14 +139,14 @@ const App = () => {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
-      {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrollY > 50 ? 'bg-primary/95 backdrop-blur-lg' : 'bg-transparent'}`}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex-shrink-0 -ml-2">
-              <h1 className="text-3xl font-serif font-light text-gold tracking-widest">THE BAR.</h1>
-            </div>
+      <div className="relative z-10">
+        {/* Navigation */}
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrollY > 50 ? 'bg-primary/95 backdrop-blur-lg' : 'bg-transparent'}`}>
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="flex justify-between items-center h-20">
+              <div className="flex-shrink-0 -ml-2">
+                <h1 className="text-3xl font-serif font-light text-gold tracking-widest">THE BAR.</h1>
+              </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:block">
