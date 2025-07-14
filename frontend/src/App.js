@@ -141,8 +141,8 @@ const App = () => {
       {/* Main Content Container */}
       <div className="relative z-10 max-w-6xl mx-auto px-6">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrollY > 50 ? 'bg-primary/95 backdrop-blur-lg' : 'bg-transparent'}`}>
-        <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrollY > 50 ? 'bg-primary/95 backdrop-blur-lg' : 'bg-transparent'}`}>
+        <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0 -ml-2">
               <h1 className="text-3xl font-serif font-light text-gold tracking-widest">THE BAR.</h1>
@@ -180,16 +180,18 @@ const App = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="bg-primary/95 backdrop-blur-lg border-b border-primary/20">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {['Home', 'About', 'Packages', 'Gallery', 'Reviews', 'Contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase())}
-                  className="block px-3 py-2 text-white/80 hover:text-gold transition-colors duration-300 text-base font-serif font-light tracking-wide w-full text-left"
-                >
-                  {item}
-                </button>
-              ))}
+            <div className="max-w-6xl mx-auto px-6">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                {['Home', 'About', 'Packages', 'Gallery', 'Reviews', 'Contact'].map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase())}
+                    className="block px-3 py-2 text-white/80 hover:text-gold transition-colors duration-300 text-base font-serif font-light tracking-wide w-full text-left"
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         )}
