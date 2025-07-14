@@ -135,14 +135,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0">
-              <div className="flex items-center">
-                <img 
-                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgNUgzNVYxNUg1VjVaIiBzdHJva2U9IiNDQkE4NUYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPgo8cGF0aCBkPSJNNSAxNUgyMFYzNUg1VjE1WiIgc3Ryb2tlPSIjQ0JBODVGIIBZDHJVA2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KPHA+IGZpbGw9Im5vbmUiIGQ9Ik0yMCAxNUwzNSAxNUwzMCAyNUwyMCAyNVoiIHN0cm9rZT0iI0NCQTg1RiIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo="
-                  alt="THE BAR. Logo"
-                  className="h-8 w-8 mr-3"
-                />
-                <h1 className="text-xl font-serif font-light text-gold tracking-wider">THE BAR.</h1>
-              </div>
+              <h1 className="text-xl font-serif font-light text-gold tracking-wider">THE BAR.</h1>
             </div>
             
             {/* Desktop Navigation */}
