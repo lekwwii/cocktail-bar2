@@ -579,7 +579,7 @@ const App = () => {
       {/* Footer */}
       <footer className="bg-dark-navy border-t border-white/10 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-2xl font-serif font-light text-gold mb-4">THE BAR.</h3>
               <p className="text-white/75 leading-relaxed font-light">
@@ -606,6 +606,15 @@ const App = () => {
                 <p>Prague, Czech Republic</p>
                 <p>+420 775 505 805</p>
                 <p>thebar.catering@gmail.com</p>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-lg font-medium text-white mb-4 font-serif">Company Info</h4>
+              <div className="space-y-2 text-white/75 font-light">
+                <p>IČO: 23284111</p>
+                <p>Kaprová 42/12</p>
+                <p>Praha 1, 110 00</p>
+                <p>Czech Republic</p>
               </div>
             </div>
           </div>
