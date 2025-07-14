@@ -247,11 +247,11 @@ const App = () => {
               </p>
               <div className="flex space-x-8">
                 <div className="text-center">
-                  <div className="text-3xl font-light text-gold mb-2">150+</div>
+                  <div className="text-3xl font-light text-gold mb-2">25+</div>
                   <div className="text-sm text-white/60 uppercase tracking-wide font-light">Premium Events</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-light text-gold mb-2">25+</div>
+                  <div className="text-3xl font-light text-gold mb-2">15+</div>
                   <div className="text-sm text-white/60 uppercase tracking-wide font-light">Signature Cocktails</div>
                 </div>
                 <div className="text-center">
