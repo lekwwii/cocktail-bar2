@@ -334,7 +334,7 @@ const App = () => {
           <div className="max-w-6xl mx-auto px-6">
             <div className="flex justify-between items-center h-20">
               <div className="flex-shrink-0 -ml-2">
-                <h1 className="text-3xl font-serif font-light text-gold tracking-widest">THE BAR.</h1>
+                <h1 className="text-3xl font-serif font-medium text-gold tracking-widest">THE BAR.</h1>
               </div>
             
               {/* Desktop Navigation */}
