@@ -388,7 +388,7 @@ const App = () => {
         "Exkluzivní menu pro vaši akci"
       ],
       bonus: "K balíčku Gold získáte 20 % slevu na pyramidu ze sklenic s efektem studené fontány a 15 lahví prosecca.",
-      image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTI0NTMwMDB8MA&ixlib=rb-4.1.0&q=85",
+      image: "https://images.unsplash.com/photo-1464207687429-7505649dae38?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwcm9tYW50aWN8ZW58MHx8fGJsYWNrfDE3NTI0NTMwMDB8MA&ixlib=rb-4.1.0&q=85",
       featured: true
     },
     {
