@@ -784,7 +784,7 @@ const App = () => {
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
                 <div className="flex items-baseline space-x-6">
-                  {[t('nav.home'), t('nav.about'), t('nav.packages'), t('nav.wedding'), t('nav.gallery'), t('nav.reviews'), t('nav.contact')].map((item, index) => {
+                  {['Úvod', 'O nás', 'Balíčky', 'Svatební Balíčky', 'Galerie', 'Recenze', 'Kontakt'].map((item, index) => {
                     const sectionIds = ['hero', 'about', 'packages', 'svatebni-balicky', 'gallery', 'reviews', 'contact'];
                     return (
                       <button
@@ -797,7 +797,6 @@ const App = () => {
                     );
                   })}
                 </div>
-                <LanguageSwitcher />
               </div>
 
             {/* Mobile menu button and language switcher */}
