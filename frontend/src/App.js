@@ -6,6 +6,15 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [hasShownPopup, setHasShownPopup] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    date: '',
+    service: ''
+  });
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -14,15 +23,57 @@ const App = () => {
     // Ensure page is fully loaded
     const timer = setTimeout(() => setIsLoaded(true), 100);
     
+    // Popup logic
+    const showPopupTimer = setTimeout(() => {
+      if (!hasShownPopup) {
+        setShowPopup(true);
+        setHasShownPopup(true);
+      }
+    }, 5000);
+
+    const handleScrollPopup = () => {
+      const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      if (scrollPercent >= 30 && !hasShownPopup) {
+        setShowPopup(true);
+        setHasShownPopup(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollPopup);
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScrollPopup);
       clearTimeout(timer);
+      clearTimeout(showPopupTimer);
     };
-  }, []);
+  }, [hasShownPopup]);
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
     setIsMenuOpen(false);
+  };
+
+  const handleFormChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    setShowPopup(false);
+    // Reset form
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      date: '',
+      service: ''
+    });
   };
 
   const packages = [
