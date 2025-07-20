@@ -540,7 +540,7 @@ button, a, input, textarea, select {
   transition-duration: 200ms !important;
 }
 
-/* Hide Emergent watermark */
+/* Hide Emergent watermark - all possible selectors */
 [data-testid*="emergent"],
 [class*="emergent"],
 [id*="emergent"],
@@ -548,8 +548,41 @@ iframe[src*="emergent"],
 .watermark,
 [aria-label*="Made with"],
 [title*="Made with"],
-div:has-text("Made with Emergent") {
+div:has-text("Made with Emergent"),
+/* Common watermark patterns */
+div[style*="position: fixed"][style*="bottom"],
+div[style*="position: fixed"][style*="right"],
+/* Specific to bottom-right watermarks */
+div[style*="bottom: 0"][style*="right: 0"],
+div[style*="bottom: 1"][style*="right: 1"],
+div[style*="bottom: 10px"][style*="right: 10px"],
+div[style*="bottom: 20px"][style*="right: 20px"],
+/* Text content based hiding */
+div:contains("Made with"),
+div:contains("Emergent"),
+span:contains("Made with"),
+span:contains("Emergent"),
+/* Additional patterns */
+div[class*="watermark"],
+div[id*="watermark"],
+[data-powered-by],
+[data-branding] {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+}
+
+/* Additional global override for any bottom-right fixed elements that might be watermarks */
+body > div:last-child[style*="position: fixed"][style*="bottom"][style*="right"] {
+  display: none !important;
+}
+
+/* Hide common branding elements */
+[class*="branding"],
+[id*="branding"],
+[data-brand],
+[data-creator] {
+  display: none !important;
 }
