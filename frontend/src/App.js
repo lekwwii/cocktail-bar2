@@ -417,7 +417,7 @@ const App = () => {
                 </p>
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="bg-gold hover:bg-gold/90 text-primary px-8 py-4 text-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-gold/20"
+                  className="bg-gold hover:bg-gold/90 text-primary px-8 py-4 text-lg font-sans font-semibold tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-gold/20"
                 >
                   Rezervovat akci
                 </button>
