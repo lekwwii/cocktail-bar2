@@ -346,7 +346,7 @@ const App = () => {
                       <button
                         key={item}
                         onClick={() => scrollToSection(sectionIds[index])}
-                        className="text-white/90 hover:text-gold transition-colors duration-300 text-base font-serif font-light tracking-wide px-2 py-1"
+                        className="text-white/90 hover:text-gold transition-colors duration-300 text-base font-sans font-medium tracking-wide px-2 py-1"
                       >
                         {item}
                       </button>
