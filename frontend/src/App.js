@@ -343,15 +343,18 @@ const App = () => {
           <div className="bg-primary/95 backdrop-blur-lg border-b border-primary/20">
             <div className="max-w-6xl mx-auto px-6">
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {['Home', 'About', 'Packages', 'Gallery', 'Reviews', 'Contact'].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase())}
-                    className="block px-3 py-2 text-white/80 hover:text-gold transition-colors duration-300 text-base font-serif font-light tracking-wide w-full text-left"
-                  >
-                    {item}
-                  </button>
-                ))}
+                {['Úvod', 'O nás', 'Balíčky', 'Galerie', 'Recenze', 'Kontakt'].map((item, index) => {
+                  const sectionIds = ['hero', 'about', 'packages', 'gallery', 'reviews', 'contact'];
+                  return (
+                    <button
+                      key={item}
+                      onClick={() => scrollToSection(sectionIds[index])}
+                      className="block px-3 py-2 text-white/80 hover:text-gold transition-colors duration-300 text-base font-serif font-light tracking-wide w-full text-left"
+                    >
+                      {item}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
