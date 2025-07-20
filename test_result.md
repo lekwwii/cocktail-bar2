@@ -121,6 +121,90 @@ backend:
         comment: "Comprehensive backend testing completed successfully. Created and executed backend_test.py with 5 test scenarios: ✅ Server connectivity (GET /api/) - Backend responsive with correct 'Hello World' response, ✅ Status check creation (POST /api/status) - Successfully creates status records with proper UUID, timestamp, and data validation, ✅ Status check retrieval (GET /api/status) - Correctly returns list of status records, ✅ Error handling - Properly returns HTTP 422 for invalid JSON requests, ✅ CORS functionality - Working correctly (returns requesting origin as expected). All core API endpoints functional. Supervisor logs confirm backend running stable on port 8001. MongoDB connection working. No regressions detected from frontend bug fixes."
 
 frontend:
+  - task: "Implement multilingual language switcher component"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/LanguageSwitcher.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "LanguageSwitcher component implemented with support for 4 languages (Czech, English, Russian, Ukrainian). Features desktop and mobile responsive design, flag icons, dropdown functionality, and localStorage persistence. Requires comprehensive testing for functionality, language switching, and responsive behavior."
+
+  - task: "Implement i18n configuration and translation resources"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/i18n/i18n.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "i18n configuration implemented with react-i18next, browser language detection, and localStorage caching. Translation resources created for all 4 languages with comprehensive coverage of navigation, hero, about, packages, wedding, gallery, reviews, contact, popup, and GDPR sections. Czech set as fallback language. Requires testing for proper initialization and language switching."
+
+  - task: "Create comprehensive translation files for all 4 languages"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/i18n/locales/"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Complete translation files created for Czech (cs.json), English (en.json), Russian (ru.json), and Ukrainian (uk.json). All files contain comprehensive translations for navigation, hero section, about section, packages, wedding packages, gallery, reviews, contact forms, popup modal, footer, and GDPR content. Requires testing to verify all translations display correctly and content switches properly between languages."
+
+  - task: "Integrate translation keys throughout main App component"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Main App.js component updated to use translation keys with useTranslation hook. Navigation menu, hero section, about section, and other content areas now use t() function for dynamic content. LanguageSwitcher component integrated in header for both desktop and mobile layouts. Requires testing to verify all content translates correctly and no hardcoded text remains."
+
+  - task: "Test language switcher visibility and positioning"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/LanguageSwitcher.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Language switcher positioned in top-right corner of header for desktop and mobile layouts. Component shows current language flag and code, with dropdown functionality. Requires testing to verify proper positioning, visibility, and responsive behavior across different screen sizes."
+
+  - task: "Test content translation for all major sections"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "All major sections (navigation, hero, about, packages, wedding, gallery, reviews, contact) integrated with translation system. Content should dynamically change when language is switched. Requires comprehensive testing to verify all sections translate correctly, including complex content like package features, testimonials, and form labels."
+
+  - task: "Test language persistence and browser detection"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/i18n/i18n.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "i18n configured with localStorage and cookie persistence, plus browser language detection. Language preference should persist across page reloads and sessions. Requires testing to verify language selection is remembered and proper fallback behavior works."
+
   - task: "Update 'Naše balíčky' section to 'Hotová řešení'"
     implemented: true
     working: true
