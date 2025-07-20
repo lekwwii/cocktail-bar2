@@ -180,22 +180,27 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   color-scheme: dark;
   cursor: pointer !important;
   background-image: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
 }
 
 /* Improved date picker close behavior */
 .date-input::-webkit-calendar-picker-indicator {
-  opacity: 0;
+  opacity: 0.8;
   position: absolute;
   right: 0;
-  width: 100%;
-  height: 100%;
+  width: 20px;
+  height: 20px;
   cursor: pointer !important;
   z-index: 2;
+  margin-right: 8px;
 }
 
 /* Better handling of date picker calendar */
 .date-input::-webkit-datetime-edit {
   cursor: pointer !important;
+  padding: 0;
+  margin: 0;
 }
 
 .date-input::-webkit-inner-spin-button,
@@ -212,10 +217,12 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
 .date-input::-webkit-datetime-edit-fields-wrapper {
   color: white !important;
   padding: 0;
+  margin: 0;
 }
 
 .date-input::-webkit-datetime-edit-text {
   color: rgba(255, 255, 255, 0.5) !important;
+  padding: 0;
 }
 
 .date-input::-webkit-datetime-edit-month-field,
@@ -223,6 +230,8 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
 .date-input::-webkit-datetime-edit-year-field {
   color: white !important;
   background: transparent !important;
+  padding: 0;
+  margin: 0;
 }
 
 /* Custom calendar icon */
@@ -236,12 +245,6 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   z-index: 1;
 }
 
-/* Ensure proper calendar behavior across browsers */
-.date-input[type="date"] {
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
-}
-
 /* Handle focus states properly */
 .date-input:focus {
   outline: 2px solid var(--gold);
@@ -253,6 +256,8 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   .date-input::-webkit-calendar-picker-indicator {
     font-size: 16px; /* Prevent zoom on iOS */
     opacity: 0.8;
+    width: 16px;
+    height: 16px;
   }
   
   .date-input {
@@ -276,8 +281,9 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
     font-size: 16px !important; /* Prevent iOS zoom */
     padding: 12px 16px !important;
     min-height: 48px;
-    background-size: 16px;
-    background-position: right 16px center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
   
   /* Mobile form inputs */
@@ -292,6 +298,20 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   
   textarea {
     min-height: 120px;
+  }
+
+  /* Floating action buttons positioning */
+  .floating-actions {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+/* Desktop floating actions positioning */
+@media (min-width: 769px) {
+  .floating-actions {
+    bottom: 2rem;
+    right: 2rem;
   }
 }
 
