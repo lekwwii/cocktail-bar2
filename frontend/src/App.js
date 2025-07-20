@@ -1198,14 +1198,12 @@ const App = () => {
               <div className="text-center">
                 <p className="text-white/40 font-light text-sm leading-relaxed max-w-4xl mx-auto">
                   *Kliknutím na tlačítko vyjadřujete souhlas se zpracováním osobních údajů a souhlasíte se{' '}
-                  <a 
-                    href="#privacy" 
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button 
+                    onClick={() => setShowGdprPage(true)}
                     className="text-gold hover:text-gold/80 cursor-pointer underline transition-colors duration-300"
                   >
                     zásadami ochrany osobních údajů
-                  </a>.
+                  </button>.
                 </p>
               </div>
             </div>
