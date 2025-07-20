@@ -1174,7 +1174,7 @@ const App = () => {
                   <h4 className="text-xl font-serif font-light mb-4 text-white">Sledujte nás</h4>
                   <div className="flex space-x-4">
                     <a 
-                      href="https://instagram.com/thebar.catering"
+                      href="https://www.instagram.com/thebar.cz"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center w-12 h-12 text-white/85 hover:text-gold transition-colors duration-300 bg-white/5 rounded-lg hover:bg-gold/10"
@@ -1185,7 +1185,7 @@ const App = () => {
                       </svg>
                     </a>
                     <a 
-                      href="https://www.facebook.com/profile.php?id=61578282090185"
+                      href="https://www.facebook.com/thebar.cz"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center w-12 h-12 text-white/85 hover:text-gold transition-colors duration-300 bg-white/5 rounded-lg hover:bg-gold/10"
@@ -1196,7 +1196,7 @@ const App = () => {
                       </svg>
                     </a>
                     <a 
-                      href="https://www.tiktok.com/@thebar.catering"
+                      href="https://www.tiktok.com/@thebar.cz"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center w-12 h-12 text-white/85 hover:text-gold transition-colors duration-300 bg-white/5 rounded-lg hover:bg-gold/10"
