@@ -1133,7 +1133,7 @@ const App = () => {
                 <div className="space-y-2 text-white/75 font-light">
                   <p>Praha, Česká republika</p>
                   <p>+420 775 505 805</p>
-                  <p>thebar.catering@gmail.com</p>
+                  <p>thebar.event@gmail.com</p>
                 </div>
               </div>
               <div>
