@@ -561,7 +561,7 @@ const App = () => {
                     required
                     className={`w-full bg-primary/50 border ${
                       popupErrors.service ? 'border-red-500' : 'border-white/20'
-                    } rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm`}
+                    } rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm md:text-sm text-base min-h-12 md:min-h-auto`}
                   >
                     <option value="" className="text-white/70">Vyberte si službu</option>
                     <option value="koktejlovy-bar" className="text-white bg-primary">Koktejlový bar</option>
