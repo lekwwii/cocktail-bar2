@@ -574,9 +574,14 @@ const App = () => {
                     required
                     className={`w-full bg-primary/50 border ${
                       popupErrors.service ? 'border-red-500' : 'border-white/20'
-                    } rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm md:text-sm text-base min-h-12 md:min-h-auto`}
+                    } rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm md:text-sm text-base min-h-12 md:min-h-auto appearance-none bg-no-repeat bg-right-4 bg-center`}
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e")`,
+                      backgroundSize: '16px',
+                      paddingRight: '2.5rem'
+                    }}
                   >
-                    <option value="" className="text-white/70">Vyberte si službu</option>
+                    <option value="" className="text-white/70 bg-primary">Vyberte si službu</option>
                     <option value="koktejlovy-bar" className="text-white bg-primary">Koktejlový bar</option>
                     <option value="pyramida" className="text-white bg-primary">Elegantní pyramida šampaňského</option>
                     <option value="welcome-zona" className="text-white bg-primary">Welcome zóna s ledovým blokem a květinou uvnitř</option>
