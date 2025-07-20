@@ -823,7 +823,7 @@ const App = () => {
           <div className="bg-primary/95 backdrop-blur-lg border-b border-primary/20">
             <div className="max-w-6xl mx-auto px-6">
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {['Úvod', 'O nás', 'Balíčky', 'Svatební Balíčky', 'Galerie', 'Recenze', 'Kontakt'].map((item, index) => {
+                {[t('nav.home'), t('nav.about'), t('nav.packages'), t('nav.wedding'), t('nav.gallery'), t('nav.reviews'), t('nav.contact')].map((item, index) => {
                   const sectionIds = ['hero', 'about', 'packages', 'svatebni-balicky', 'gallery', 'reviews', 'contact'];
                   return (
                     <button
