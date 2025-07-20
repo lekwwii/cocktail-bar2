@@ -477,35 +477,56 @@ const App = () => {
 
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Jméno"
-                    value={formData.name}
-                    onChange={handleFormChange}
-                    required
-                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm"
-                  />
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Telefon"
-                    value={formData.phone}
-                    onChange={handleFormChange}
-                    required
-                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm"
-                  />
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Jméno"
+                      value={formData.name}
+                      onChange={handleFormChange}
+                      required
+                      className={`w-full bg-primary/50 border ${
+                        popupErrors.name ? 'border-red-500' : 'border-white/20'
+                      } rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm`}
+                    />
+                    {popupErrors.name && (
+                      <p className="text-red-400 text-xs mt-1 font-sans">{popupErrors.name}</p>
+                    )}
+                  </div>
+                  <div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Telefon"
+                      value={formData.phone}
+                      onChange={handleFormChange}
+                      required
+                      className={`w-full bg-primary/50 border ${
+                        popupErrors.phone ? 'border-red-500' : 'border-white/20'
+                      } rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm`}
+                    />
+                    {popupErrors.phone && (
+                      <p className="text-red-400 text-xs mt-1 font-sans">{popupErrors.phone}</p>
+                    )}
+                  </div>
                 </div>
                 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleFormChange}
-                  required
-                  className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm"
-                />
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleFormChange}
+                    required
+                    className={`w-full bg-primary/50 border ${
+                      popupErrors.email ? 'border-red-500' : 'border-white/20'
+                    } rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm`}
+                  />
+                  {popupErrors.email && (
+                    <p className="text-red-400 text-xs mt-1 font-sans">{popupErrors.email}</p>
+                  )}
+                </div>
                 
                 <div className="date-picker-container relative">
                   <input
@@ -515,7 +536,9 @@ const App = () => {
                     value={formData.date}
                     onChange={handleFormChange}
                     required
-                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 pr-12 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm date-input"
+                    className={`w-full bg-primary/50 border ${
+                      popupErrors.date ? 'border-red-500' : 'border-white/20'
+                    } rounded-lg px-4 py-3 pr-12 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm date-input`}
                     style={{
                       colorScheme: 'dark'
                     }}
@@ -525,22 +548,32 @@ const App = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                   </div>
+                  {popupErrors.date && (
+                    <p className="text-red-400 text-xs mt-1 font-sans">{popupErrors.date}</p>
+                  )}
                 </div>
 
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleFormChange}
-                  required
-                  className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm"
-                >
-                  <option value="" className="text-white/70">Vyberte si službu</option>
-                  <option value="koktejlovy-bar" className="text-white bg-primary">Koktejlový bar</option>
-                  <option value="pyramida" className="text-white bg-primary">Elegantní pyramida šampaňského</option>
-                  <option value="welcome-zona" className="text-white bg-primary">Welcome zóna s ledovým blokem a květinou uvnitř</option>
-                  <option value="bar-welcome" className="text-white bg-primary">Koktejlový bar + Welcome zóna</option>
-                  <option value="masterclass" className="text-white bg-primary">MasterClass</option>
-                </select>
+                <div>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleFormChange}
+                    required
+                    className={`w-full bg-primary/50 border ${
+                      popupErrors.service ? 'border-red-500' : 'border-white/20'
+                    } rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm`}
+                  >
+                    <option value="" className="text-white/70">Vyberte si službu</option>
+                    <option value="koktejlovy-bar" className="text-white bg-primary">Koktejlový bar</option>
+                    <option value="pyramida" className="text-white bg-primary">Elegantní pyramida šampaňského</option>
+                    <option value="welcome-zona" className="text-white bg-primary">Welcome zóna s ledovým blokem a květinou uvnitř</option>
+                    <option value="bar-welcome" className="text-white bg-primary">Koktejlový bar + Welcome zóna</option>
+                    <option value="masterclass" className="text-white bg-primary">MasterClass</option>
+                  </select>
+                  {popupErrors.service && (
+                    <p className="text-red-400 text-xs mt-1 font-sans">{popupErrors.service}</p>
+                  )}
+                </div>
 
                 <button
                   type="submit"
