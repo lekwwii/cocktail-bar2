@@ -499,17 +499,31 @@ html {
   background: #d4af37;
 }
 
-/* Performance optimizations */
-img {
-  content-visibility: auto;
-  will-change: transform;
-}
-
-/* FIXED: Ensure all images are visible */
+/* CRITICAL: Ensure all images are visible and properly displayed */
 img {
   opacity: 1 !important;
   visibility: visible !important;
   display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Fix for images within containers */
+div img,
+section img,
+.relative img,
+.aspect-square img,
+.aspect-[4/5] img,
+.aspect-[21/9] img {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Performance optimizations */
+img {
+  content-visibility: auto;
+  will-change: transform;
 }
 
 /* Image lazy loading optimization - FIXED */
