@@ -200,6 +200,183 @@ class BackendTester:
             self.log_test("Error Handling", False, f"Request error: {str(e)}")
             return False
     
+    def test_multilingual_contact_forms(self):
+        """Test backend handling of contact form data from different language interfaces"""
+        languages = {
+            'cs': 'Luxusní koktejlová služba pro firemní akci v Praze',
+            'en': 'Luxury cocktail service for corporate event in Prague', 
+            'ru': 'Роскошный коктейльный сервис для корпоративного мероприятия в Праге',
+            'uk': 'Розкішний коктейльний сервіс для корпоративної події в Празі'
+        }
+        
+        try:
+            for lang_code, client_name in languages.items():
+                test_data = {
+                    "client_name": f"[{lang_code.upper()}] {client_name}"
+                }
+                
+                response = self.session.post(
+                    f"{self.base_url}/status",
+                    json=test_data,
+                    headers={
+                        'Content-Type': 'application/json',
+                        'Accept-Language': lang_code
+                    },
+                    timeout=10
+                )
+                
+                if response.status_code != 200:
+                    self.log_test("Multilingual Contact Forms", False, f"Failed for {lang_code}: HTTP {response.status_code}")
+                    return False
+                
+                data = response.json()
+                if data['client_name'] != test_data['client_name']:
+                    self.log_test("Multilingual Contact Forms", False, f"Data corruption for {lang_code}")
+                    return False
+            
+            self.log_test("Multilingual Contact Forms", True, "Backend properly handles contact forms from all 4 language interfaces")
+            return True
+            
+        except requests.exceptions.RequestException as e:
+            self.log_test("Multilingual Contact Forms", False, f"Request error: {str(e)}")
+            return False
+    
+    def test_rapid_language_switching_performance(self):
+        """Test backend performance during rapid language switching scenarios"""
+        try:
+            import time
+            
+            # Simulate rapid requests with different language headers
+            languages = ['cs', 'en', 'ru', 'uk']
+            start_time = time.time()
+            successful_requests = 0
+            
+            for i in range(20):  # 20 rapid requests
+                lang = languages[i % 4]
+                test_data = {
+                    "client_name": f"Performance Test {i+1} - Language {lang.upper()}"
+                }
+                
+                response = self.session.post(
+                    f"{self.base_url}/status",
+                    json=test_data,
+                    headers={
+                        'Content-Type': 'application/json',
+                        'Accept-Language': lang
+                    },
+                    timeout=5
+                )
+                
+                if response.status_code == 200:
+                    successful_requests += 1
+            
+            end_time = time.time()
+            duration = end_time - start_time
+            
+            if successful_requests == 20 and duration < 10:  # All requests successful within 10 seconds
+                self.log_test("Rapid Language Switching Performance", True, 
+                            f"Backend handled 20 rapid multilingual requests in {duration:.2f}s")
+                return True
+            else:
+                self.log_test("Rapid Language Switching Performance", False, 
+                            f"Performance issue: {successful_requests}/20 successful in {duration:.2f}s")
+                return False
+                
+        except Exception as e:
+            self.log_test("Rapid Language Switching Performance", False, f"Performance test error: {str(e)}")
+            return False
+    
+    def test_multilingual_cors_headers(self):
+        """Test CORS configuration works properly for multilingual frontend requests"""
+        try:
+            # Test CORS with different language origins
+            multilingual_origins = [
+                'https://thebar.cz',
+                'https://thebar.com', 
+                'https://thebar.ru',
+                'https://thebar.ua'
+            ]
+            
+            for origin in multilingual_origins:
+                response = self.session.options(
+                    f"{self.base_url}/status",
+                    headers={
+                        'Origin': origin,
+                        'Access-Control-Request-Method': 'POST',
+                        'Access-Control-Request-Headers': 'Content-Type, Accept-Language'
+                    },
+                    timeout=10
+                )
+                
+                cors_origin = response.headers.get('access-control-allow-origin')
+                if cors_origin != '*':
+                    self.log_test("Multilingual CORS Headers", False, 
+                                f"CORS failed for {origin}: {cors_origin}")
+                    return False
+            
+            self.log_test("Multilingual CORS Headers", True, 
+                        "CORS properly configured for multilingual frontend requests")
+            return True
+            
+        except requests.exceptions.RequestException as e:
+            self.log_test("Multilingual CORS Headers", False, f"CORS test error: {str(e)}")
+            return False
+    
+    def test_database_operations_multilingual(self):
+        """Test database operations work correctly with multilingual data"""
+        try:
+            # Create records with multilingual content
+            multilingual_data = [
+                {"client_name": "Svatební koktejly - Zámek Troja"},
+                {"client_name": "Wedding Cocktails - Troja Castle"},
+                {"client_name": "Свадебные коктейли - Замок Троя"},
+                {"client_name": "Весільні коктейлі - Замок Троя"}
+            ]
+            
+            created_ids = []
+            
+            # Create multilingual records
+            for data in multilingual_data:
+                response = self.session.post(
+                    f"{self.base_url}/status",
+                    json=data,
+                    headers={'Content-Type': 'application/json'},
+                    timeout=10
+                )
+                
+                if response.status_code != 200:
+                    self.log_test("Database Operations Multilingual", False, 
+                                f"Failed to create record: {data['client_name']}")
+                    return False
+                
+                created_ids.append(response.json()['id'])
+            
+            # Retrieve and verify multilingual records
+            response = self.session.get(f"{self.base_url}/status", timeout=10)
+            if response.status_code != 200:
+                self.log_test("Database Operations Multilingual", False, "Failed to retrieve records")
+                return False
+            
+            records = response.json()
+            
+            # Verify all multilingual records exist
+            created_names = [data['client_name'] for data in multilingual_data]
+            retrieved_names = [record['client_name'] for record in records]
+            
+            missing_records = [name for name in created_names if name not in retrieved_names]
+            if missing_records:
+                self.log_test("Database Operations Multilingual", False, 
+                            f"Missing multilingual records: {missing_records}")
+                return False
+            
+            self.log_test("Database Operations Multilingual", True, 
+                        "Database properly stores and retrieves multilingual data")
+            return True
+            
+        except Exception as e:
+            self.log_test("Database Operations Multilingual", False, f"Database test error: {str(e)}")
+            return False
+    
     def run_all_tests(self):
         """Run all backend tests"""
         print("=" * 60)
