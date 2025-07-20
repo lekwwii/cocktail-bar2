@@ -18,58 +18,76 @@ const App = () => {
 
   // Handle date picker click outside behavior and prevent cursor bugs
   useEffect(() => {
-    // Function to handle clicking outside date pickers
-    const handleClickOutside = (event) => {
-      // Close any open date pickers when clicking outside
-      const datePickers = document.querySelectorAll('input[type="date"]');
-      datePickers.forEach(picker => {
-        if (!picker.contains(event.target) && picker !== event.target) {
-          picker.blur();
+    // Improved date picker click outside handler
+    const handleDocumentClick = (event) => {
+      // Find all date inputs
+      const dateInputs = document.querySelectorAll('input[type="date"]');
+      
+      dateInputs.forEach(dateInput => {
+        // Check if click was outside the date input
+        if (dateInput !== event.target && !dateInput.contains(event.target)) {
+          // Close the date picker by removing focus
+          if (dateInput === document.activeElement) {
+            dateInput.blur();
+          }
         }
       });
+    };
+
+    // Prevent unwanted cursor behavior on document elements
+    const handleFocusCapture = (event) => {
+      const target = event.target;
       
-      // Prevent unwanted focus on body or other elements
-      if (event.target === document.body || event.target === document.documentElement) {
+      // If body, html, or non-input elements get focus, blur them
+      if (target === document.body || 
+          target === document.documentElement || 
+          (target.tagName !== 'INPUT' && 
+           target.tagName !== 'TEXTAREA' && 
+           target.tagName !== 'SELECT' &&
+           target.tagName !== 'BUTTON' &&
+           target.tagName !== 'A')) {
         event.preventDefault();
-        event.target.blur();
-        document.activeElement.blur();
+        target.blur();
       }
     };
 
-    // Function to prevent cursor issues on body focus
-    const preventBodyFocus = (event) => {
-      if (event.target === document.body || event.target === document.documentElement) {
-        event.preventDefault();
-        event.target.blur();
-        document.activeElement.blur();
+    // Handle escape key to close date picker
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        const activeElement = document.activeElement;
+        if (activeElement && activeElement.type === 'date') {
+          activeElement.blur();
+        }
       }
     };
 
-    // Add event listeners
-    document.addEventListener('mousedown', handleClickOutside, true);
-    document.addEventListener('click', handleClickOutside, true);
-    document.addEventListener('focus', preventBodyFocus, true);
-    
-    // Remove any contenteditable attributes
-    const removeContentEditable = () => {
+    // Cleanup function to remove contenteditable attributes periodically
+    const cleanupContentEditable = () => {
+      // Remove any accidentally added contenteditable attributes
       const editableElements = document.querySelectorAll('[contenteditable="true"]');
-      editableElements.forEach(el => {
-        el.removeAttribute('contenteditable');
-      });
+      editableElements.forEach(el => el.removeAttribute('contenteditable'));
       
       // Ensure body and html don't have tabindex
       document.body.removeAttribute('tabindex');
       document.documentElement.removeAttribute('tabindex');
     };
 
-    // Initial cleanup and periodic cleanup
-    removeContentEditable();
-    const cleanupInterval = setInterval(removeContentEditable, 1000);
+    // Add event listeners with proper options
+    document.addEventListener('click', handleDocumentClick, true);
+    document.addEventListener('focus', handleFocusCapture, true);
+    document.addEventListener('keydown', handleKeyDown);
+    
+    // Initial cleanup
+    cleanupContentEditable();
+    
+    // Periodic cleanup every 2 seconds instead of every second for better performance
+    const cleanupInterval = setInterval(cleanupContentEditable, 2000);
 
+    // Cleanup function
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside, true);
-      document.removeEventListener('click', handleClickOutside, true);
-      document.removeEventListener('focus', preventBodyFocus, true);
+      document.removeEventListener('click', handleDocumentClick, true);
+      document.removeEventListener('focus', handleFocusCapture, true);
+      document.removeEventListener('keydown', handleKeyDown);
       clearInterval(cleanupInterval);
     };
   }, []);
