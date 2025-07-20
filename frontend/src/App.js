@@ -16,6 +16,21 @@ const App = () => {
     service: ''
   });
 
+  // Toast notification state
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+
+  // Form validation states
+  const [popupErrors, setPopupErrors] = useState({});
+  const [contactErrors, setContactErrors] = useState({});
+  const [contactFormData, setContactFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    eventType: '',
+    message: ''
+  });
+
   // Handle date picker click outside behavior and prevent cursor bugs
   useEffect(() => {
     // Improved date picker click outside handler
