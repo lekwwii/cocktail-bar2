@@ -921,35 +921,31 @@ const App = () => {
                 </p>
               </div>
 
-              {/* Statistics Image */}
-              <div className="mt-16">
-                <div className="relative aspect-[21/9] rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxjb2NrdGFpbCUyMGJhciUyMHNldHVwfGVufDB8fHx8MTc1MjM1MzAwNXww&ixlib=rb-4.1.0&q=85"
-                    alt="Luxusní barový setup s koktejly"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-primary/20"></div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="grid grid-cols-3 gap-8 text-center">
-                      <div>
-                        <div className="text-2xl md:text-3xl font-serif font-semibold text-gold mb-2">25+</div>
-                        <div className="text-xs md:text-sm text-white/80 uppercase tracking-wide font-sans font-medium">Premium Events</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl md:text-3xl font-serif font-semibold text-gold mb-2">15+</div>
-                        <div className="text-xs md:text-sm text-white/80 uppercase tracking-wide font-sans font-medium">Signature Cocktails</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl md:text-3xl font-serif font-semibold text-gold mb-2">100%</div>
-                        <div className="text-xs md:text-sm text-white/80 uppercase tracking-wide font-sans font-medium">Client Satisfaction</div>
-                      </div>
+              {/* Clean Statistics Section */}
+              <div className="mt-20">
+                {/* Subtle divider line */}
+                <div className="w-32 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mb-12"></div>
+                
+                {/* Statistics Container */}
+                <div className="bg-gradient-to-b from-primary/30 to-dark-navy/20 rounded-2xl py-16 px-8 border border-gold/10">
+                  <div className="grid grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
+                    <div className="space-y-3">
+                      <div className="text-4xl md:text-5xl font-serif font-semibold text-gold">25+</div>
+                      <div className="text-sm md:text-base text-white/90 uppercase tracking-widest font-sans font-medium">Premium Events</div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="text-4xl md:text-5xl font-serif font-semibold text-gold">15+</div>
+                      <div className="text-sm md:text-base text-white/90 uppercase tracking-widest font-sans font-medium">Signature Cocktails</div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="text-4xl md:text-5xl font-serif font-semibold text-gold">100%</div>
+                      <div className="text-sm md:text-base text-white/90 uppercase tracking-widest font-sans font-medium">Client Satisfaction</div>
                     </div>
                   </div>
-                  <div className="absolute -bottom-4 -right-4 w-20 h-20 border border-gold/25 rounded-lg"></div>
-                  <div className="absolute -top-4 -left-4 w-16 h-16 border border-gold/35 rounded-lg"></div>
                 </div>
+                
+                {/* Bottom divider line */}
+                <div className="w-32 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mt-12"></div>
               </div>
             </div>
           </div>
