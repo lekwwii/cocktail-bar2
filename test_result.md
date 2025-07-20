@@ -320,14 +320,7 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "Implement multilingual language switcher component"
-    - "Implement i18n configuration and translation resources"
-    - "Create comprehensive translation files for all 4 languages"
-    - "Integrate translation keys throughout main App component"
-    - "Test language switcher visibility and positioning"
-    - "Test content translation for all major sections"
-    - "Test language persistence and browser detection"
+  current_focus: []
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
