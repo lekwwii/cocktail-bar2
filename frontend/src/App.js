@@ -655,10 +655,20 @@ const App = () => {
         {/* Hero Section */}
         <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/80 z-10"></div>
+          {/* Desktop Background */}
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            className="hidden md:block absolute inset-0 bg-cover bg-center bg-fixed"
             style={{ 
               backgroundImage: `url('https://images.unsplash.com/photo-1526894198609-10b3cdf45c52?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85')`
+            }}
+          ></div>
+          {/* Mobile Background with Parallax */}
+          <div 
+            className="md:hidden absolute inset-0 bg-cover bg-center"
+            style={{ 
+              backgroundImage: `url('https://images.unsplash.com/photo-1526894198609-10b3cdf45c52?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85')`,
+              transform: `translateY(${scrollY * 0.5}px)`,
+              willChange: 'transform'
             }}
           ></div>
           
