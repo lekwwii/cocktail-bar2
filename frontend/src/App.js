@@ -784,8 +784,8 @@ const App = () => {
               {/* Desktop Navigation */}
               <div className="hidden md:block">
                 <div className="flex items-baseline space-x-6">
-                  {['Úvod', 'O nás', 'Balíčky', 'Galerie', 'Recenze', 'Kontakt'].map((item, index) => {
-                    const sectionIds = ['hero', 'about', 'packages', 'gallery', 'reviews', 'contact'];
+                  {['Úvod', 'O nás', 'Balíčky', 'Svatební Balíčky', 'Galerie', 'Recenze', 'Kontakt'].map((item, index) => {
+                    const sectionIds = ['hero', 'about', 'packages', 'svatebni-balicky', 'gallery', 'reviews', 'contact'];
                     return (
                       <button
                         key={item}
