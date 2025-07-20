@@ -16,21 +16,61 @@ const App = () => {
     service: ''
   });
 
-  // Handle date picker click outside behavior
+  // Handle date picker click outside behavior and prevent cursor bugs
   useEffect(() => {
+    // Function to handle clicking outside date pickers
     const handleClickOutside = (event) => {
       // Close any open date pickers when clicking outside
       const datePickers = document.querySelectorAll('input[type="date"]');
       datePickers.forEach(picker => {
-        if (!picker.contains(event.target)) {
+        if (!picker.contains(event.target) && picker !== event.target) {
           picker.blur();
         }
       });
+      
+      // Prevent unwanted focus on body or other elements
+      if (event.target === document.body || event.target === document.documentElement) {
+        event.preventDefault();
+        event.target.blur();
+        document.activeElement.blur();
+      }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    // Function to prevent cursor issues on body focus
+    const preventBodyFocus = (event) => {
+      if (event.target === document.body || event.target === document.documentElement) {
+        event.preventDefault();
+        event.target.blur();
+        document.activeElement.blur();
+      }
+    };
+
+    // Add event listeners
+    document.addEventListener('mousedown', handleClickOutside, true);
+    document.addEventListener('click', handleClickOutside, true);
+    document.addEventListener('focus', preventBodyFocus, true);
+    
+    // Remove any contenteditable attributes
+    const removeContentEditable = () => {
+      const editableElements = document.querySelectorAll('[contenteditable="true"]');
+      editableElements.forEach(el => {
+        el.removeAttribute('contenteditable');
+      });
+      
+      // Ensure body and html don't have tabindex
+      document.body.removeAttribute('tabindex');
+      document.documentElement.removeAttribute('tabindex');
+    };
+
+    // Initial cleanup and periodic cleanup
+    removeContentEditable();
+    const cleanupInterval = setInterval(removeContentEditable, 1000);
+
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside, true);
+      document.removeEventListener('click', handleClickOutside, true);
+      document.removeEventListener('focus', preventBodyFocus, true);
+      clearInterval(cleanupInterval);
     };
   }, []);
 
