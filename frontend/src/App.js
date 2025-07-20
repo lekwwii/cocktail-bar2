@@ -306,20 +306,23 @@ const App = () => {
                 <h1 className="text-3xl font-serif font-light text-gold tracking-widest">THE BAR.</h1>
               </div>
             
-            {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="flex items-baseline space-x-6">
-                {['Home', 'About', 'Packages', 'Gallery', 'Reviews', 'Contact'].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase())}
-                    className="text-white/90 hover:text-gold transition-colors duration-300 text-base font-serif font-light tracking-wide px-2 py-1"
-                  >
-                    {item}
-                  </button>
-                ))}
+              {/* Desktop Navigation */}
+              <div className="hidden md:block">
+                <div className="flex items-baseline space-x-6">
+                  {['Úvod', 'O nás', 'Balíčky', 'Galerie', 'Recenze', 'Kontakt'].map((item, index) => {
+                    const sectionIds = ['hero', 'about', 'packages', 'gallery', 'reviews', 'contact'];
+                    return (
+                      <button
+                        key={item}
+                        onClick={() => scrollToSection(sectionIds[index])}
+                        className="text-white/90 hover:text-gold transition-colors duration-300 text-base font-serif font-light tracking-wide px-2 py-1"
+                      >
+                        {item}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
