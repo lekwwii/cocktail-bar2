@@ -1227,23 +1227,8 @@ const App = () => {
                   </div>
                 </div>
 
-                {/* Floating Action Buttons - WhatsApp and Phone */}
-                <div className="fixed bottom-6 right-6 flex flex-col space-y-3 z-50">
-                  {/* Phone Call Button */}
-                  <a 
-                    href="tel:+420775505805"
-                    className="group relative w-14 h-14 bg-gradient-to-br from-gold to-gold/90 text-primary rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-xl hover:shadow-gold/30"
-                    title="Zavolejte nám"
-                  >
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                    </svg>
-                    {/* Tooltip */}
-                    <div className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-primary/90 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap backdrop-blur-sm">
-                      Zavolejte nám
-                    </div>
-                  </a>
-                  
+                {/* Floating Action Button - WhatsApp Only */}
+                <div className="fixed bottom-6 right-6 z-50">
                   {/* WhatsApp Button */}
                   <a 
                     href="https://wa.me/420775505805"
