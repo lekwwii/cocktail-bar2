@@ -361,6 +361,53 @@ const App = () => {
     }
   ];
 
+  const weddingPackages = [
+    {
+      name: "Silver",
+      guestCapacity: "do 60 osob",
+      price: "26 000 Kč",
+      features: [
+        "100 signature koktejlů",
+        "Welcome zóna s ledovým blokem a květinou uvnitř",
+        "10 lahví prosecca",
+        "1 barman po celou dobu akce",
+        "Exkluzivní menu pro vaši akci"
+      ],
+      image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTI0NTMwMDB8MA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+      name: "Gold",
+      guestCapacity: "do 100 osob",
+      price: "35 000 Kč",
+      features: [
+        "150 signature koktejlů",
+        "Welcome zóna s ledovým blokem a květinou uvnitř",
+        "15 lahví prosecca",
+        "2 barmani po celou dobu akce",
+        "Domácí limonády",
+        "Exkluzivní menu pro vaši akci"
+      ],
+      bonus: "K balíčku Gold získáte 20 % slevu na pyramidu ze sklenic s efektem studené fontány a 15 lahví prosecca.",
+      image: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHx3ZWRkaW5nJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTI0NTMwMDB8MA&ixlib=rb-4.1.0&q=85",
+      featured: true
+    },
+    {
+      name: "Diamond",
+      guestCapacity: "100+ osob",
+      price: "45 000 Kč",
+      features: [
+        "200 signature koktejlů",
+        "Welcome zóna s ledovým blokem a květinou uvnitř + Aperol",
+        "Pyramida ze sklenic s efektem studené fontány",
+        "20 lahví prosecca",
+        "2 barmani po celou dobu akce",
+        "Domácí limonády",
+        "Exkluzivní menu pro vaši akci"
+      ],
+      image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHx3ZWRkaW5nJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTI0NTMwMDB8MA&ixlib=rb-4.1.0&q=85"
+    }
+  ];
+
   const testimonials = [
     {
       name: "Sarah & Michael",
