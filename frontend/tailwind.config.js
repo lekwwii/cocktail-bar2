@@ -12,7 +12,7 @@ module.exports = {
         'primary': '#0d1117',
       },
       fontFamily: {
-        'serif': ['Playfair Display', 'Cormorant Garamond', 'serif'],
+        'serif': ['Playfair Display', 'serif'],
         'sans': ['Inter', 'sans-serif'],
       },
       animation: {
