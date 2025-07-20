@@ -1,0 +1,254 @@
+{
+  "nav": {
+    "home": "Úvod",
+    "about": "O nás", 
+    "packages": "Balíčky",
+    "wedding": "Svatební Balíčky",
+    "gallery": "Galerie",
+    "reviews": "Recenze",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "THE BAR.",
+    "subtitle": "PRÉMIOVÝ KOKTEJLOVÝ CATERING",
+    "description": "Zažijte umění koktejlů s našimi špičkovými profesionály. Od intimních setkání po velkolepé oslavy - vytváříme nezapomenutelné zážitky, které ladí s vaší vizí.",
+    "cta": "Rezervovat konzultaci"
+  },
+  "about": {
+    "title": "Umění mixologie",
+    "subtitle": "Naše vášeň pro dokonalé koktejly",
+    "description": "THE BAR. reprezentuje vrchol koktejlového umění v České republice. Náš tým zkušených barmanů kombinuje tradiční techniky s moderními trendy, aby vytvořil nezapomenutelné chuťové zážitky pro každou příležitost.",
+    "stats": {
+      "experience": "5+ LET ZKUŠENOSTÍ",
+      "events": "500+ ÚSPĚŠNÝCH AKCÍ", 
+      "clients": "SPOKOJENÍ KLIENTI"
+    }
+  },
+  "packages": {
+    "title": "Hotová řešení",
+    "subtitle": "Vyberte si z našich pečlivě sestavených balíčků služeb, z nichž každý je navržen tak, aby poskytl výjimečný koktejlový zážitek přizpůsobený potřebám vaší akce.",
+    "cta": "Požádat o nabídku",
+    "lite": {
+      "name": "Lite",
+      "description": "Perfektní pro menší akce",
+      "features": [
+        "100 signature koktejlů",
+        "1 barman po celou dobu akce",
+        "Exkluzivní menu pro vaši akci"
+      ]
+    },
+    "classic": {
+      "name": "Classic", 
+      "description": "Nejoblíbenější volba pro střední akce",
+      "features": [
+        "150 signature koktejlů",
+        "2 barmani po celou dobu akce", 
+        "Flavour Blaster zážitek v ceně",
+        "Exkluzivní menu pro vaši akci"
+      ],
+      "discount": "Při objednání tohoto balíčku získáte 20 % slevu na Welcome zónu s ledovým blokem a proseccem"
+    },
+    "premium": {
+      "name": "Premium",
+      "description": "Luxusní zážitek pro velké akce", 
+      "features": [
+        "200 signature koktejlů",
+        "2 barmani po celou dobu akce",
+        "Flavour Blaster zážitek v ceně", 
+        "Exkluzivní menu pro vaši akci"
+      ],
+      "discount": "Při objednání tohoto balíčku získáte 20 % slevu na Welcome zónu s ledovým blokem a proseccem"
+    },
+    "featured": "NEJOBLÍBENĚJŠÍ"
+  },
+  "wedding": {
+    "title": "Svatební Balíček",
+    "subtitle": "Speciální svatební nabídky navržené pro váš nejdůležitější den. Každý balíček zahrnuje vše potřebné pro nezapomenutelnou svatební oslavu.",
+    "cta": "Požádat o nabídku",
+    "featured": "NEJOBLÍBENĚJŠÍ",
+    "bonus": "Bonus",
+    "silver": {
+      "name": "Silver",
+      "capacity": "do 60 osob",
+      "features": [
+        "100 signature koktejlů",
+        "Welcome zóna s ledovým blokem a květinou uvnitř",
+        "10 lahví prosecca",
+        "1 barman po celou dobu akce",
+        "Exkluzivní menu pro vaši akci"
+      ]
+    },
+    "gold": {
+      "name": "Gold",
+      "capacity": "do 100 osob", 
+      "features": [
+        "150 signature koktejlů",
+        "Welcome zóna s ledovým blokem a květinou uvnitř",
+        "15 lahví prosecca",
+        "2 barmani po celou dobu akce",
+        "Domácí limonády",
+        "Exkluzivní menu pro vaši akci"
+      ],
+      "bonus": "K balíčku Gold získáte 20 % slevu na pyramidu ze sklenic s efektem studené fontány a 15 lahví prosecca."
+    },
+    "diamond": {
+      "name": "Diamond",
+      "capacity": "100+ osob",
+      "features": [
+        "200 signature koktejlů",
+        "Welcome zóna s ledovým blokem a květinou uvnitř + Aperol",
+        "Pyramida ze sklenic s efektem studené fontány", 
+        "20 lahví prosecca",
+        "2 barmani po celou dobu akce",
+        "Domácí limonády",
+        "Exkluzivní menu pro vaši akci"
+      ]
+    }
+  },
+  "gallery": {
+    "title": "Naše galerie",
+    "subtitle": "Zažijte umění a eleganci, které definují každou akci THE BAR. prostřednictvím naší kurátorské kolekce nezapomenutelných okamžiků."
+  },
+  "reviews": {
+    "title": "Recenze klientů",
+    "subtitle": "Nejen co říkáme my - slyšte, co říkají naši klienti o svých nezapomenutelných zážitcích s THE BAR.",
+    "testimonials": {
+      "sarahMichael": {
+        "name": "Sarah & Michael",
+        "event": "Svatba na Pražském hradě", 
+        "text": "Absolutně výjimečná obsluha! Koktejly byly dokonalé a ledové sochy s orchidejemi byly úchvatné. Naši hosté o tom ještě po měsících mluví."
+      },
+      "corporateManager": {
+        "name": "Manažer firemních akcí",
+        "event": "Spuštění technologické společnosti",
+        "text": "Profesionální, elegantní a přesně to, co jsme potřebovali pro naše významné spuštění. Tým překonal všechna očekávání svou sofistikovanou prezentací."
+      },
+      "isabella": {
+        "name": "Isabella Rodríguez", 
+        "event": "Soukromá oslava narozenin",
+        "text": "THE BAR. změnil naše jednoduché setkání na nezapomenutelný luxusní zážitek. Pozornost věnovaná detailům a prémiová obsluha stála za každou korunu!"
+      },
+      "viktorAnna": {
+        "name": "Viktor & Anna",
+        "event": "Oslava výročí",
+        "text": "Neuvěřitelné řemeslné umění! Každý koktejl byl uměleckým dílem. Prémiová obsluha a elegantní prezentace učinily naše výročí skutečně výjimečným."
+      },
+      "hotelGroup": {
+        "name": "Pražská skupina hotelů",
+        "event": "VIP události pro hosty", 
+        "text": "THE BAR. se stal naším partnerem pro luxusní zážitky hostů. Konzistentně výjimečná kvalita a služby, které odpovídají našim prémiovým standardům."
+      },
+      "marie": {
+        "name": "Marie Nováková",
+        "event": "Firemní gala",
+        "text": "Vynikající profesionalita a kreativita. Personalizované koktejlové menu dokonale doplnilo téma naší akce. Vřele doporučuji pro jakoukoli prémiovou příležitost."
+      }
+    }
+  },
+  "contact": {
+    "title": "Ozvěte se nám",
+    "subtitle": "Připraveni posunout vaši akci na vyšší úroveň? Kontaktujte nás, abyste projednali svou vizi a nechte nás vytvořit nezapomenutelný koktejlový zážitek.",
+    "form": {
+      "title": "Pošlete nám zprávu",
+      "name": "Vaše jméno",
+      "phone": "Telefon",
+      "email": "E-mail", 
+      "date": "Datum akce",
+      "service": "Vyberte službu",
+      "serviceOptions": {
+        "hotova-reseni": "Hotová řešení",
+        "svatebni-balicky": "Svatební Balíčky", 
+        "koktejlovy-bar": "Koktejlový Bar",
+        "pyramida-sampanskeho": "Elegantní pyramida šampaňského",
+        "welcome-zona": "Welcome zóna s ledovým blokem a květinou uvnitř",
+        "bar-welcome-zona": "Koktejlový Bar + Welcome zóna",
+        "masterclass": "MasterClass"
+      },
+      "message": "Vaše zpráva",
+      "submit": "Odeslat zprávu",
+      "errors": {
+        "required": "Toto pole je povinné",
+        "invalidEmail": "Zadejte platnou e-mailovou adresu"
+      },
+      "successMessage": "Děkujeme za odeslání! Ozveme se vám co nejdříve."
+    },
+    "info": {
+      "title": "Kontaktní informace",
+      "location": "Praha, Česká republika",
+      "quickLinks": "Rychlé odkazy"
+    }
+  },
+  "popup": {
+    "title": "VÁŠ KOKTEJLOVÝ ZÁŽITEK NA MÍRU",
+    "subtitle": "Nechte si připravit nezávaznou nabídku na míru – zdarma.",
+    "description": "Získejte exkluzivní návrh koktejlového zážitku pro vaši akci.",
+    "specialOffer": "Při rezervaci navíc až 10 signature drinků zcela zdarma.",
+    "form": {
+      "name": "Jméno",
+      "phone": "Telefon", 
+      "email": "Email",
+      "date": "Datum akce",
+      "service": "Vyberte si službu",
+      "submit": "ODESLAT"
+    }
+  },
+  "footer": {
+    "quickLinks": "Rychlé odkazy",
+    "contact": "Kontakt",
+    "location": "Praha, Česká republika",
+    "gdpr": "Zásady ochrany osobních údajů"
+  },
+  "gdpr": {
+    "title": "Zásady ochrany osobních údajů",
+    "intro": "Vladyslav Breslavskyi – THE BAR. PREMIUM COCKTAIL CATERING (dále jen „provozovatel") se zavazuje chránit vaše osobní údaje a soukromí.",
+    "businessInfo": "Provozovatel je fyzická osoba podnikající dle živnostenského zákona, IČO: 23284111.",
+    "sections": {
+      "dataCollection": {
+        "title": "1. Jaké údaje shromažďujeme?",
+        "items": [
+          "Jméno a příjmení",
+          "Telefonní číslo", 
+          "E-mailová adresa",
+          "Datum plánované akce",
+          "Vybraná služba"
+        ]
+      },
+      "purpose": {
+        "title": "2. Za jakým účelem údaje zpracováváme?",
+        "items": [
+          "Vytvoření nezávazné cenové nabídky",
+          "Komunikace ohledně vaší poptávky",
+          "Rezervace našich služeb"
+        ]
+      },
+      "access": {
+        "title": "3. Kdo má k údajům přístup?",
+        "items": [
+          "Údaje jsou zpracovávány pouze provozovatelem",
+          "Nikdy je nepředáváme třetím stranám bez vašeho souhlasu"
+        ]
+      },
+      "retention": {
+        "title": "4. Jak dlouho údaje uchováváme?",
+        "items": [
+          "Po dobu nezbytně nutnou pro vyřízení vaší poptávky",
+          "Maximálně však 12 měsíců"
+        ]
+      },
+      "rights": {
+        "title": "5. Vaše práva",
+        "description": "Máte právo:",
+        "items": [
+          "na přístup ke svým údajům",
+          "na opravu nebo výmaz údajů", 
+          "vznést námitku proti zpracování",
+          "podat stížnost u Úřadu pro ochranu osobních údajů (ÚOOÚ)"
+        ]
+      },
+      "contact": {
+        "title": "6. Kontakt"
+      }
+    },
+    "close": "Zavřít"
+  }
+}
