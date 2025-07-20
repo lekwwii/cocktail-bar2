@@ -993,6 +993,14 @@ const App = () => {
                         ))}
                       </ul>
 
+                      {pkg.discount && (
+                        <div className="mb-6 p-4 bg-gold/10 border border-gold/20 rounded-lg">
+                          <p className="text-gold text-sm font-light italic leading-relaxed">
+                            {pkg.discount}
+                          </p>
+                        </div>
+                      )}
+
                       <button
                         onClick={() => scrollToSection('contact')}
                         className={`w-full py-3 text-center font-medium tracking-wide transition-all duration-300 ${pkg.featured 
