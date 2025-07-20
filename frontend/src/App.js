@@ -16,6 +16,24 @@ const App = () => {
     service: ''
   });
 
+  // Handle date picker click outside behavior
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Close any open date pickers when clicking outside
+      const datePickers = document.querySelectorAll('input[type="date"]');
+      datePickers.forEach(picker => {
+        if (!picker.contains(event.target)) {
+          picker.blur();
+        }
+      });
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
