@@ -151,10 +151,11 @@ class BackendTester:
         """Test CORS configuration"""
         try:
             # Test preflight request
+            test_origin = 'https://example.com'
             response = self.session.options(
                 f"{self.base_url}/status",
                 headers={
-                    'Origin': 'https://example.com',
+                    'Origin': test_origin,
                     'Access-Control-Request-Method': 'POST',
                     'Access-Control-Request-Headers': 'Content-Type'
                 },
@@ -167,7 +168,10 @@ class BackendTester:
                 'access-control-allow-headers': response.headers.get('access-control-allow-headers')
             }
             
-            if cors_headers['access-control-allow-origin'] == '*':
+            # When allow_credentials=True, CORS returns the requesting origin instead of "*"
+            if (cors_headers['access-control-allow-origin'] == test_origin and 
+                'POST' in cors_headers.get('access-control-allow-methods', '') and
+                'Content-Type' in cors_headers.get('access-control-allow-headers', '')):
                 self.log_test("CORS Configuration", True, "CORS headers properly configured", cors_headers)
                 return True
             else:
