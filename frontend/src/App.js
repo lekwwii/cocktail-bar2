@@ -521,7 +521,7 @@ const App = () => {
                     required
                     className={`w-full bg-primary/50 border ${
                       popupErrors.email ? 'border-red-500' : 'border-white/20'
-                    } rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm`}
+                    } rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm md:text-sm text-base min-h-12 md:min-h-auto`}
                   />
                   {popupErrors.email && (
                     <p className="text-red-400 text-xs mt-1 font-sans">{popupErrors.email}</p>
