@@ -1211,7 +1211,7 @@ const App = () => {
                 </div>
 
                 {/* Floating Action Buttons - WhatsApp and Phone */}
-                <div className="floating-actions fixed flex flex-col space-y-3 z-50">
+                <div className="fixed bottom-6 right-6 flex flex-col space-y-3 z-50">
                   {/* Phone Call Button */}
                   <a 
                     href="tel:+420775505805"
