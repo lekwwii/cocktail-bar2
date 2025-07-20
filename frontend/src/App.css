@@ -170,9 +170,11 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   animation: slide-out-down 0.3s ease-out;
 }
 
-/* Enhanced date input styling with improved close behavior */
+/* Enhanced date input styling with improved mobile alignment */
 .date-picker-container {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .date-input {
@@ -182,6 +184,8 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   background-image: none !important;
   -webkit-appearance: none;
   -moz-appearance: textfield;
+  display: flex;
+  align-items: center;
 }
 
 /* Improved date picker close behavior */
@@ -201,6 +205,9 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   cursor: pointer !important;
   padding: 0;
   margin: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .date-input::-webkit-inner-spin-button,
@@ -218,6 +225,9 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   color: white !important;
   padding: 0;
   margin: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .date-input::-webkit-datetime-edit-text {
@@ -232,6 +242,9 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   background: transparent !important;
   padding: 0;
   margin: 0;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
 }
 
 /* Custom calendar icon */
@@ -243,6 +256,8 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   pointer-events: none;
   color: rgba(255, 255, 255, 0.5);
   z-index: 1;
+  display: flex;
+  align-items: center;
 }
 
 /* Handle focus states properly */
@@ -251,7 +266,7 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   outline-offset: 2px;
 }
 
-/* Mobile date picker improvements */
+/* Mobile date picker improvements - Enhanced alignment */
 @media (max-width: 768px) {
   .date-input::-webkit-calendar-picker-indicator {
     font-size: 16px; /* Prevent zoom on iOS */
@@ -263,17 +278,66 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   .date-input {
     font-size: 16px !important; /* Prevent iOS zoom */
     padding: 12px 16px !important;
-    min-height: 48px; /* Ensure touch-friendly size */
+    min-height: 48px !important; /* Ensure touch-friendly size */
+    display: flex !important;
+    align-items: center !important;
+    line-height: 1.5 !important;
   }
   
   .date-picker-container {
     position: relative;
+    display: flex;
+    align-items: center;
   }
   
   .date-picker-icon {
     right: 16px;
     pointer-events: auto;
     z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+  }
+
+  /* Reset/clear button alignment */
+  .date-picker-container button {
+    position: absolute;
+    right: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Enhanced mobile datetime edit alignment */
+  .date-input::-webkit-datetime-edit {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    line-height: normal !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .date-input::-webkit-datetime-edit-fields-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    line-height: normal !important;
+  }
+
+  .date-input::-webkit-datetime-edit-month-field,
+  .date-input::-webkit-datetime-edit-day-field,
+  .date-input::-webkit-datetime-edit-year-field {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    line-height: normal !important;
+    vertical-align: middle !important;
   }
   
   /* Mobile select dropdown improvements */
@@ -284,6 +348,8 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    display: flex;
+    align-items: center;
   }
   
   /* Mobile form inputs */
@@ -294,10 +360,14 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
     font-size: 16px !important; /* Prevent iOS zoom */
     padding: 12px 16px !important;
     min-height: 48px;
+    display: flex;
+    align-items: center;
   }
   
   textarea {
     min-height: 120px;
+    align-items: flex-start;
+    padding-top: 12px !important;
   }
 }
 
