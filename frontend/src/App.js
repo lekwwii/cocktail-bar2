@@ -1158,17 +1158,29 @@ const App = () => {
                     )}
                   </div>
                   <div>
-                    <input 
-                      type="text" 
+                    <select 
                       name="eventType"
-                      placeholder="Typ akce a datum" 
                       value={contactFormData.eventType}
                       onChange={handleContactFormChange}
                       required
                       className={`w-full bg-primary/50 border ${
                         contactErrors.eventType ? 'border-red-500' : 'border-white/20'
-                      } rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light`}
-                    />
+                      } rounded px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-light appearance-none bg-no-repeat bg-right-4 bg-center`}
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e")`,
+                        backgroundSize: '16px',
+                        backgroundPosition: 'right 12px center'
+                      }}
+                    >
+                      <option value="" className="text-white/70 bg-primary">Vyberte typ akce</option>
+                      <option value="hotova-reseni" className="text-white bg-primary">Hotová řešení</option>
+                      <option value="svatebni-balicky" className="text-white bg-primary">Svatební Balíčky</option>
+                      <option value="koktejlovy-bar" className="text-white bg-primary">Koktejlový Bar</option>
+                      <option value="pyramida-sampanskeho" className="text-white bg-primary">Elegantní pyramida šampaňského</option>
+                      <option value="welcome-zona" className="text-white bg-primary">Welcome zóna s ledovým blokem a květinou uvnitř</option>
+                      <option value="bar-welcome-zona" className="text-white bg-primary">Koktejlový Bar + Welcome zóna</option>
+                      <option value="masterclass" className="text-white bg-primary">MasterClass</option>
+                    </select>
                     {contactErrors.eventType && (
                       <p className="text-red-400 text-xs mt-1 font-sans">{contactErrors.eventType}</p>
                     )}
