@@ -18,7 +18,10 @@ module.exports = {
       animation: {
         'fade-in-up': 'fade-in-up 1s ease-out',
         'fade-in': 'fade-in 0.3s ease-out',
+        'fade-out': 'fade-out 0.3s ease-out',
         'slide-up': 'slide-up 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'slide-down': 'slide-down 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'slide-out-down': 'slide-out-down 0.3s ease-out',
         'bounce': 'bounce 2s infinite',
       },
       backdropBlur: {
