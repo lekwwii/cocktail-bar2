@@ -185,14 +185,20 @@ const App = () => {
 
       {/* Popup Modal */}
       {showPopup && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
-          <div className="bg-gradient-to-b from-primary to-dark-navy border border-gold/20 rounded-xl max-w-md w-full mx-4 relative">
+        <div 
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setShowPopup(false)}
+        >
+          <div 
+            className="bg-gradient-to-b from-primary to-dark-navy border border-gold/20 rounded-xl max-w-lg w-full mx-4 relative animate-slide-up shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Close Button */}
             <button
               onClick={() => setShowPopup(false)}
-              className="absolute top-4 right-4 text-white/70 hover:text-gold transition-colors duration-300 z-10"
+              className="absolute top-4 right-4 text-white/70 hover:text-gold transition-colors duration-300 z-10 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gold/10"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -204,18 +210,25 @@ const App = () => {
                 alt="Bartender"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
             </div>
 
             {/* Content */}
-            <div className="p-6">
-              <h3 className="text-2xl font-serif font-light mb-4 text-gold text-center">
-                DÁRKOVÉ KOKTEJLY
+            <div className="p-8 pt-6">
+              <h3 className="text-2xl md:text-3xl font-serif font-light mb-4 text-gold text-center leading-tight">
+                VÁŠ KOKTEJLOVÝ ZÁŽITEK NA MÍRU
               </h3>
-              <p className="text-white/85 text-center mb-6 font-light leading-relaxed">
-                Nejste si jistí, co si vybrat? Vyplňte krátký formulář a pomohu vám s výběrem. 
-                Navíc můžete získat až 10 signature drinků zcela zdarma!
-              </p>
+              <div className="text-center mb-6 space-y-2">
+                <p className="text-white/90 font-light leading-relaxed text-sm">
+                  Nechte si připravit nezávaznou nabídku na míru – zdarma.
+                </p>
+                <p className="text-white/90 font-light leading-relaxed text-sm">
+                  Získejte exkluzivní návrh koktejlového zážitku pro vaši akci.
+                </p>
+                <p className="text-gold/90 font-light leading-relaxed text-sm">
+                  Při rezervaci navíc až 10 signature drinků zcela zdarma.
+                </p>
+              </div>
 
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -226,7 +239,7 @@ const App = () => {
                     value={formData.name}
                     onChange={handleFormChange}
                     required
-                    className="w-full bg-primary/50 border border-white/20 rounded px-3 py-2 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
                   />
                   <input
                     type="tel"
@@ -235,7 +248,7 @@ const App = () => {
                     value={formData.phone}
                     onChange={handleFormChange}
                     required
-                    className="w-full bg-primary/50 border border-white/20 rounded px-3 py-2 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
                   />
                 </div>
                 
@@ -246,7 +259,7 @@ const App = () => {
                   value={formData.email}
                   onChange={handleFormChange}
                   required
-                  className="w-full bg-primary/50 border border-white/20 rounded px-3 py-2 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                  className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
                 />
                 
                 <div className="relative">
@@ -257,8 +270,16 @@ const App = () => {
                     value={formData.date}
                     onChange={handleFormChange}
                     required
-                    className="w-full bg-primary/50 border border-white/20 rounded px-3 py-2 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm date-input"
+                    style={{
+                      colorScheme: 'dark'
+                    }}
                   />
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                    <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
                 </div>
 
                 <select
@@ -266,19 +287,19 @@ const App = () => {
                   value={formData.service}
                   onChange={handleFormChange}
                   required
-                  className="w-full bg-primary/50 border border-white/20 rounded px-3 py-2 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                  className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
                 >
-                  <option value="">Vyberte si službu</option>
-                  <option value="koktejlovy-bar">Koktejlový bar</option>
-                  <option value="pyramida">Elegantní pyramida šampaňského</option>
-                  <option value="welcome-zona">Welcome zóna s ledovým blokem a květinou uvnitř</option>
-                  <option value="bar-welcome">Koktejlový bar + Welcome zóna</option>
-                  <option value="masterclass">MasterClass</option>
+                  <option value="" className="text-white/70">Vyberte si službu</option>
+                  <option value="koktejlovy-bar" className="text-white">Koktejlový bar</option>
+                  <option value="pyramida" className="text-white">Elegantní pyramida šampaňského</option>
+                  <option value="welcome-zona" className="text-white">Welcome zóna s ledovým blokem a květinou uvnitř</option>
+                  <option value="bar-welcome" className="text-white">Koktejlový bar + Welcome zóna</option>
+                  <option value="masterclass" className="text-white">MasterClass</option>
                 </select>
 
                 <button
                   type="submit"
-                  className="w-full bg-gold hover:bg-gold/90 text-primary py-3 font-medium tracking-wide transition-all duration-300 hover:scale-105 rounded"
+                  className="w-full bg-gold hover:bg-gold/90 text-primary py-3 font-medium tracking-wide transition-all duration-300 hover:scale-105 rounded-lg shadow-lg hover:shadow-gold/20"
                 >
                   ODESLAT
                 </button>
