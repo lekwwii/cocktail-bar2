@@ -11,71 +11,71 @@
   "hero": {
     "title": "THE BAR.",
     "subtitle": "PREMIUM COCKTAIL CATERING",
-    "description": "Experience the art of cocktails with our top-tier professionals. From intimate gatherings to grand celebrations - we create unforgettable experiences that match your vision.",
-    "cta": "Book Consultation"
+    "description": "Experience the artistry of cocktails with our world-class mixologists. From intimate gatherings to grand celebrations - we craft unforgettable experiences that bring your vision to life.",
+    "cta": "Book Your Experience"
   },
   "about": {
     "title": "The Art of Mixology",
-    "subtitle": "Our passion for perfect cocktails",
-    "description": "THE BAR. represents the pinnacle of cocktail artistry in the Czech Republic. Our team of experienced bartenders combines traditional techniques with modern trends to create unforgettable taste experiences for every occasion.",
+    "subtitle": "Our passion for cocktail perfection",
+    "description": "THE BAR. represents the pinnacle of cocktail craftsmanship in the Czech Republic. Our team of master mixologists blends time-honored techniques with contemporary innovation, creating extraordinary taste journeys for every occasion.",
     "stats": {
-      "experience": "5+ YEARS OF EXPERIENCE",
+      "experience": "5+ YEARS OF EXCELLENCE",
       "events": "500+ SUCCESSFUL EVENTS", 
-      "clients": "SATISFIED CLIENTS"
+      "clients": "DELIGHTED CLIENTS"
     }
   },
   "packages": {
-    "title": "Ready Solutions",
-    "subtitle": "Choose from our carefully curated service packages, each designed to provide an exceptional cocktail experience tailored to your event needs.",
-    "cta": "Request Quote",
+    "title": "Ready-to-Go Solutions",
+    "subtitle": "Choose from our expertly curated service packages, each meticulously designed to deliver an exceptional cocktail experience tailored to your event's unique requirements.",
+    "cta": "Get Your Quote",
     "lite": {
       "name": "Lite",
-      "description": "Perfect for smaller events",
+      "description": "Perfect for intimate gatherings",
       "features": [
         "100 signature cocktails",
-        "1 bartender for the entire event",
-        "Exclusive menu for your event"
+        "1 professional mixologist for the entire event",
+        "Bespoke menu crafted for your occasion"
       ]
     },
     "classic": {
       "name": "Classic", 
-      "description": "Most popular choice for medium events",
+      "description": "The preferred choice for medium-scale events",
       "features": [
         "150 signature cocktails",
-        "2 bartenders for the entire event", 
-        "Flavour Blaster experience included",
-        "Exclusive menu for your event"
+        "2 professional mixologists for the entire event", 
+        "Flavour Blaster theatrical experience included",
+        "Bespoke menu crafted for your occasion"
       ],
-      "discount": "When ordering this package, you get 20% discount on Welcome zone with ice block and prosecco"
+      "discount": "Booking this package includes a 20% discount on our Welcome Zone with ice sculpture and premium prosecco"
     },
     "premium": {
       "name": "Premium",
-      "description": "Luxury experience for large events", 
+      "description": "Luxury experience for grand celebrations", 
       "features": [
         "200 signature cocktails",
-        "2 bartenders for the entire event",
-        "Flavour Blaster experience included", 
-        "Exclusive menu for your event"
+        "2 professional mixologists for the entire event",
+        "Flavour Blaster theatrical experience included", 
+        "Bespoke menu crafted for your occasion"
       ],
-      "discount": "When ordering this package, you get 20% discount on Welcome zone with ice block and prosecco"
+      "discount": "Booking this package includes a 20% discount on our Welcome Zone with ice sculpture and premium prosecco"
     },
     "featured": "MOST POPULAR"
   },
   "wedding": {
-    "title": "Wedding Package",
-    "subtitle": "Special wedding offers designed for your most important day. Each package includes everything needed for an unforgettable wedding celebration.",
-    "cta": "Request Quote",
+    "title": "Wedding Collections",
+    "subtitle": "Exquisite wedding packages crafted for your most treasured day. Each collection includes everything needed to create an unforgettable wedding celebration.",
+    "cta": "Request Your Proposal",
     "featured": "MOST POPULAR",
-    "bonus": "Bonus",
+    "bonus": "Exclusive Bonus",
     "silver": {
       "name": "Silver",
       "capacity": "up to 60 guests",
       "features": [
         "100 signature cocktails",
-        "Welcome zone with ice block and flower inside",
-        "10 bottles of prosecco",
-        "1 bartender for the entire event",
-        "Exclusive menu for your event"
+        "Welcome zone with artistic ice sculpture and floral centerpiece",
+        "10 bottles of premium prosecco",
+        "1 professional mixologist for the entire celebration",
+        "Personalized wedding menu"
       ]
     },
     "gold": {
@@ -83,94 +83,94 @@
       "capacity": "up to 100 guests", 
       "features": [
         "150 signature cocktails",
-        "Welcome zone with ice block and flower inside",
-        "15 bottles of prosecco",
-        "2 bartenders for the entire event",
-        "Homemade lemonades",
-        "Exclusive menu for your event"
+        "Welcome zone with artistic ice sculpture and floral centerpiece",
+        "15 bottles of premium prosecco",
+        "2 professional mixologists for the entire celebration",
+        "Artisan-crafted lemonades",
+        "Personalized wedding menu"
       ],
-      "bonus": "With the Gold package, you get 20% discount on glass pyramid with cold fountain effect and 15 bottles of prosecco."
+      "bonus": "Your Gold package includes a complimentary 20% discount on our stunning glass pyramid with cascading fountain effect and 15 additional bottles of premium prosecco."
     },
     "diamond": {
       "name": "Diamond",
       "capacity": "100+ guests",
       "features": [
         "200 signature cocktails",
-        "Welcome zone with ice block and flower inside + Aperol",
-        "Glass pyramid with cold fountain effect", 
-        "20 bottles of prosecco",
-        "2 bartenders for the entire event",
-        "Homemade lemonades",
-        "Exclusive menu for your event"
+        "Welcome zone with artistic ice sculpture, floral centerpiece + Aperol station",
+        "Spectacular glass pyramid with cascading fountain effect", 
+        "20 bottles of premium prosecco",
+        "2 professional mixologists for the entire celebration",
+        "Artisan-crafted lemonades",
+        "Personalized wedding menu"
       ]
     }
   },
   "gallery": {
     "title": "Our Gallery",
-    "subtitle": "Experience the art and elegance that define every THE BAR. event through our curated collection of unforgettable moments."
+    "subtitle": "Discover the artistry and elegance that define every THE BAR. experience through our curated collection of unforgettable moments."
   },
   "reviews": {
-    "title": "Client Reviews",
-    "subtitle": "Not just what we say - hear what our clients say about their unforgettable experiences with THE BAR.",
+    "title": "Client Testimonials",
+    "subtitle": "Beyond our promises - hear directly from our clients about their extraordinary experiences with THE BAR.",
     "testimonials": {
       "sarahMichael": {
         "name": "Sarah & Michael",
         "event": "Wedding at Prague Castle", 
-        "text": "Absolutely exceptional service! The cocktails were perfect and the ice sculptures with orchids were breathtaking. Our guests are still talking about it months later."
+        "text": "Absolutely exceptional service! The cocktails were perfection and the ice sculptures with orchids were breathtaking. Our guests are still raving about it months later."
       },
       "corporateManager": {
         "name": "Corporate Events Manager",
         "event": "Technology Company Launch",
-        "text": "Professional, elegant, and exactly what we needed for our important launch. The team exceeded all expectations with their sophisticated presentation."
+        "text": "Professional, elegant, and exactly what we needed for our high-profile launch. The team exceeded every expectation with their sophisticated presentation."
       },
       "isabella": {
         "name": "Isabella Rodríguez", 
         "event": "Private Birthday Celebration",
-        "text": "THE BAR. transformed our simple gathering into an unforgettable luxury experience. The attention to detail and premium service was worth every penny!"
+        "text": "THE BAR. transformed our simple gathering into an unforgettable luxury experience. The attention to detail and premium service was worth every investment!"
       },
       "viktorAnna": {
         "name": "Viktor & Anna",
         "event": "Anniversary Celebration",
-        "text": "Incredible craftsmanship! Every cocktail was a work of art. The premium service and elegant presentation made our anniversary truly exceptional."
+        "text": "Incredible artistry! Every cocktail was a masterpiece. The premium service and elegant presentation made our anniversary truly extraordinary."
       },
       "hotelGroup": {
         "name": "Prague Hotel Group",
-        "event": "VIP Guest Events", 
-        "text": "THE BAR. has become our partner for luxury guest experiences. Consistently exceptional quality and service that matches our premium standards."
+        "event": "VIP Guest Experiences", 
+        "text": "THE BAR. has become our trusted partner for luxury guest experiences. Consistently exceptional quality and service that perfectly matches our premium standards."
       },
       "marie": {
         "name": "Marie Nováková",
         "event": "Corporate Gala",
-        "text": "Excellent professionalism and creativity. The personalized cocktail menu perfectly complemented our event theme. Highly recommend for any premium occasion."
+        "text": "Outstanding professionalism and creativity. The personalized cocktail menu perfectly complemented our event theme. Highly recommended for any premium occasion."
       }
     }
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "Ready to elevate your event? Contact us to discuss your vision and let us create an unforgettable cocktail experience.",
+    "title": "Get In Touch",
+    "subtitle": "Ready to elevate your event to extraordinary heights? Contact us to discuss your vision and let us craft an unforgettable cocktail experience.",
     "form": {
       "title": "Send us a message",
       "name": "Your name",
-      "phone": "Phone",
-      "email": "Email", 
+      "phone": "Phone number",
+      "email": "Email address", 
       "date": "Event date",
-      "service": "Select service",
+      "service": "Select your service",
       "serviceOptions": {
-        "hotova-reseni": "Ready Solutions",
-        "svatebni-balicky": "Wedding Packages", 
-        "koktejlovy-bar": "Cocktail Bar",
+        "hotova-reseni": "Ready-to-Go Solutions",
+        "svatebni-balicky": "Wedding Collections", 
+        "koktejlovy-bar": "Cocktail Bar Service",
         "pyramida-sampanskeho": "Elegant Champagne Pyramid",
-        "welcome-zona": "Welcome zone with ice block and flower inside",
-        "bar-welcome-zona": "Cocktail Bar + Welcome zone",
-        "masterclass": "MasterClass"
+        "welcome-zona": "Welcome zone with ice sculpture and floral centerpiece",
+        "bar-welcome-zona": "Cocktail Bar + Welcome Zone",
+        "masterclass": "Private MasterClass"
       },
-      "message": "Your message",
+      "message": "Tell us about your vision",
       "submit": "Send Message",
       "errors": {
         "required": "This field is required",
         "invalidEmail": "Please enter a valid email address"
       },
-      "successMessage": "Thank you for your submission! We will contact you soon."
+      "successMessage": "Thank you for reaching out! We'll contact you shortly to discuss your vision."
     },
     "info": {
       "title": "Contact Information",
@@ -179,17 +179,17 @@
     }
   },
   "popup": {
-    "title": "YOUR CUSTOM COCKTAIL EXPERIENCE",
-    "subtitle": "Get a free custom quote tailored to your needs.",
-    "description": "Receive an exclusive cocktail experience proposal for your event.",
-    "specialOffer": "When booking, get up to 10 signature drinks completely free.",
+    "title": "YOUR BESPOKE COCKTAIL EXPERIENCE",
+    "subtitle": "Receive a complimentary custom proposal tailored to your vision.",
+    "description": "Get an exclusive cocktail experience proposal crafted specifically for your event.",
+    "specialOffer": "Book now and receive up to 10 signature cocktails absolutely complimentary.",
     "form": {
       "name": "Name",
       "phone": "Phone", 
       "email": "Email",
       "date": "Event date",
-      "service": "Select service",
-      "submit": "SUBMIT"
+      "service": "Select your service",
+      "submit": "GET MY PROPOSAL"
     }
   },
   "footer": {
@@ -200,8 +200,8 @@
   },
   "gdpr": {
     "title": "Privacy Policy",
-    "intro": "Vladyslav Breslavskyi – THE BAR. PREMIUM COCKTAIL CATERING (hereinafter referred to as 'operator') is committed to protecting your personal data and privacy.",
-    "businessInfo": "The operator is a natural person doing business under the Trade Licensing Act, Business ID: 23284111.",
+    "intro": "Vladyslav Breslavskyi – THE BAR. PREMIUM COCKTAIL CATERING (hereinafter referred to as the 'operator') is committed to protecting your personal data and privacy.",
+    "businessInfo": "The operator is a natural person conducting business under the Trade Licensing Act, Business ID: 23284111.",
     "sections": {
       "dataCollection": {
         "title": "1. What data do we collect?",
@@ -214,39 +214,39 @@
         ]
       },
       "purpose": {
-        "title": "2. For what purpose do we process data?",
+        "title": "2. Why do we process your data?",
         "items": [
-          "Creating a non-binding price quote",
-          "Communication regarding your inquiry",
-          "Booking our services"
+          "To create a customized price proposal",
+          "To communicate regarding your inquiry",
+          "To facilitate booking of our services"
         ]
       },
       "access": {
-        "title": "3. Who has access to the data?",
+        "title": "3. Who has access to your data?",
         "items": [
-          "Data is processed only by the operator",
-          "We never share it with third parties without your consent"
+          "Data is processed exclusively by the operator",
+          "We never share your information with third parties without your explicit consent"
         ]
       },
       "retention": {
-        "title": "4. How long do we keep the data?",
+        "title": "4. How long do we retain your data?",
         "items": [
-          "For the period necessary to process your inquiry",
-          "Maximum 12 months"
+          "For the duration necessary to process your inquiry",
+          "Maximum of 12 months"
         ]
       },
       "rights": {
         "title": "5. Your rights",
         "description": "You have the right to:",
         "items": [
-          "access your data",
-          "correct or delete data", 
-          "object to processing",
+          "access your personal data",
+          "request correction or deletion of your data", 
+          "object to data processing",
           "file a complaint with the Personal Data Protection Office"
         ]
       },
       "contact": {
-        "title": "6. Contact"
+        "title": "6. Contact Information"
       }
     },
     "close": "Close"
