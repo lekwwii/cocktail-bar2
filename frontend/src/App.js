@@ -899,10 +899,13 @@ const App = () => {
           <div className="max-w-6xl mx-auto px-6">
             {/* Section Title */}
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-8 text-white">
-                Umění <span className="text-gold">mixologie</span>
+              <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6 text-white">
+                {t('about.title')}
               </h2>
-              <div className="h-px w-16 bg-gold mx-auto mb-8"></div>
+              <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
+              <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
+                {t('about.subtitle')}
+              </p>
             </div>
 
             {/* Content Layout with Images */}
