@@ -313,9 +313,17 @@ class BackendTester:
                 )
                 
                 cors_origin = response.headers.get('access-control-allow-origin')
-                if cors_origin != '*':
+                cors_methods = response.headers.get('access-control-allow-methods', '')
+                cors_headers = response.headers.get('access-control-allow-headers', '')
+                
+                # When allow_credentials=True, CORS returns the requesting origin
+                if (cors_origin == origin and 
+                    'POST' in cors_methods and
+                    'Content-Type' in cors_headers):
+                    continue
+                else:
                     self.log_test("Multilingual CORS Headers", False, 
-                                f"CORS failed for {origin}: {cors_origin}")
+                                f"CORS failed for {origin}: origin={cors_origin}, methods={cors_methods}")
                     return False
             
             self.log_test("Multilingual CORS Headers", True, 
