@@ -233,17 +233,17 @@ const App = () => {
 
             {/* Content */}
             <div className="p-8 pt-6">
-              <h3 className="text-2xl md:text-3xl font-serif font-light mb-4 text-gold text-center leading-tight">
+              <h3 className="text-2xl md:text-3xl font-serif font-medium mb-4 text-gold text-center leading-tight">
                 VÁŠ KOKTEJLOVÝ ZÁŽITEK NA MÍRU
               </h3>
               <div className="text-center mb-6 space-y-2">
-                <p className="text-white/90 font-light leading-relaxed text-sm">
+                <p className="text-white/90 font-sans font-normal leading-relaxed text-sm">
                   Nechte si připravit nezávaznou nabídku na míru – zdarma.
                 </p>
-                <p className="text-white/90 font-light leading-relaxed text-sm">
+                <p className="text-white/90 font-sans font-normal leading-relaxed text-sm">
                   Získejte exkluzivní návrh koktejlového zážitku pro vaši akci.
                 </p>
-                <p className="text-gold/90 font-light leading-relaxed text-sm">
+                <p className="text-gold/90 font-sans font-medium leading-relaxed text-sm">
                   Při rezervaci navíc až 10 signature drinků zcela zdarma.
                 </p>
               </div>
@@ -257,7 +257,7 @@ const App = () => {
                     value={formData.name}
                     onChange={handleFormChange}
                     required
-                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm"
                   />
                   <input
                     type="tel"
@@ -266,7 +266,7 @@ const App = () => {
                     value={formData.phone}
                     onChange={handleFormChange}
                     required
-                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm"
                   />
                 </div>
                 
@@ -277,10 +277,10 @@ const App = () => {
                   value={formData.email}
                   onChange={handleFormChange}
                   required
-                  className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                  className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm"
                 />
                 
-                <div className="relative">
+                <div className="date-picker-container relative">
                   <input
                     type="date"
                     name="date"
@@ -288,13 +288,13 @@ const App = () => {
                     value={formData.date}
                     onChange={handleFormChange}
                     required
-                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm date-input"
+                    className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 pr-12 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm date-input"
                     style={{
                       colorScheme: 'dark'
                     }}
                   />
-                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                    <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="date-picker-icon">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                   </div>
@@ -305,19 +305,19 @@ const App = () => {
                   value={formData.service}
                   onChange={handleFormChange}
                   required
-                  className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                  className="w-full bg-primary/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm"
                 >
                   <option value="" className="text-white/70">Vyberte si službu</option>
-                  <option value="koktejlovy-bar" className="text-white">Koktejlový bar</option>
-                  <option value="pyramida" className="text-white">Elegantní pyramida šampaňského</option>
-                  <option value="welcome-zona" className="text-white">Welcome zóna s ledovým blokem a květinou uvnitř</option>
-                  <option value="bar-welcome" className="text-white">Koktejlový bar + Welcome zóna</option>
-                  <option value="masterclass" className="text-white">MasterClass</option>
+                  <option value="koktejlovy-bar" className="text-white bg-primary">Koktejlový bar</option>
+                  <option value="pyramida" className="text-white bg-primary">Elegantní pyramida šampaňského</option>
+                  <option value="welcome-zona" className="text-white bg-primary">Welcome zóna s ledovým blokem a květinou uvnitř</option>
+                  <option value="bar-welcome" className="text-white bg-primary">Koktejlový bar + Welcome zóna</option>
+                  <option value="masterclass" className="text-white bg-primary">MasterClass</option>
                 </select>
 
                 <button
                   type="submit"
-                  className="w-full bg-gold hover:bg-gold/90 text-primary py-3 font-medium tracking-wide transition-all duration-300 hover:scale-105 rounded-lg shadow-lg hover:shadow-gold/20"
+                  className="w-full bg-gold hover:bg-gold/90 text-primary py-3 font-sans font-semibold tracking-wide transition-all duration-300 hover:scale-105 rounded-lg shadow-lg hover:shadow-gold/20"
                 >
                   ODESLAT
                 </button>
