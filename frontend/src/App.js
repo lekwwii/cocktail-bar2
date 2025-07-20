@@ -547,8 +547,12 @@ const App = () => {
                   {formData.date && (
                     <button
                       type="button"
-                      onClick={() => setFormData({...formData, date: ''})}
-                      className="absolute right-12 top-1/2 transform -translate-y-1/2 text-white/50 hover:text-red-400 transition-colors duration-200 z-10"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setFormData({...formData, date: ''});
+                        setPopupErrors({...popupErrors, date: ''});
+                      }}
+                      className="absolute right-12 top-1/2 transform -translate-y-1/2 text-white/50 hover:text-red-400 transition-colors duration-200 z-10 p-1"
                       title="Vymazat datum"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
