@@ -907,41 +907,86 @@ const App = () => {
               {/* Contact Form */}
               <div className="bg-gradient-to-b from-dark-navy/50 to-primary/50 border border-white/10 rounded-lg p-8">
                 <h3 className="text-2xl font-serif font-light mb-6 text-white">Pošlete nám zprávu</h3>
-                <form className="space-y-6">
+                <form onSubmit={handleContactFormSubmit} className="space-y-6">
                   <div>
                     <input 
                       type="text" 
+                      name="name"
                       placeholder="Vaše jméno" 
-                      className="w-full bg-primary/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light"
+                      value={contactFormData.name}
+                      onChange={handleContactFormChange}
+                      required
+                      className={`w-full bg-primary/50 border ${
+                        contactErrors.name ? 'border-red-500' : 'border-white/20'
+                      } rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light`}
                     />
+                    {contactErrors.name && (
+                      <p className="text-red-400 text-xs mt-1 font-sans">{contactErrors.name}</p>
+                    )}
                   </div>
                   <div>
                     <input 
                       type="email" 
+                      name="email"
                       placeholder="E-mailová adresa" 
-                      className="w-full bg-primary/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light"
+                      value={contactFormData.email}
+                      onChange={handleContactFormChange}
+                      required
+                      className={`w-full bg-primary/50 border ${
+                        contactErrors.email ? 'border-red-500' : 'border-white/20'
+                      } rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light`}
                     />
+                    {contactErrors.email && (
+                      <p className="text-red-400 text-xs mt-1 font-sans">{contactErrors.email}</p>
+                    )}
                   </div>
                   <div>
                     <input 
                       type="tel" 
+                      name="phone"
                       placeholder="Telefonní číslo" 
-                      className="w-full bg-primary/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light"
+                      value={contactFormData.phone}
+                      onChange={handleContactFormChange}
+                      required
+                      className={`w-full bg-primary/50 border ${
+                        contactErrors.phone ? 'border-red-500' : 'border-white/20'
+                      } rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light`}
                     />
+                    {contactErrors.phone && (
+                      <p className="text-red-400 text-xs mt-1 font-sans">{contactErrors.phone}</p>
+                    )}
                   </div>
                   <div>
                     <input 
                       type="text" 
+                      name="eventType"
                       placeholder="Typ akce a datum" 
-                      className="w-full bg-primary/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light"
+                      value={contactFormData.eventType}
+                      onChange={handleContactFormChange}
+                      required
+                      className={`w-full bg-primary/50 border ${
+                        contactErrors.eventType ? 'border-red-500' : 'border-white/20'
+                      } rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light`}
                     />
+                    {contactErrors.eventType && (
+                      <p className="text-red-400 text-xs mt-1 font-sans">{contactErrors.eventType}</p>
+                    )}
                   </div>
                   <div>
                     <textarea 
                       rows="4" 
+                      name="message"
                       placeholder="Řekněte nám o vaší akci..." 
-                      className="w-full bg-primary/50 border border-white/20 rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 resize-none font-light"
+                      value={contactFormData.message}
+                      onChange={handleContactFormChange}
+                      required
+                      className={`w-full bg-primary/50 border ${
+                        contactErrors.message ? 'border-red-500' : 'border-white/20'
+                      } rounded px-4 py-3 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 resize-none font-light`}
                     ></textarea>
+                    {contactErrors.message && (
+                      <p className="text-red-400 text-xs mt-1 font-sans">{contactErrors.message}</p>
+                    )}
                   </div>
                   <button 
                     type="submit"
