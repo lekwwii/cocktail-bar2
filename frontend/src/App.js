@@ -440,17 +440,17 @@ const App = () => {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-4xl md:text-5xl font-serif font-light mb-8 text-white">
+                <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-8 text-white">
                   Umění <span className="text-gold">mixologie</span>
                 </h2>
                 <div className="h-px w-16 bg-gold mb-8"></div>
-                <p className="text-lg text-white/85 mb-6 leading-relaxed font-light">
+                <p className="text-lg text-white/85 mb-6 leading-relaxed font-sans font-normal">
                   Sídlící v srdci Prahy, THE BAR. představuje vrchol koktejlového řemesla. Věříme, že každý nápoj vypráví příběh a každá událost si zaslouží dokonalost.
                 </p>
-                <p className="text-lg text-white/85 mb-6 leading-relaxed font-light">
+                <p className="text-lg text-white/85 mb-6 leading-relaxed font-sans font-normal">
                   Naše vášeň pro mixologii jde nad rámec jednoduchých koktejlů. Vytváříme pohlcující zážitky se signature ledovými sochami, prémiovými destiláty a divadelní prezentací, která přemění jakékoli setkání na nezapomenutelnou oslavu.
                 </p>
-                <p className="text-lg text-white/85 mb-8 leading-relaxed font-light">
+                <p className="text-lg text-white/85 mb-8 leading-relaxed font-sans font-normal">
                   Od intimních soukromých večírků po velkolepé firemní akce přinášíme luxusní barový zážitek přímo k vám, kompletní s profesionálními barmany, prémiovým vybavením a nekompromisní pozorností k detailům.
                 </p>
                 <div className="flex space-x-8">
