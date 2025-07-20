@@ -864,16 +864,16 @@ const App = () => {
                 </h1>
                 <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
                 <p className="text-xl md:text-2xl font-serif font-medium mb-8 text-white/95 leading-relaxed">
-                  PRÉMIOVÝ KOKTEJLOVÝ CATERING
+                  Signaturní koktejly. Mobilní bar. Nezapomenutelné okamžiky.
                 </p>
                 <p className="text-lg text-white/75 mb-12 max-w-2xl mx-auto font-sans font-normal">
-                  Zažijte umění koktejlů s našimi špičkovými profesionály. Od intimních setkání po velkolepé oslavy - vytváříme nezapomenutelné zážitky, které ladí s vaší vizí.
+                  Prémiový koktejlový catering v Praze, který přináší luxus, umění a nezapomenutelné zážitky na vaše nejdůležitější akce.
                 </p>
                 <button
                   onClick={() => scrollToSection('contact')}
                   className="bg-gold hover:bg-gold/90 text-primary px-8 py-4 text-lg font-sans font-semibold tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-gold/20"
                 >
-                  Rezervovat konzultaci
+                  Rezervovat akci
                 </button>
               </div>
             </div>
