@@ -935,15 +935,15 @@ const App = () => {
                     <div className="grid grid-cols-3 gap-8 text-center">
                       <div>
                         <div className="text-2xl md:text-3xl font-serif font-semibold text-gold mb-2">25+</div>
-                        <div className="text-xs md:text-sm text-white/80 uppercase tracking-wide font-sans font-medium">Prémiových akcí</div>
+                        <div className="text-xs md:text-sm text-white/80 uppercase tracking-wide font-sans font-medium">Premium Events</div>
                       </div>
                       <div>
                         <div className="text-2xl md:text-3xl font-serif font-semibold text-gold mb-2">15+</div>
-                        <div className="text-xs md:text-sm text-white/80 uppercase tracking-wide font-sans font-medium">Signature koktejlů</div>
+                        <div className="text-xs md:text-sm text-white/80 uppercase tracking-wide font-sans font-medium">Signature Cocktails</div>
                       </div>
                       <div>
                         <div className="text-2xl md:text-3xl font-serif font-semibold text-gold mb-2">100%</div>
-                        <div className="text-xs md:text-sm text-white/80 uppercase tracking-wide font-sans font-medium">Spokojenost klientů</div>
+                        <div className="text-xs md:text-sm text-white/80 uppercase tracking-wide font-sans font-medium">Client Satisfaction</div>
                       </div>
                     </div>
                   </div>
