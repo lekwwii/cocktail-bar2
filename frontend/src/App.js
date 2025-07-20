@@ -366,43 +366,37 @@ const App = () => {
       name: "Sarah & Michael",
       event: "Svatba na Pražském hradě",
       rating: 5,
-      text: "Absolutně výjimečná obsluha! Koktejly byly dokonalé a ledové sochy s orchidejemi byly úchvatné. Naši hosté o tom ještě po měsících mluví.",
-      image: "https://images.unsplash.com/photo-1573830539666-1f96afdf149f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85"
+      text: "Absolutně výjimečná obsluha! Koktejly byly dokonalé a ledové sochy s orchidejemi byly úchvatné. Naši hosté o tom ještě po měsících mluví."
     },
     {
       name: "Manažer firemních akcí",
       event: "Spuštění technologické společnosti",
       rating: 5,
-      text: "Profesionální, elegantní a přesně to, co jsme potřebovali pro naše významné spuštění. Tým překonal všechna očekávání svou sofistikovanou prezentací.",
-      image: "https://images.unsplash.com/photo-1596351992649-8cea3853ba92?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBiYXJ8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTB8MA&ixlib=rb-4.1.0&q=85"
+      text: "Profesionální, elegantní a přesně to, co jsme potřebovali pro naše významné spuštění. Tým překonal všechna očekávání svou sofistikovanou prezentací."
     },
     {
       name: "Isabella Rodríguez",
       event: "Soukromá oslava narozenin",
       rating: 5,
-      text: "THE BAR. změnil naše jednoduché setkání na nezapomenutelný luxusní zážitek. Pozornost věnovaná detailům a prémiová obsluha stála za každou korunu!",
-      image: "https://images.unsplash.com/photo-1587223962930-cb7f31384c19?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxwcmVtaXVtJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTh8MA&ixlib=rb-4.1.0&q=85"
+      text: "THE BAR. změnil naše jednoduché setkání na nezapomenutelný luxusní zážitek. Pozornost věnovaná detailům a prémiová obsluha stála za každou korunu!"
     },
     {
       name: "Viktor & Anna",
       event: "Oslava výročí",
       rating: 5,
-      text: "Neuvěřitelné řemeslné umění! Každý koktejl byl uměleckým dílem. Prémiová obsluha a elegantní prezentace učinily naše výročí skutečně výjimečným.",
-      image: "https://images.unsplash.com/photo-1650814843722-2498e2aa8e3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxwcmVtaXVtJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTh8MA&ixlib=rb-4.1.0&q=85"
+      text: "Neuvěřitelné řemeslné umění! Každý koktejl byl uměleckým dílem. Prémiová obsluha a elegantní prezentace učinily naše výročí skutečně výjimečným."
     },
     {
       name: "Pražská skupina hotelů",
       event: "VIP události pro hosty",
       rating: 5,
-      text: "THE BAR. se stal naším partnerem pro luxusní zážitky hostů. Konzistentně výjimečná kvalita a služby, které odpovídají našim prémiovým standardům.",
-      image: "https://images.pexels.com/photos/4705928/pexels-photo-4705928.jpeg"
+      text: "THE BAR. se stal naším partnerem pro luxusní zážitky hostů. Konzistentně výjimečná kvalita a služby, které odpovídají našim prémiovým standardům."
     },
     {
       name: "Marie Nováková",
       event: "Firemní gala",
       rating: 5,
-      text: "Vynikající profesionalita a kreativita. Personalizované koktejlové menu dokonale doplnilo téma naší akce. Vřele doporučuji pro jakoukoli prémiovou příležitost.",
-      image: "https://images.pexels.com/photos/5550310/pexels-photo-5550310.jpeg"
+      text: "Vynikající profesionalita a kreativita. Personalizované koktejlové menu dokonale doplnilo téma naší akce. Vřele doporučuji pro jakoukoli prémiovou příležitost."
     }
   ];
 
