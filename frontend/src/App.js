@@ -1071,12 +1071,12 @@ const App = () => {
                   </div>
                   <p className="text-white/85 mb-6 italic leading-relaxed font-light">"{review.text}"</p>
                   <div className="flex items-center">
-                    <img 
-                      src={review.image}
-                      alt={review.name}
-                      className="w-12 h-12 rounded-full object-cover mr-4"
-                      loading="lazy"
-                    />
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gold/20 to-gold/10 border border-gold/30 flex items-center justify-center mr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                          d="M5.121 17.804A9.953 9.953 0 0112 15c2.21 0 4.248.713 5.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
                     <div>
                       <div className="text-white font-medium">{review.name}</div>
                       <div className="text-gold text-sm font-light">{review.event}</div>
