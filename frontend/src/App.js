@@ -523,39 +523,39 @@ const App = () => {
           </div>
         </section>
 
-      {/* Gallery Section */}
-      <section id="gallery" className="py-20 bg-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-white">
-              Our <span className="text-gold">Gallery</span>
-            </h2>
-            <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
-            <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
-              Experience the artistry and elegance that defines every THE BAR. event through our curated collection of memorable moments.
-            </p>
-          </div>
+        {/* Gallery Section */}
+        <section id="gallery" className="py-20 bg-primary">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-white">
+                Naše <span className="text-gold">galerie</span>
+              </h2>
+              <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
+              <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
+                Zažijte umění a eleganci, které definují každou akci THE BAR. prostřednictvím naší kurátorské kolekce nezapomenutelných okamžiků.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((image, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-lg aspect-square">
-                <img 
-                  src={image}
-                  alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg className="w-12 h-12 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                  </svg>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {galleryImages.map((image, index) => (
+                <div key={index} className="group relative overflow-hidden rounded-lg aspect-square">
+                  <img 
+                    src={image}
+                    alt={`Galerie obrázek ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg className="w-12 h-12 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* Reviews Section */}
       <section id="reviews" className="py-20 bg-gradient-to-b from-dark-navy to-primary">
