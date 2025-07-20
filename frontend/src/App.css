@@ -275,7 +275,7 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   outline-offset: 2px;
 }
 
-/* Mobile date picker improvements - Enhanced left alignment */
+/* Mobile date picker improvements - CRITICAL ALIGNMENT FIX */
 @media (max-width: 768px) {
   .date-input::-webkit-calendar-picker-indicator {
     font-size: 16px; /* Prevent zoom on iOS */
@@ -285,6 +285,7 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
     right: 8px;
   }
   
+  /* CRITICAL: Force left alignment for mobile date input */
   .date-input {
     font-size: 16px !important; /* Prevent iOS zoom */
     padding: 12px 60px 12px 16px !important; /* Specific left padding, space for icons on right */
@@ -294,6 +295,8 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
     line-height: 1.5 !important;
     text-align: left !important;
     direction: ltr !important;
+    /* FORCE webkit elements to align left */
+    -webkit-text-align: left !important;
   }
   
   .date-picker-container {
@@ -327,7 +330,7 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
     z-index: 4;
   }
   
-  /* Enhanced mobile datetime edit alignment */
+  /* CRITICAL: Webkit-specific mobile date alignment overrides */
   .date-input::-webkit-datetime-edit {
     display: flex !important;
     align-items: center !important;
@@ -338,6 +341,9 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
     text-align: left !important;
     width: 100% !important;
     justify-content: flex-start !important;
+    /* Force left alignment */
+    -webkit-text-align: left !important;
+    text-align-last: left !important;
   }
   
   .date-input::-webkit-datetime-edit-fields-wrapper {
@@ -350,6 +356,9 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
     width: 100% !important;
     padding-left: 0 !important;
     margin-left: 0 !important;
+    /* Additional webkit overrides */
+    -webkit-justify-content: flex-start !important;
+    -webkit-text-align: left !important;
   }
 
   .date-input::-webkit-datetime-edit-month-field,
@@ -363,13 +372,30 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
     text-align: left !important;
     padding: 0 !important;
     margin: 0 !important;
+    /* Force left alignment for each field */
+    -webkit-text-align: left !important;
+    justify-self: flex-start !important;
   }
 
-  /* Mobile-specific date text alignment */
+  /* Mobile-specific date text alignment - AGGRESSIVE OVERRIDE */
   .date-input::-webkit-datetime-edit-text {
     text-align: left !important;
     padding: 0 !important;
     margin: 0 !important;
+    -webkit-text-align: left !important;
+  }
+
+  /* Additional mobile date input styling to match other fields */
+  .date-input::placeholder {
+    text-align: left !important;
+    padding-left: 0 !important;
+  }
+
+  /* Ensure all date parts align to the left */
+  .date-input::-webkit-datetime-edit-day-field:first-child,
+  .date-input::-webkit-datetime-edit-month-field:first-child {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
   }
   
   /* Mobile select dropdown improvements */
@@ -385,7 +411,7 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
     text-align: left !important;
   }
   
-  /* Mobile form inputs */
+  /* Mobile form inputs - ensure consistency */
   input[type="text"],
   input[type="email"], 
   input[type="tel"],
