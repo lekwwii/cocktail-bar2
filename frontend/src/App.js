@@ -380,7 +380,7 @@ const App = () => {
                     <button
                       key={item}
                       onClick={() => scrollToSection(sectionIds[index])}
-                      className="block px-3 py-2 text-white/80 hover:text-gold transition-colors duration-300 text-base font-serif font-light tracking-wide w-full text-left"
+                      className="block px-3 py-2 text-white/80 hover:text-gold transition-colors duration-300 text-base font-sans font-medium tracking-wide w-full text-left"
                     >
                       {item}
                     </button>
