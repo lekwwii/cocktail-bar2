@@ -12,34 +12,28 @@
   --primary: #0d1117;
 }
 
-/* CRITICAL: Fix blinking cursor bug completely */
+/* CRITICAL: Fix blinking cursor bug with targeted approach */
 html, body {
-  cursor: default !important;
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  outline: none !important;
-  -webkit-tap-highlight-color: transparent !important;
+  cursor: default;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Remove any potential focus on body/html */
+/* Prevent unwanted focus on body/html */
 html:focus, body:focus {
   outline: none !important;
 }
 
-/* Default cursor behavior for all elements */
-*, *::before, *::after {
-  cursor: default !important;
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  outline: none !important;
-  -webkit-tap-highlight-color: transparent !important;
+/* Default behavior for most elements */
+div, span, section, header, footer, nav, main, aside {
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-/* Only allow text cursor and selection in actual form inputs */
+/* Text cursor only for form inputs */
 input[type="text"], 
 input[type="email"], 
 input[type="tel"], 
@@ -47,32 +41,31 @@ input[type="password"],
 input[type="search"], 
 textarea {
   cursor: text !important;
-  user-select: auto !important;
-  -webkit-user-select: auto !important;
-  -moz-user-select: auto !important;
-  -ms-user-select: auto !important;
-}
-
-/* Special handling for date input */
-input[type="date"] {
-  cursor: pointer !important;
-  user-select: none !important;
-}
-
-/* Proper cursor for interactive elements */
-button, a, [role="button"] {
-  cursor: pointer !important;
-  user-select: none !important;
-}
-
-/* Allow text selection only for readable content */
-p, span, div:not([role]), h1, h2, h3, h4, h5, h6, li {
   user-select: text !important;
   -webkit-user-select: text !important;
-  cursor: default !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
 }
 
-/* Remove any contenteditable attributes */
+/* Pointer cursor for date inputs and interactive elements */
+input[type="date"],
+select,
+button, 
+a, 
+[role="button"],
+.cursor-pointer {
+  cursor: pointer !important;
+  user-select: none !important;
+}
+
+/* Allow text selection for readable content */
+p, h1, h2, h3, h4, h5, h6, li, blockquote {
+  cursor: default;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* Prevent contenteditable issues */
 [contenteditable="true"] {
   contenteditable: false !important;
 }
