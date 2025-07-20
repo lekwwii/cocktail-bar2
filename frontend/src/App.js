@@ -23,17 +23,10 @@ const App = () => {
     // Ensure page is fully loaded
     const timer = setTimeout(() => setIsLoaded(true), 100);
     
-    // Popup logic
-    const showPopupTimer = setTimeout(() => {
-      if (!hasShownPopup) {
-        setShowPopup(true);
-        setHasShownPopup(true);
-      }
-    }, 5000);
-
+    // Popup logic - show when user scrolls 30-50% down
     const handleScrollPopup = () => {
       const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-      if (scrollPercent >= 30 && !hasShownPopup) {
+      if (scrollPercent >= 35 && !hasShownPopup) {
         setShowPopup(true);
         setHasShownPopup(true);
       }
@@ -45,7 +38,6 @@ const App = () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('scroll', handleScrollPopup);
       clearTimeout(timer);
-      clearTimeout(showPopupTimer);
     };
   }, [hasShownPopup]);
 
