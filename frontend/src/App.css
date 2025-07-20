@@ -252,6 +252,46 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
 @media (max-width: 768px) {
   .date-input::-webkit-calendar-picker-indicator {
     font-size: 16px; /* Prevent zoom on iOS */
+    opacity: 0.8;
+  }
+  
+  .date-input {
+    font-size: 16px !important; /* Prevent iOS zoom */
+    padding: 12px 16px !important;
+    min-height: 48px; /* Ensure touch-friendly size */
+  }
+  
+  .date-picker-container {
+    position: relative;
+  }
+  
+  .date-picker-icon {
+    right: 16px;
+    pointer-events: auto;
+    z-index: 3;
+  }
+  
+  /* Mobile select dropdown improvements */
+  select {
+    font-size: 16px !important; /* Prevent iOS zoom */
+    padding: 12px 16px !important;
+    min-height: 48px;
+    background-size: 16px;
+    background-position: right 16px center;
+  }
+  
+  /* Mobile form inputs */
+  input[type="text"],
+  input[type="email"], 
+  input[type="tel"],
+  textarea {
+    font-size: 16px !important; /* Prevent iOS zoom */
+    padding: 12px 16px !important;
+    min-height: 48px;
+  }
+  
+  textarea {
+    min-height: 120px;
   }
 }
 
