@@ -895,11 +895,11 @@ const App = () => {
             {/* Section Title */}
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6 text-white">
-                {t('about.title')}
+                Umění mixologie
               </h2>
               <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
               <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
-                {t('about.subtitle')}
+                Naše vášeň pro dokonalé koktejly
               </p>
             </div>
 
