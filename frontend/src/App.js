@@ -88,16 +88,36 @@ const App = () => {
       document.documentElement.removeAttribute('tabindex');
     };
 
+    // CRITICAL: Ensure all images are visible
+    const ensureImagesVisible = () => {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        // Force images to be visible
+        img.style.opacity = '1';
+        img.style.visibility = 'visible';
+        img.style.display = 'block';
+        
+        // Add loaded class for lazy images
+        if (img.hasAttribute('loading') && img.getAttribute('loading') === 'lazy') {
+          img.classList.add('loaded');
+        }
+      });
+    };
+
     // Add event listeners with proper options
     document.addEventListener('click', handleDocumentClick, true);
     document.addEventListener('focus', handleFocusCapture, true);
     document.addEventListener('keydown', handleKeyDown);
     
-    // Initial cleanup
+    // Initial cleanup and image visibility fix
     cleanupContentEditable();
+    ensureImagesVisible();
     
-    // Periodic cleanup every 2 seconds instead of every second for better performance
-    const cleanupInterval = setInterval(cleanupContentEditable, 2000);
+    // Periodic cleanup every 2 seconds
+    const cleanupInterval = setInterval(() => {
+      cleanupContentEditable();
+      ensureImagesVisible(); // Ensure images stay visible
+    }, 2000);
 
     // Cleanup function
     return () => {
