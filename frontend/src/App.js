@@ -125,44 +125,44 @@ const App = () => {
   const testimonials = [
     {
       name: "Sarah & Michael",
-      event: "Wedding in Prague Castle",
+      event: "Svatba na Pražském hradě",
       rating: 5,
-      text: "Absolutely exceptional service! The cocktails were perfection and the ice sculptures with orchids were breathtaking. Our guests are still talking about it months later.",
+      text: "Absolutně výjimečná obsluha! Koktejly byly dokonalé a ledové sochy s orchidejemi byly úchvatné. Naši hosté o tom ještě po měsících mluví.",
       image: "https://images.unsplash.com/photo-1573830539666-1f96afdf149f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85"
     },
     {
-      name: "Corporate Event Manager",
-      event: "Tech Company Launch",
+      name: "Manažer firemních akcí",
+      event: "Spuštění technologické společnosti",
       rating: 5,
-      text: "Professional, elegant, and exactly what we needed for our high-profile launch. The team exceeded all expectations with their sophisticated presentation.",
+      text: "Profesionální, elegantní a přesně to, co jsme potřebovali pro naše významné spuštění. Tým překonal všechna očekávání svou sofistikovanou prezentací.",
       image: "https://images.unsplash.com/photo-1596351992649-8cea3853ba92?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBiYXJ8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTB8MA&ixlib=rb-4.1.0&q=85"
     },
     {
-      name: "Isabella Rodriguez",
-      event: "Private Birthday Celebration",
+      name: "Isabella Rodríguez",
+      event: "Soukromá oslava narozenin",
       rating: 5,
-      text: "THE BAR. transformed our simple gathering into an unforgettable luxury experience. The attention to detail and premium service was worth every euro!",
+      text: "THE BAR. změnil naše jednoduché setkání na nezapomenutelný luxusní zážitek. Pozornost věnovaná detailům a prémiová obsluha stála za každou korunu!",
       image: "https://images.unsplash.com/photo-1587223962930-cb7f31384c19?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxwcmVtaXVtJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTh8MA&ixlib=rb-4.1.0&q=85"
     },
     {
       name: "Viktor & Anna",
-      event: "Anniversary Celebration",
+      event: "Oslava výročí",
       rating: 5,
-      text: "Incredible craftsmanship! Every cocktail was a work of art. The premium service and elegant presentation made our anniversary truly special.",
+      text: "Neuvěřitelné řemeslné umění! Každý koktejl byl uměleckým dílem. Prémiová obsluha a elegantní prezentace učinily naše výročí skutečně výjimečným.",
       image: "https://images.unsplash.com/photo-1650814843722-2498e2aa8e3e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxwcmVtaXVtJTIwY29ja3RhaWx8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTh8MA&ixlib=rb-4.1.0&q=85"
     },
     {
-      name: "Prague Hotels Group",
-      event: "VIP Guest Events",
+      name: "Pražská skupina hotelů",
+      event: "VIP události pro hosty",
       rating: 5,
-      text: "THE BAR. has become our go-to partner for luxury guest experiences. Consistently exceptional quality and service that matches our premium standards.",
+      text: "THE BAR. se stal naším partnerem pro luxusní zážitky hostů. Konzistentně výjimečná kvalita a služby, které odpovídají našim prémiovým standardům.",
       image: "https://images.pexels.com/photos/4705928/pexels-photo-4705928.jpeg"
     },
     {
-      name: "Marie Novakova",
-      event: "Corporate Gala",
+      name: "Marie Nováková",
+      event: "Firemní gala",
       rating: 5,
-      text: "Outstanding professionalism and creativity. The custom cocktail menu perfectly complemented our event theme. Highly recommended for any premium occasion.",
+      text: "Vynikající profesionalita a kreativita. Personalizované koktejlové menu dokonale doplnilo téma naší akce. Vřele doporučuji pro jakoukoli prémiovou příležitost.",
       image: "https://images.pexels.com/photos/5550310/pexels-photo-5550310.jpeg"
     }
   ];
