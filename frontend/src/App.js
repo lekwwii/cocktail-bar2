@@ -1167,7 +1167,7 @@ const App = () => {
                         backgroundPosition: 'right 12px center'
                       }}
                     >
-                      <option value="" className="text-white/70 bg-primary">Vyberte typ akce</option>
+                      <option value="" className="text-white/70 bg-primary">Vyberte službu</option>
                       <option value="hotova-reseni" className="text-white bg-primary">Hotová řešení</option>
                       <option value="svatebni-balicky" className="text-white bg-primary">Svatební Balíčky</option>
                       <option value="koktejlovy-bar" className="text-white bg-primary">Koktejlový Bar</option>
