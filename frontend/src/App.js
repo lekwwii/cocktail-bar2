@@ -404,6 +404,20 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-primary text-white overflow-x-hidden relative">
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed top-6 right-6 z-[110] animate-slide-down">
+          <div className="bg-gradient-to-r from-gold to-gold/90 text-primary px-6 py-4 rounded-lg shadow-2xl border border-gold/20 backdrop-blur-sm">
+            <div className="flex items-center space-x-3">
+              <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="font-sans font-medium text-sm">{toastMessage}</span>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Premium Frame Effects */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Vignette Effect */}
