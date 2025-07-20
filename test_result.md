@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Fix two critical bugs in the luxury cocktail catering website THE BAR.: 1) Blinking text cursor appearing globally (should only be in input fields), 2) Date picker not closing when clicking outside. Ensure fixes work on desktop and mobile, and Czech diacritics render correctly."
+user_problem_statement: "1. Replace content in the 'Naše balíčky' section with updated packages: Change title to 'Hotová řešení', replace current three blocks with Lite (18,000 Kč), Classic (24,000 Kč), Premium (30,000 Kč) packages. 2. Update contact form dropdown label from 'Vyberte typ akce' to 'Vyberte službu'."
 
 backend:
   - task: "Backend API endpoints and server functionality"
