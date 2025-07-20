@@ -137,26 +137,166 @@ const App = () => {
     setIsMenuOpen(false);
   };
 
+  // Toast notification function
+  const showToastNotification = (message) => {
+    setToastMessage(message);
+    setShowToast(true);
+    
+    // Auto-hide toast after 4.5 seconds
+    setTimeout(() => {
+      setShowToast(false);
+    }, 4500);
+  };
+
+  // Form validation functions
+  const validateField = (name, value) => {
+    if (!value || value.trim() === '') {
+      return 'Toto pole je povinné';
+    }
+    
+    if (name === 'email') {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) {
+        return 'Zadejte platnou e-mailovou adresu';
+      }
+    }
+    
+    if (name === 'phone') {
+      const phoneRegex = /^[\+]?[0-9\s\-\(\)]{9,}$/;
+      if (!phoneRegex.test(value)) {
+        return 'Zadejte platné telefonní číslo';
+      }
+    }
+    
+    return '';
+  };
+
+  const validatePopupForm = () => {
+    const errors = {};
+    const requiredFields = ['name', 'phone', 'email', 'date', 'service'];
+    
+    requiredFields.forEach(field => {
+      const error = validateField(field, formData[field]);
+      if (error) errors[field] = error;
+    });
+    
+    setPopupErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const validateContactForm = () => {
+    const errors = {};
+    const requiredFields = ['name', 'email', 'phone', 'eventType', 'message'];
+    
+    requiredFields.forEach(field => {
+      const error = validateField(field, contactFormData[field]);
+      if (error) errors[field] = error;
+    });
+    
+    setContactErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  // Smooth scroll to top function
+  const smoothScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const handleFormChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
+    
+    // Clear error when user starts typing
+    if (popupErrors[name]) {
+      setPopupErrors({
+        ...popupErrors,
+        [name]: ''
+      });
+    }
+  };
+
+  const handleContactFormChange = (e) => {
+    const { name, value } = e.target;
+    setContactFormData({
+      ...contactFormData,
+      [name]: value
+    });
+    
+    // Clear error when user starts typing
+    if (contactErrors[name]) {
+      setContactErrors({
+        ...contactErrors,
+        [name]: ''
+      });
+    }
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    setShowPopup(false);
+    
+    if (!validatePopupForm()) {
+      return;
+    }
+    
+    // Simulate form submission
+    console.log('Popup form submitted:', formData);
+    
+    // Show success toast
+    showToastNotification('Děkujeme za odeslání! Ozveme se vám co nejdříve.');
+    
+    // Enhanced modal closing animation
+    const modal = document.querySelector('.fixed.inset-0.bg-black\\/80');
+    if (modal) {
+      modal.classList.add('animate-fade-out');
+      setTimeout(() => {
+        setShowPopup(false);
+        // Reset form
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          date: '',
+          service: ''
+        });
+        setPopupErrors({});
+        
+        // Smooth scroll to top after modal closes
+        setTimeout(smoothScrollToTop, 200);
+      }, 300);
+    }
+  };
+
+  const handleContactFormSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!validateContactForm()) {
+      return;
+    }
+    
+    // Simulate form submission
+    console.log('Contact form submitted:', contactFormData);
+    
+    // Show success toast
+    showToastNotification('Děkujeme za odeslání! Ozveme se vám co nejdříve.');
+    
     // Reset form
-    setFormData({
+    setContactFormData({
       name: '',
-      phone: '',
       email: '',
-      date: '',
-      service: ''
+      phone: '',
+      eventType: '',
+      message: ''
     });
+    setContactErrors({});
+    
+    // Smooth scroll to top after brief delay
+    setTimeout(smoothScrollToTop, 1000);
   };
 
   const packages = [
