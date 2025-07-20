@@ -405,6 +405,114 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-primary text-white overflow-x-hidden relative">
+      {/* GDPR Page Modal */}
+      {showGdprPage && (
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[120] flex items-center justify-center p-4 animate-fade-in">
+          <div className="bg-gradient-to-b from-primary to-dark-navy border border-gold/20 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-slide-up">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowGdprPage(false)}
+              className="absolute top-6 right-6 text-white/70 hover:text-gold transition-colors duration-300 z-10 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gold/10"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* GDPR Content */}
+            <div className="p-8 md:p-12">
+              <h1 className="text-3xl md:text-4xl font-serif font-medium mb-8 text-gold text-center">
+                Zásady ochrany osobních údajů
+              </h1>
+
+              <div className="space-y-6 text-white/90 font-sans leading-relaxed">
+                <p className="text-lg">
+                  <strong className="text-gold">Vladyslav Breslavskyi – THE BAR. PREMIUM COCKTAIL CATERING</strong> (dále jen „provozovatel") se zavazuje chránit vaše osobní údaje a soukromí.
+                </p>
+
+                <p>
+                  Provozovatel je fyzická osoba podnikající dle živnostenského zákona, <strong>IČO: 23284111</strong>.
+                </p>
+
+                <div className="space-y-4">
+                  <h2 className="text-xl font-serif font-medium text-gold">1. Jaké údaje shromažďujeme?</h2>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Jméno a příjmení</li>
+                    <li>Telefonní číslo</li>
+                    <li>E-mailová adresa</li>
+                    <li>Datum plánované akce</li>
+                    <li>Vybraná služba</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <h2 className="text-xl font-serif font-medium text-gold">2. Za jakým účelem údaje zpracováváme?</h2>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Vytvoření nezávazné cenové nabídky</li>
+                    <li>Komunikace ohledně vaší poptávky</li>
+                    <li>Rezervace našich služeb</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <h2 className="text-xl font-serif font-medium text-gold">3. Kdo má k údajům přístup?</h2>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Údaje jsou zpracovávány pouze provozovatelem</li>
+                    <li>Nikdy je nepředáváme třetím stranám bez vašeho souhlasu</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <h2 className="text-xl font-serif font-medium text-gold">4. Jak dlouho údaje uchováváme?</h2>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Po dobu nezbytně nutnou pro vyřízení vaší poptávky</li>
+                    <li>Maximálně však 12 měsíců</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <h2 className="text-xl font-serif font-medium text-gold">5. Vaše práva</h2>
+                  <p>Máte právo:</p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>na přístup ke svým údajům</li>
+                    <li>na opravu nebo výmaz údajů</li>
+                    <li>vznést námitku proti zpracování</li>
+                    <li>podat stížnost u Úřadu pro ochranu osobních údajů (ÚOOÚ)</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <h2 className="text-xl font-serif font-medium text-gold">6. Kontakt</h2>
+                  <div className="space-y-2">
+                    <p className="flex items-center">
+                      <span className="mr-2">📧</span>
+                      <a href="mailto:thebar.event@gmail.com" className="text-gold hover:text-gold/80 transition-colors">
+                        thebar.event@gmail.com
+                      </a>
+                    </p>
+                    <p className="flex items-center">
+                      <span className="mr-2">📞</span>
+                      <a href="tel:+420775505805" className="text-gold hover:text-gold/80 transition-colors">
+                        +420 775 505 805
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-8 text-center">
+                  <button
+                    onClick={() => setShowGdprPage(false)}
+                    className="bg-gold hover:bg-gold/90 text-primary px-8 py-3 font-sans font-semibold tracking-wide transition-all duration-300 hover:scale-105 rounded-lg"
+                  >
+                    Zavřít
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Toast Notification */}
       {showToast && (
         <div className="fixed top-6 right-6 z-[110] animate-slide-down">
