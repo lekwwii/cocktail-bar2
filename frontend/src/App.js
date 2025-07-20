@@ -1146,10 +1146,20 @@ const App = () => {
                 </div>
               </div>
             </div>
-            <div className="border-t border-white/10 mt-8 pt-8 text-center">
-              <p className="text-white/50 font-light">
-                © 2025 THE BAR. Prémiový koktejlový catering. Všechna práva vyhrazena.
-              </p>
+            <div className="border-t border-white/10 mt-8 pt-8">
+              <div className="text-center mb-4">
+                <p className="text-white/50 font-light">
+                  © 2025 THE BAR. Prémiový koktejlový catering. Všechna práva vyhrazena.
+                </p>
+              </div>
+              {/* GDPR Consent Section */}
+              <div className="text-center">
+                <p className="text-white/40 font-light text-sm leading-relaxed max-w-4xl mx-auto">
+                  Používáním našich služeb souhlasíte s používáním cookies a zpracováním osobních údajů v souladu s GDPR. 
+                  Vaše údaje používáme pouze pro komunikaci ohledně vašich událostí a nikdy je nepředáváme třetím stranám. 
+                  Více informací naleznete v našich <span className="text-gold hover:text-gold/80 cursor-pointer">zásadách ochrany osobních údajů</span>.
+                </p>
+              </div>
             </div>
           </div>
         </footer>
