@@ -865,20 +865,20 @@ const App = () => {
             <div className={`relative z-20 text-center transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div>
                 <h1 className="text-5xl md:text-7xl font-serif font-medium mb-6 text-white tracking-wide leading-tight">
-                  THE BAR<span className="text-gold">.</span>
+                  {t('hero.title')}<span className="text-gold">.</span>
                 </h1>
                 <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
                 <p className="text-xl md:text-2xl font-serif font-medium mb-8 text-white/95 leading-relaxed">
-                  Signature koktejly. Mobilní bar. Nezapomenutelné okamžiky.
+                  {t('hero.subtitle')}
                 </p>
                 <p className="text-lg text-white/75 mb-12 max-w-2xl mx-auto font-sans font-normal">
-                  Prémiový koktejlový catering v Praze přináší luxus, umění a nezapomenutelné zážitky na vaše nejdůležitější události.
+                  {t('hero.description')}
                 </p>
                 <button
                   onClick={() => scrollToSection('contact')}
                   className="bg-gold hover:bg-gold/90 text-primary px-8 py-4 text-lg font-sans font-semibold tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-gold/20"
                 >
-                  Rezervovat akci
+                  {t('hero.cta')}
                 </button>
               </div>
             </div>
