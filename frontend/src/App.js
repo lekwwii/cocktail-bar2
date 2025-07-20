@@ -1125,8 +1125,8 @@ const App = () => {
                   {pkg.bonus && (
                     <div className="mt-6 p-4 bg-gradient-to-r from-amber-200/80 to-orange-200/80 border border-amber-300/60 rounded-xl shadow-md">
                       <div className="flex items-start">
-                        <svg className="w-6 h-6 text-amber-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 0v1.5m0 0L16 9.5m-4-1.5L10 9.5m4 4.5l2 2m-2-2l-2 2" />
+                        <svg className="w-6 h-6 text-amber-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0115 5c.65 0 1.26-.132 1.82-.376a1 1 0 01.78 1.836l-1.83.914a1 1 0 00-.548.894v8.232A2 2 0 0113.236 18H6.764A2 2 0 015 16.5V7.268a1 1 0 00-.547-.894L2.62 5.46a1 1 0 01.78-1.836A4.994 4.994 0 005 5zm5-1a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd" />
                         </svg>
                         <p className="text-amber-800 text-sm font-medium leading-relaxed italic">
                           <span className="font-semibold text-amber-900">Bonus:</span> {pkg.bonus}
