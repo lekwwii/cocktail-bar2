@@ -785,9 +785,9 @@ const App = () => {
               </div>
             
               {/* Desktop Navigation */}
-              <div className="hidden md:block">
+              <div className="hidden md:flex items-center space-x-6">
                 <div className="flex items-baseline space-x-6">
-                  {['Úvod', 'O nás', 'Balíčky', 'Svatební Balíčky', 'Galerie', 'Recenze', 'Kontakt'].map((item, index) => {
+                  {[t('nav.home'), t('nav.about'), t('nav.packages'), t('nav.wedding'), t('nav.gallery'), t('nav.reviews'), t('nav.contact')].map((item, index) => {
                     const sectionIds = ['hero', 'about', 'packages', 'svatebni-balicky', 'gallery', 'reviews', 'contact'];
                     return (
                       <button
@@ -800,10 +800,12 @@ const App = () => {
                     );
                   })}
                 </div>
+                <LanguageSwitcher />
               </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
+            {/* Mobile menu button and language switcher */}
+            <div className="md:hidden flex items-center space-x-3">
+              <LanguageSwitcher />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white/80 hover:text-gold transition-colors duration-300"
