@@ -121,22 +121,7 @@ backend:
         comment: "Comprehensive backend testing completed successfully. Created and executed backend_test.py with 5 test scenarios: ✅ Server connectivity (GET /api/) - Backend responsive with correct 'Hello World' response, ✅ Status check creation (POST /api/status) - Successfully creates status records with proper UUID, timestamp, and data validation, ✅ Status check retrieval (GET /api/status) - Correctly returns list of status records, ✅ Error handling - Properly returns HTTP 422 for invalid JSON requests, ✅ CORS functionality - Working correctly (returns requesting origin as expected). All core API endpoints functional. Supervisor logs confirm backend running stable on port 8001. MongoDB connection working. No regressions detected from frontend bug fixes."
 
 frontend:
-  - task: "Fix blinking text cursor bug"
-    implemented: true
-    working: true
-    file: "/app/frontend/src/App.css"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: false
-        agent: "user"
-        comment: "User reported blinking text cursor appearing globally across the website, even in non-input areas"
-      - working: true
-        agent: "main"
-        comment: "Implemented targeted CSS fixes (lines 15-47 in App.css). Replaced overly aggressive universal selectors with targeted rules: default cursor for most elements, text cursor only for form inputs, pointer cursor for interactive elements. Tested successfully on desktop and mobile."
-
-  - task: "Fix date picker closing behavior"
+  - task: "Update 'Naše balíčky' section to 'Hotová řešení'"
     implemented: true
     working: true
     file: "/app/frontend/src/App.js"
@@ -144,72 +129,45 @@ frontend:
     priority: "high"
     needs_retesting: false
     status_history:
-      - working: false
-        agent: "user"
-        comment: "Date picker calendar popup does not close when clicking outside, requires explicit click inside field again"
       - working: true
         agent: "main"
-        comment: "Improved JavaScript date picker event handling (lines 20-66 in App.js). Added better click outside detection, escape key support, proper event delegation, and cross-browser compatibility. Enhanced CSS styling in App.css (lines 138-191). Tested successfully on desktop and mobile."
+        comment: "Successfully updated packages section title from 'Naše balíčky' to 'Hotová řešení' (line 949 in App.js). Updated packages data structure with three new packages: Lite (18,000 Kč), Classic (24,000 Kč, featured), and Premium (30,000 Kč). Added discount text rendering for Classic and Premium packages."
 
-  - task: "Czech diacritics font rendering"
+  - task: "Replace current packages with new Lite, Classic, Premium packages"
     implemented: true
     working: true
-    file: "/app/frontend/src/App.css"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Successfully replaced packages array (lines 323-367) with new structure: Lite package (100 signature koktejlů, 1 barman, exkluzivní menu, 18,000 Kč), Classic package (150 signature koktejlů, 2 barmani, Flavour Blaster, exkluzivní menu, 24,000 Kč, featured, with discount text), Premium package (200 signature koktejlů, 2 barmani, Flavour Blaster, exkluzivní menu, 30,000 Kč, with discount text)."
+
+  - task: "Update contact form dropdown label"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
     stuck_count: 0
     priority: "medium"
     needs_retesting: false
     status_history:
       - working: true
         agent: "main"
-        comment: "Verified Czech diacritics render correctly with Playfair Display and Inter fonts. Enhanced font-face definitions (lines 416-432) include comprehensive unicode-range for Czech characters. All Czech text elements display properly on desktop and mobile."
+        comment: "Successfully updated contact form dropdown label from 'Vyberte typ akce' to 'Vyberte službu' (line 1175). Dropdown options remain the same as requested."
 
-  - task: "Mobile responsiveness of bug fixes"
-    implemented: true
-    working: true
-    file: "/app/frontend/src/App.css"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: true
-        agent: "main"
-        comment: "Added mobile-specific improvements (lines 184-191) including touch handling, iOS zoom prevention, and mobile date picker optimizations. All bug fixes confirmed working on mobile viewport (375x812 iPhone 12 Pro size)."
-
-  - task: "Toast notifications system"
+  - task: "Add discount text rendering for Classic and Premium packages"
     implemented: true
     working: true
     file: "/app/frontend/src/App.js"
     stuck_count: 0
-    priority: "high"
+    priority: "medium"
     needs_retesting: false
     status_history:
       - working: true
         agent: "main"
-        comment: "Implemented premium toast notification system with Czech message 'Děkujeme za odeslání! Ozveme se vám co nejdříve.' Appears at top-right with elegant gold styling, auto-hides after 4.5 seconds with smooth slide-down animation. Integrated with both contact and popup forms."
-
-  - task: "Form validation with Czech error messages"
-    implemented: true
-    working: true
-    file: "/app/frontend/src/App.js"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: true
-        agent: "main"
-        comment: "Comprehensive form validation for both contact form and popup modal. Features: red border highlighting for invalid fields, Czech error messages ('Toto pole je povinné', 'Zadejte platnou e-mailovou adresu'), real-time error clearing on user input, email/phone format validation. Maintains premium dark theme styling."
-
-  - task: "Enhanced modal and scroll animations"
-    implemented: true
-    working: true
-    file: "/app/frontend/src/App.js, /app/frontend/src/App.css"
-    stuck_count: 0
-    priority: "high"
-    needs_retesting: false
-    status_history:
-      - working: true
-        agent: "main"
-        comment: "Added smooth modal closing animation with fade-out effect (300ms duration). Implemented auto-scroll to top after form submission with smooth behavior. Enhanced CSS keyframes for slide-down toast, fade-out modal, and slide-out effects. All animations maintain premium feel with proper timing and easing."
+        comment: "Successfully added discount text rendering after features list. Added conditional rendering for packages with discount field, displaying gold-themed discount box with italic styling."
 
 metadata:
   created_by: "main_agent"
