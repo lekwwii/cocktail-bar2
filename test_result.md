@@ -201,10 +201,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Update 'Naše balíčky' section to 'Hotová řešení'"
-    - "Replace current packages with new Lite, Classic, Premium packages"
-    - "Update contact form dropdown label"
-    - "Add discount text rendering for Classic and Premium packages"
+    - "Update testimonial avatars to consistent user icons"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
