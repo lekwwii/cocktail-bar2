@@ -379,50 +379,61 @@ class BackendTester:
     
     def run_all_tests(self):
         """Run all backend tests"""
-        print("=" * 60)
-        print("BACKEND API TESTING SUITE - THE BAR. LUXURY COCKTAIL CATERING")
-        print("=" * 60)
+        print("=" * 80)
+        print("BACKEND MULTILINGUAL STABILITY TESTING - THE BAR. LUXURY COCKTAIL CATERING")
+        print("=" * 80)
         print(f"Testing backend at: {self.base_url}")
+        print("Focus: Backend stability and functionality during multilingual operations")
         print()
         
         if not self.base_url:
             print("❌ CRITICAL: Could not determine backend URL")
             return False
         
-        # Test sequence
+        # Test sequence - including multilingual specific tests
         tests = [
-            self.test_server_connectivity,
-            self.test_create_status_check,
-            self.test_get_status_checks,
-            self.test_cors_headers,
-            self.test_error_handling
+            ("Basic Connectivity", self.test_server_connectivity),
+            ("Status Creation", self.test_create_status_check),
+            ("Status Retrieval", self.test_get_status_checks),
+            ("CORS Configuration", self.test_cors_headers),
+            ("Error Handling", self.test_error_handling),
+            ("Multilingual Contact Forms", self.test_multilingual_contact_forms),
+            ("Rapid Language Switching Performance", self.test_rapid_language_switching_performance),
+            ("Multilingual CORS Headers", self.test_multilingual_cors_headers),
+            ("Database Operations Multilingual", self.test_database_operations_multilingual)
         ]
         
         passed = 0
         total = len(tests)
         
-        for test in tests:
+        for test_name, test_func in tests:
             try:
-                if test == self.test_create_status_check:
-                    success, _ = test()
+                print(f"Running: {test_name}...")
+                if test_func == self.test_create_status_check:
+                    success, _ = test_func()
                 else:
-                    success = test()
+                    success = test_func()
                 if success:
                     passed += 1
             except Exception as e:
-                print(f"❌ FAIL {test.__name__}: Unexpected error: {str(e)}")
+                print(f"❌ FAIL {test_name}: Unexpected error: {str(e)}")
         
         print()
-        print("=" * 60)
-        print(f"BACKEND TEST RESULTS: {passed}/{total} tests passed")
-        print("=" * 60)
+        print("=" * 80)
+        print(f"MULTILINGUAL BACKEND TEST RESULTS: {passed}/{total} tests passed")
+        print("=" * 80)
         
         # Summary
         if passed == total:
-            print("✅ ALL BACKEND TESTS PASSED - No regressions detected")
+            print("✅ ALL MULTILINGUAL BACKEND TESTS PASSED")
+            print("✅ Backend remains stable during multilingual operations")
+            print("✅ All API endpoints function correctly regardless of frontend language")
+            print("✅ Contact forms process data properly from any language interface")
+            print("✅ No backend errors or performance degradation during language operations")
             return True
         else:
-            print(f"❌ {total - passed} BACKEND TESTS FAILED - Issues detected")
+            print(f"❌ {total - passed} MULTILINGUAL BACKEND TESTS FAILED")
+            print("❌ Backend stability issues detected during multilingual operations")
             return False
 
 def main():
