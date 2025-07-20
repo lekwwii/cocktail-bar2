@@ -755,55 +755,58 @@ const App = () => {
           </div>
         </section>
 
-      {/* Footer */}
-      <footer className="bg-dark-navy border-t border-white/10 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-2xl font-serif font-light text-gold mb-4">THE BAR.</h3>
-              <p className="text-white/75 leading-relaxed font-light">
-                Premium cocktail catering in Prague, creating unforgettable moments through artistry, precision, and uncompromising quality.
+        {/* Footer */}
+        <footer className="bg-dark-navy border-t border-white/10 py-12">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div>
+                <h3 className="text-2xl font-serif font-light text-gold mb-4">THE BAR.</h3>
+                <p className="text-white/75 leading-relaxed font-light">
+                  Prémiový koktejlový catering v Praze, vytváří nezapomenutelné okamžiky prostřednictvím umění, přesnosti a nekompromisní kvality.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-lg font-medium text-white mb-4 font-serif">Rychlé odkazy</h4>
+                <div className="space-y-2">
+                  {['O nás', 'Balíčky', 'Galerie', 'Recenze', 'Kontakt'].map((item, index) => {
+                    const sectionIds = ['about', 'packages', 'gallery', 'reviews', 'contact'];
+                    return (
+                      <button
+                        key={item}
+                        onClick={() => scrollToSection(sectionIds[index])}
+                        className="block text-white/75 hover:text-gold transition-colors duration-300 font-light"
+                      >
+                        {item}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+              <div>
+                <h4 className="text-lg font-medium text-white mb-4 font-serif">Kontakt</h4>
+                <div className="space-y-2 text-white/75 font-light">
+                  <p>Praha, Česká republika</p>
+                  <p>+420 775 505 805</p>
+                  <p>thebar.catering@gmail.com</p>
+                </div>
+              </div>
+              <div>
+                <h4 className="text-lg font-medium text-white mb-4 font-serif">Informace o společnosti</h4>
+                <div className="space-y-2 text-white/75 font-light">
+                  <p>IČO: 23284111</p>
+                  <p>Kaprová 42/12</p>
+                  <p>Praha 1, 110 00</p>
+                  <p>Česká republika</p>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-white/10 mt-8 pt-8 text-center">
+              <p className="text-white/50 font-light">
+                © 2025 THE BAR. Prémiový koktejlový catering. Všechna práva vyhrazena.
               </p>
             </div>
-            <div>
-              <h4 className="text-lg font-medium text-white mb-4 font-serif">Quick Links</h4>
-              <div className="space-y-2">
-                {['About', 'Packages', 'Gallery', 'Reviews', 'Contact'].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item.toLowerCase())}
-                    className="block text-white/75 hover:text-gold transition-colors duration-300 font-light"
-                  >
-                    {item}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h4 className="text-lg font-medium text-white mb-4 font-serif">Contact</h4>
-              <div className="space-y-2 text-white/75 font-light">
-                <p>Prague, Czech Republic</p>
-                <p>+420 775 505 805</p>
-                <p>thebar.catering@gmail.com</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-lg font-medium text-white mb-4 font-serif">Company Info</h4>
-              <div className="space-y-2 text-white/75 font-light">
-                <p>IČO: 23284111</p>
-                <p>Kaprová 42/12</p>
-                <p>Praha 1, 110 00</p>
-                <p>Czech Republic</p>
-              </div>
-            </div>
           </div>
-          <div className="border-t border-white/10 mt-8 pt-8 text-center">
-            <p className="text-white/50 font-light">
-              © 2025 THE BAR. Premium Cocktail Catering. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+        </footer>
       </div>
     </div>
   );
