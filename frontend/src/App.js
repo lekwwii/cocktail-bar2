@@ -405,14 +405,14 @@ const App = () => {
           <div className="max-w-6xl mx-auto px-6">
             <div className={`relative z-20 text-center transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div>
-                <h1 className="text-5xl md:text-7xl font-serif font-light mb-6 text-white tracking-wide leading-tight">
+                <h1 className="text-5xl md:text-7xl font-serif font-medium mb-6 text-white tracking-wide leading-tight">
                   THE BAR<span className="text-gold">.</span>
                 </h1>
                 <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
-                <p className="text-xl md:text-2xl font-serif font-light mb-8 text-white/95 leading-relaxed">
+                <p className="text-xl md:text-2xl font-serif font-medium mb-8 text-white/95 leading-relaxed">
                   Signature koktejly. Mobilní bar. Nezapomenutelné okamžiky.
                 </p>
-                <p className="text-lg text-white/75 mb-12 max-w-2xl mx-auto font-light">
+                <p className="text-lg text-white/75 mb-12 max-w-2xl mx-auto font-sans font-normal">
                   Prémiový koktejlový catering v Praze přináší luxus, umění a nezapomenutelné zážitky na vaše nejdůležitější události.
                 </p>
                 <button
