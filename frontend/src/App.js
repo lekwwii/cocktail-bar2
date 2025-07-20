@@ -889,70 +889,40 @@ const App = () => {
           </div>
         </section>
 
-        {/* About Section - Umění mixologie */}
+        {/* About Section - O nás */}
         <section id="about" className="py-20 bg-gradient-to-b from-primary to-dark-navy">
           <div className="max-w-6xl mx-auto px-6">
             {/* Section Title */}
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6 text-white">
-                Umění mixologie
+                O nás
               </h2>
               <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
               <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
-                Naše vášeň pro dokonalé koktejly
+                Prémiové koktejly. Nezapomenutelný zážitek.
               </p>
             </div>
 
-            {/* Content Layout with Images */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Content Layout */}
+            <div className="max-w-4xl mx-auto text-center space-y-8 mb-16">
               
-              {/* First Text Block */}
-              <div className="lg:col-span-7 space-y-6">
+              {/* New Premium Copy */}
+              <div className="space-y-6">
                 <p className="text-lg text-white/85 leading-relaxed font-sans font-normal">
-                  Sídlící v srdci Prahy, THE BAR. představuje vrchol koktejlového řemesla. Věříme, že každý nápoj vypráví příběh a každá událost si zaslouží dokonalost.
+                  THE BAR. není jen koktejlový bar – je to zážitek na míru.<br/>
+                  Sídlíme v srdci Prahy a specializujeme se na vytváření nezapomenutelných okamžiků prostřednictvím prémiových koktejlů, elegantní prezentace a osobního přístupu.
+                </p>
+                <p className="text-lg text-white/85 leading-relaxed font-sans font-normal">
+                  Ať už plánujete svatbu, firemní večírek nebo soukromou oslavu, přinášíme vám nejen bar, ale celý svět chutí, vůní a estetiky.<br/>
+                  Naši barmani pracují s těmi nejkvalitnějšími surovinami, signature koktejly připravujeme s vášní a každý detail ladíme k dokonalosti.
+                </p>
+                <p className="text-lg text-white/85 leading-relaxed font-sans font-normal font-medium">
+                  Protože na výjimečné chvíle si zasloužíte výjimečný servis.
                 </p>
               </div>
 
-              {/* First Image */}
-              <div className="lg:col-span-5">
-                <div className="relative aspect-square rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxjb2NrdGFpbCUyMGJhcnxlbnwwfHx8fDE3NTIzNTMwMDV8MA&ixlib=rb-4.1.0&q=85"
-                    alt="Signature koktejl s květinovou dekorací"
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
-                  <div className="absolute -bottom-3 -right-3 w-16 h-16 border border-gold/30 rounded-lg"></div>
-                </div>
-              </div>
-
-              {/* Second Image */}
-              <div className="lg:col-span-5 lg:order-first">
-                <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1546171753-97d7676e4602?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxjb2NrdGFpbCUyMGdhcm5pc2h8ZW58MHx8fHwxNzUyMzUzMDA1fDA&ixlib=rb-4.1.0&q=85"
-                    alt="Elegantní koktejly s květinami"
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/30"></div>
-                  <div className="absolute -top-3 -left-3 w-12 h-12 border border-gold/40 rounded-lg"></div>
-                </div>
-              </div>
-
-              {/* Second Text Block */}
-              <div className="lg:col-span-7 space-y-6">
-                <p className="text-lg text-white/85 leading-relaxed font-sans font-normal">
-                  Naše vášeň pro mixologii jde nad rámec jednoduchých koktejlů. Vytváříme pohlcující zážitky se signature ledovými bloky s květinami, prémiovými destiláty, pyramidou ze sklenic se šumivým vínem a divadelní prezentací, která promění jakékoli setkání na nezapomenutelnou oslavu.
-                </p>
-                <p className="text-lg text-white/85 leading-relaxed font-sans font-normal">
-                  Od soukromých večírků po velkolepé firemní eventy přinášíme luxusní barový zážitek přímo k vám – kompletní s profesionálními barmany, špičkovým vybavením a nekompromisní pozorností k detailům.
-                </p>
-              </div>
-
-              {/* Third Image */}
-              <div className="lg:col-span-12 mt-8">
+              {/* Statistics Image */}
+              <div className="mt-16">
                 <div className="relative aspect-[21/9] rounded-lg overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxjb2NrdGFpbCUyMGJhciUyMHNldHVwfGVufDB8fHx8MTc1MjM1MzAwNXww&ixlib=rb-4.1.0&q=85"
