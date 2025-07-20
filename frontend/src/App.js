@@ -361,47 +361,48 @@ const App = () => {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/80 z-10"></div>
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: `url('https://images.unsplash.com/photo-1526894198609-10b3cdf45c52?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85')`,
-            transform: `translateY(${scrollY * 0.3}px)`
-          }}
-        ></div>
-        
-        <div className={`relative z-20 text-center max-w-4xl mx-auto px-4 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div>
-            <h1 className="text-5xl md:text-7xl font-serif font-light mb-6 text-white tracking-wide leading-tight">
-              THE BAR<span className="text-gold">.</span>
-            </h1>
-            <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
-            <p className="text-xl md:text-2xl font-serif font-light mb-8 text-white/95 leading-relaxed">
-              Signature Cocktails. Mobile Bar. Unforgettable Moments.
-            </p>
-            <p className="text-lg text-white/75 mb-12 max-w-2xl mx-auto font-light">
-              Premium cocktail catering in Prague bringing luxury, artistry, and unforgettable experiences to your most important events.
-            </p>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="bg-gold hover:bg-gold/90 text-primary px-8 py-4 text-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-gold/20"
-            >
-              Book Your Event
-            </button>
+        {/* Hero Section */}
+        <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/80 z-10"></div>
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            style={{ 
+              backgroundImage: `url('https://images.unsplash.com/photo-1526894198609-10b3cdf45c52?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85')`
+            }}
+          ></div>
+          
+          <div className="max-w-6xl mx-auto px-6">
+            <div className={`relative z-20 text-center transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div>
+                <h1 className="text-5xl md:text-7xl font-serif font-light mb-6 text-white tracking-wide leading-tight">
+                  THE BAR<span className="text-gold">.</span>
+                </h1>
+                <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
+                <p className="text-xl md:text-2xl font-serif font-light mb-8 text-white/95 leading-relaxed">
+                  Signature koktejly. Mobilní bar. Nezapomenutelné okamžiky.
+                </p>
+                <p className="text-lg text-white/75 mb-12 max-w-2xl mx-auto font-light">
+                  Prémiový koktejlový catering v Praze přináší luxus, umění a nezapomenutelné zážitky na vaše nejdůležitější události.
+                </p>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="bg-gold hover:bg-gold/90 text-primary px-8 py-4 text-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-gold/20"
+                >
+                  Rezervovat akci
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="animate-bounce">
-            <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+            <div className="animate-bounce">
+              <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* About Section */}
       <section id="about" className="py-20 bg-gradient-to-b from-primary to-dark-navy">
