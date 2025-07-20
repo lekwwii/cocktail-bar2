@@ -19,6 +19,7 @@ const App = () => {
   // Toast notification state
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
+  const [showGdprPage, setShowGdprPage] = useState(false);
 
   // Form validation states
   const [popupErrors, setPopupErrors] = useState({});
