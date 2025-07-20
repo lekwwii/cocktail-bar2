@@ -17,11 +17,15 @@
   "about": {
     "title": "The Art of Mixology",
     "subtitle": "Our passion for cocktail perfection",
-    "description": "THE BAR. represents the pinnacle of cocktail craftsmanship in the Czech Republic. Our team of master mixologists blends time-honored techniques with contemporary innovation, creating extraordinary taste journeys for every occasion.",
+    "description": "Located in the heart of Prague, THE BAR. represents the pinnacle of cocktail craftsmanship. We believe that every drink tells a story, and every event deserves perfection.",
+    "description2": "Our passion for mixology goes beyond simple cocktails. We create immersive experiences with signature ice blocks filled with flowers, premium spirits, champagne glass pyramids, and theatrical presentations that turn any gathering into an unforgettable celebration. From private parties to grand corporate events, we deliver a luxury bar experience right to you – complete with professional bartenders, top-tier equipment, and uncompromising attention to detail.",
     "stats": {
-      "experience": "5+ YEARS OF EXCELLENCE",
-      "events": "500+ SUCCESSFUL EVENTS", 
-      "clients": "DELIGHTED CLIENTS"
+      "events": "Premium Events",
+      "eventsValue": "25+",
+      "cocktails": "Signature Cocktails", 
+      "cocktailsValue": "15+",
+      "satisfaction": "Client Satisfaction",
+      "satisfactionValue": "100%"
     }
   },
   "packages": {
@@ -179,17 +183,24 @@
     }
   },
   "popup": {
-    "title": "YOUR BESPOKE COCKTAIL EXPERIENCE",
-    "subtitle": "Receive a complimentary custom proposal tailored to your vision.",
-    "description": "Get an exclusive cocktail experience proposal crafted specifically for your event.",
-    "specialOffer": "Book now and receive up to 10 signature cocktails absolutely complimentary.",
+    "title": "Your Tailored Cocktail Experience",
+    "subtitle": "Let us prepare a non-binding personalized offer – free of charge.",
+    "description": "Get an exclusive cocktail concept tailored for your event.",
+    "specialOffer": "Book now and receive up to 10 signature drinks completely free.",
     "form": {
       "name": "Name",
       "phone": "Phone", 
       "email": "Email",
       "date": "Event date",
-      "service": "Select your service",
-      "submit": "GET MY PROPOSAL"
+      "service": "Select a service",
+      "serviceOptions": [
+        "Cocktail Bar",
+        "Elegant Champagne Pyramid",
+        "Welcome Zone with Ice Block and Flower Inside",
+        "Cocktail Bar + Welcome Zone",
+        "MasterClass"
+      ],
+      "submit": "SUBMIT"
     }
   },
   "footer": {

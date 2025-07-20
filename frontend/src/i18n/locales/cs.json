@@ -15,13 +15,17 @@
     "cta": "Rezervovat konzultaci"
   },
   "about": {
-    "title": "Umění mixologie",
-    "subtitle": "Naše vášeň pro dokonalé koktejly",
-    "description": "THE BAR. reprezentuje vrchol koktejlového umění v České republice. Náš tým zkušených barmanů kombinuje tradiční techniky s moderními trendy, aby vytvořil nezapomenutelné chuťové zážitky pro každou příležitost.",
+    "title": "The Art of Mixology",
+    "subtitle": "Our passion for cocktail perfection",
+    "description": "Sídlící v srdci Prahy, THE BAR. představuje vrchol koktejlového řemesla. Věříme, že každý nápoj vypráví příběh a každá událost si zaslouží dokonalost.",
+    "description2": "Naše vášeň pro mixologii jde nad rámec jednoduchých koktejlů. Vytváříme pohlcující zážitky se signature ledovými bloky s květinami, prémiovými destiláty, pyramidou ze sklenic se šumivým vínem a divadelní prezentací, která promění jakékoli setkání na nezapomenutelnou oslavu. Od soukromých večírků po velkolepé firemní eventy přinášíme luxusní barový zážitek přímo k vám – kompletní s profesionálními barmany, špičkovým vybavením a nekompromisní pozorností k detailům.",
     "stats": {
-      "experience": "5+ LET ZKUŠENOSTÍ",
-      "events": "500+ ÚSPĚŠNÝCH AKCÍ", 
-      "clients": "SPOKOJENÍ KLIENTI"
+      "events": "Prémiových akcí",
+      "eventsValue": "25+",
+      "cocktails": "Signature koktejlů", 
+      "cocktailsValue": "15+",
+      "satisfaction": "Spokojenost klientů",
+      "satisfactionValue": "100%"
     }
   },
   "packages": {
@@ -189,6 +193,13 @@
       "email": "Email",
       "date": "Datum akce",
       "service": "Vyberte si službu",
+      "serviceOptions": [
+        "Koktejlový bar",
+        "Elegantní pyramida šampaňského",
+        "Welcome zóna s ledovým blokem a květinou uvnitř",
+        "Koktejlový bar + Welcome zóna",
+        "MasterClass"
+      ],
       "submit": "ODESLAT"
     }
   },
