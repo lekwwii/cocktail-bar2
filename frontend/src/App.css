@@ -1,7 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Inter:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* Custom CSS for THE BAR. website */
 
@@ -10,6 +10,33 @@
   --gold: #CBA85F;
   --dark-navy: #0C0C1C;
   --primary: #0d1117;
+}
+
+/* Fix text cursor appearing everywhere */
+* {
+  cursor: default;
+  user-select: none;
+}
+
+/* Allow text selection and proper cursors for appropriate elements */
+input, textarea, select {
+  cursor: text;
+  user-select: auto;
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+}
+
+a {
+  cursor: pointer;
+  user-select: none;
+}
+
+p, span, div, h1, h2, h3, h4, h5, h6 {
+  user-select: text;
+  cursor: default;
 }
 
 /* Custom animations */
@@ -56,14 +83,32 @@
   animation: slide-up 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Date input styling */
+/* Premium Typography */
+.font-serif {
+  font-family: 'Playfair Display', serif;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+}
+
+.font-sans {
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: "kern", "liga", "tnum", "zero", "ss01", "locl";
+}
+
+/* Date input styling with improved behavior */
+.date-input {
+  position: relative;
+  color-scheme: dark;
+  cursor: pointer;
+}
+
 .date-input::-webkit-calendar-picker-indicator {
   opacity: 0;
   position: absolute;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  right: 12px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+  z-index: 10;
 }
 
 .date-input::-webkit-inner-spin-button,
@@ -72,17 +117,13 @@
   margin: 0;
 }
 
-/* Dark theme date picker */
-.date-input {
-  color-scheme: dark;
-}
-
 .date-input:focus::-webkit-datetime-edit {
   color: white;
 }
 
 .date-input::-webkit-datetime-edit-fields-wrapper {
   color: white;
+  padding: 0;
 }
 
 .date-input::-webkit-datetime-edit-text {
@@ -93,6 +134,22 @@
 .date-input::-webkit-datetime-edit-day-field,
 .date-input::-webkit-datetime-edit-year-field {
   color: white;
+  background: transparent;
+}
+
+/* Custom date picker container */
+.date-picker-container {
+  position: relative;
+}
+
+.date-picker-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 5;
 }
 
 /* Smooth scrolling */
@@ -167,15 +224,6 @@ html {
   background: #d4af37;
 }
 
-/* Typography improvements */
-.font-serif {
-  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
-}
-
-.font-sans {
-  font-family: 'Inter', sans-serif;
-}
-
 /* Performance optimizations */
 img {
   content-visibility: auto;
@@ -208,7 +256,8 @@ img[loading="lazy"].loaded {
 /* Focus states for accessibility */
 button:focus,
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   outline: 2px solid var(--gold);
   outline-offset: 2px;
 }
@@ -333,17 +382,19 @@ textarea::placeholder {
 @font-face {
   font-family: 'Playfair Display';
   font-style: normal;
-  font-weight: 300 700;
+  font-weight: 300 900;
   font-display: swap;
-  src: url('https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtM.woff2') format('woff2');
+  src: url('https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtXK-F2qC0s.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F;
 }
 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 200 700;
+  font-weight: 100 900;
   font-display: swap;
-  src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZ8.woff2') format('woff2');
+  src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZs.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F;
 }
 
 /* Image optimization */
@@ -363,7 +414,7 @@ textarea::placeholder {
 }
 
 /* Smooth transitions for all interactive elements */
-* {
+button, input, textarea, select, a {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
