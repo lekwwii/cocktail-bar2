@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "1. Replace content in the 'Naše balíčky' section with updated packages: Change title to 'Hotová řešení', replace current three blocks with Lite (18,000 Kč), Classic (24,000 Kč), Premium (30,000 Kč) packages. 2. Update contact form dropdown label from 'Vyberte typ akce' to 'Vyberte službu'."
+user_problem_statement: "Test the newly implemented multilingual functionality on THE BAR luxury cocktail catering website. This is a major new feature that provides full internationalization support for 4 languages: Czech (default), English, Russian, and Ukrainian. Focus on language switcher functionality, content translation, responsive design, and user experience across all supported languages."
 
 backend:
   - task: "Backend API endpoints and server functionality"
