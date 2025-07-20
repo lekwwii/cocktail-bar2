@@ -322,46 +322,41 @@ const App = () => {
 
   const packages = [
     {
-      name: "Signature Experience",
-      price: "Od 7.500 Kč",
-      description: "Perfektní pro intimní setkání",
+      name: "Lite",
+      price: "18 000 Kč",
+      description: "Perfektní pro menší akce",
       features: [
-        "3 klasické koktejly",
-        "Stylový přenosný bar",
-        "1 profesionální barman",
-        "Základní sklenice a nástroje",
-        "2-3 hodiny obsluhy"
+        "100 signature koktejlů",
+        "1 barman po celou dobu akce",
+        "Exkluzivní menu pro vaši akci"
       ],
       image: "https://images.unsplash.com/photo-1597075687490-8f673c6c17f6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBjb2NrdGFpbHxlbnwwfHx8YmxhY2t8MTc1MjM1MzAwNXww&ixlib=rb-4.1.0&q=85"
     },
     {
-      name: "Premium Flair",
-      price: "Od 15.000 Kč",
-      description: "Vyšší úroveň pro speciální příležitosti",
+      name: "Classic",
+      price: "24 000 Kč",
+      description: "Nejoblíbenější volba pro střední akce",
       features: [
-        "5 signature koktejlů",
-        "Prémiové ledové sochy",
-        "2 profesionální barmani", 
-        "Luxusní výzdoba baru",
-        "Prémiové sklenice",
-        "4-5 hodin obsluhy"
+        "150 signature koktejlů",
+        "2 barmani po celou dobu akce",
+        "Flavour Blaster zážitek v ceně",
+        "Exkluzivní menu pro vaši akci"
       ],
+      discount: "Při objednání tohoto balíčku získáte 20 % slevu na Welcome zónu s ledovým blokem a proseccem",
       image: "https://images.unsplash.com/photo-1705944601084-3d8119490b26?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85",
       featured: true
     },
     {
-      name: "Ultra Premium Showcase",
-      price: "Od 35.000 Kč",
-      description: "Vrcholný luxusní koktejlový zážitek",
+      name: "Premium",
+      price: "30 000 Kč",
+      description: "Luxusní zážitek pro velké akce",
       features: [
-        "Plně personalizované koktejlové menu",
-        "LED osvícený prémiový bar",
-        "Šampaňská věž",
-        "Jedlé květiny a ozdoby",
-        "Barmanská show a flair",
-        "Personalizované detaily obsluhy",
-        "Kompletní event servis"
+        "200 signature koktejlů",
+        "2 barmani po celou dobu akce",
+        "Flavour Blaster zážitek v ceně",
+        "Exkluzivní menu pro vaši akci"
       ],
+      discount: "Při objednání tohoto balíčku získáte 20 % slevu na Welcome zónu s ledovým blokem a proseccem",
       image: "https://images.unsplash.com/flagged/photo-1571046423953-30c053888852?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBiYXJ8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTB8MA&ixlib=rb-4.1.0&q=85"
     }
   ];
