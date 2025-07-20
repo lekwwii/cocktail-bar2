@@ -455,16 +455,16 @@ const App = () => {
                 </p>
                 <div className="flex space-x-8">
                   <div className="text-center">
-                    <div className="text-3xl font-light text-gold mb-2">25+</div>
-                    <div className="text-sm text-white/60 uppercase tracking-wide font-light">Prémiových akcí</div>
+                    <div className="text-3xl font-serif font-semibold text-gold mb-2">25+</div>
+                    <div className="text-sm text-white/60 uppercase tracking-wide font-sans font-medium">Prémiových akcí</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-light text-gold mb-2">15+</div>
-                    <div className="text-sm text-white/60 uppercase tracking-wide font-light">Signature koktejlů</div>
+                    <div className="text-3xl font-serif font-semibold text-gold mb-2">15+</div>
+                    <div className="text-sm text-white/60 uppercase tracking-wide font-sans font-medium">Signature koktejlů</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-light text-gold mb-2">100%</div>
-                    <div className="text-sm text-white/60 uppercase tracking-wide font-light">Spokojenost klientů</div>
+                    <div className="text-3xl font-serif font-semibold text-gold mb-2">100%</div>
+                    <div className="text-sm text-white/60 uppercase tracking-wide font-sans font-medium">Spokojenost klientů</div>
                   </div>
                 </div>
               </div>
