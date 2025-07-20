@@ -299,20 +299,6 @@ p, h1, h2, h3, h4, h5, h6, li, blockquote {
   textarea {
     min-height: 120px;
   }
-
-  /* Floating action buttons positioning */
-  .floating-actions {
-    bottom: 1.5rem;
-    right: 1.5rem;
-  }
-}
-
-/* Desktop floating actions positioning */
-@media (min-width: 769px) {
-  .floating-actions {
-    bottom: 2rem;
-    right: 2rem;
-  }
 }
 
 /* Smooth scrolling */
