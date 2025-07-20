@@ -331,8 +331,10 @@ test_plan:
       - working: "NA"
         agent: "main"
         comment: "Significantly improved translation quality for all non-Czech languages. Enhanced English translations with premium terminology, sophisticated language, and luxury service industry vocabulary. Refined Russian translations with cultural appropriateness, natural flow, and proper luxury terminology. Improved Ukrainian translations with cultural nuances, premium language, and professional service descriptions. All translations now sound more natural, premium, and appropriate for luxury cocktail catering service. Requires comprehensive testing to verify improved translation quality and cultural appropriateness."
+  current_focus:
+    - "Enhanced translation quality for English, Russian, Ukrainian content"
   stuck_tasks: []
-  test_all: false
+  test_all: true
   test_priority: "high_first"
 
 agent_communication:
