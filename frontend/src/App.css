@@ -505,14 +505,21 @@ img {
   will-change: transform;
 }
 
-/* Image lazy loading optimization */
+/* FIXED: Ensure all images are visible */
+img {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Image lazy loading optimization - FIXED */
 img[loading="lazy"] {
-  opacity: 0;
+  opacity: 1 !important;
   transition: opacity 0.3s;
 }
 
 img[loading="lazy"].loaded {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 /* Focus states only for form inputs */
