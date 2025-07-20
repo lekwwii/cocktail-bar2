@@ -1445,7 +1445,7 @@ const App = () => {
               <div>
                 <h4 className="text-lg font-medium text-white mb-4 font-serif">Rychlé odkazy</h4>
                 <div className="space-y-2">
-                  {['O nás', 'Balíčky', 'Galerie', 'Recenze', 'Kontakt'].map((item, index) => {
+                  {['O nás', 'Balíčky', 'Svatební Balíčky', 'Galerie', 'Recenze', 'Kontakt'].map((item, index) => {
                     const sectionIds = ['about', 'packages', 'gallery', 'reviews', 'contact'];
                     return (
                       <button
