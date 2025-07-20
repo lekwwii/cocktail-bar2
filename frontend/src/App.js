@@ -1059,6 +1059,87 @@ const App = () => {
           </div>
         </section>
 
+        {/* Wedding Packages Section */}
+        <section id="svatebni-balicky" className="py-20 bg-gradient-to-br from-amber-50 to-orange-100">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6 text-amber-900">
+                Svatební <span className="text-amber-700">Balíček</span>
+              </h2>
+              <div className="h-px w-24 bg-amber-600 mx-auto mb-8"></div>
+              <p className="text-xl text-amber-800/80 max-w-3xl mx-auto font-light">
+                Speciální svatební nabídky navržené pro váš nejdůležitější den. Každý balíček zahrnuje vše potřebné pro nezapomenutelnou svatební oslavu.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {weddingPackages.map((pkg, index) => (
+                <div key={index} className={`relative group ${pkg.featured ? 'lg:scale-105 lg:-mt-4' : ''}`}>
+                  <div className={`bg-gradient-to-b from-white/90 to-amber-50/80 border ${pkg.featured ? 'border-amber-400/60' : 'border-amber-300/40'} rounded-xl shadow-lg overflow-hidden hover:border-amber-500/50 transition-all duration-500 hover:scale-105 hover:shadow-xl`}>
+                    {pkg.featured && (
+                      <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white text-center py-2 text-sm font-semibold tracking-wide">
+                        NEJOBLÍBENĚJŠÍ
+                      </div>
+                    )}
+                    
+                    <div className="aspect-video relative overflow-hidden">
+                      <img 
+                        src={pkg.image}
+                        alt={pkg.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-amber-900/60 to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="text-2xl font-serif font-semibold text-white mb-1">{pkg.name}</h3>
+                        <p className="text-amber-100 text-sm font-light italic">{pkg.guestCapacity}</p>
+                      </div>
+                    </div>
+
+                    <div className="p-8">
+                      <p className="text-3xl font-bold text-amber-900 mb-6 text-center">{pkg.price}</p>
+                      
+                      <ul className="space-y-3 mb-8">
+                        {pkg.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start text-amber-800 font-medium">
+                            <svg className="w-5 h-5 text-amber-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            <span className="text-sm leading-relaxed">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <button
+                        onClick={() => scrollToSection('contact')}
+                        className={`w-full py-3 rounded-lg text-center font-semibold tracking-wide transition-all duration-300 ${pkg.featured 
+                          ? 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white shadow-md hover:shadow-lg' 
+                          : 'border-2 border-amber-500 text-amber-700 hover:bg-amber-500 hover:text-white'
+                        } transform hover:scale-105`}
+                      >
+                        Požádat o nabídku
+                      </button>
+                    </div>
+                  </div>
+
+                  {pkg.bonus && (
+                    <div className="mt-6 p-4 bg-gradient-to-r from-amber-200/80 to-orange-200/80 border border-amber-300/60 rounded-xl shadow-md">
+                      <div className="flex items-start">
+                        <svg className="w-6 h-6 text-amber-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 0v1.5m0 0L16 9.5m-4-1.5L10 9.5m4 4.5l2 2m-2-2l-2 2" />
+                        </svg>
+                        <p className="text-amber-800 text-sm font-medium leading-relaxed italic">
+                          <span className="font-semibold text-amber-900">Bonus:</span> {pkg.bonus}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Gallery Section */}
         <section id="gallery" className="py-20 bg-primary">
           <div className="max-w-6xl mx-auto px-6">
