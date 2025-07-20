@@ -454,74 +454,74 @@ const App = () => {
           </div>
         </section>
 
-      {/* Packages Section */}
-      <section id="packages" className="py-20 bg-dark-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-white">
-              Our <span className="text-gold">Packages</span>
-            </h2>
-            <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
-            <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
-              Choose from our carefully crafted service packages, each designed to deliver an exceptional cocktail experience tailored to your event's needs.
-            </p>
-          </div>
+        {/* Packages Section */}
+        <section id="packages" className="py-20 bg-dark-navy">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-white">
+                Naše <span className="text-gold">balíčky</span>
+              </h2>
+              <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
+              <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
+                Vyberte si z našich pečlivě sestavených balíčků služeb, z nichž každý je navržen tak, aby poskytl výjimečný koktejlový zážitek přizpůsobený potřebám vaší akce.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <div 
-                key={index}
-                className={`relative group ${pkg.featured ? 'lg:scale-105 lg:-mt-4' : ''}`}
-              >
-                <div className={`bg-gradient-to-b from-primary/80 to-dark-navy border ${pkg.featured ? 'border-gold/50' : 'border-white/10'} rounded-lg overflow-hidden hover:border-gold/30 transition-all duration-500 hover:scale-105`}>
-                  {pkg.featured && (
-                    <div className="bg-gold text-primary text-center py-2 text-sm font-medium tracking-wide">
-                      MOST POPULAR
-                    </div>
-                  )}
-                  
-                  <div className="aspect-video relative overflow-hidden">
-                    <img 
-                      src={pkg.image}
-                      alt={pkg.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
-                  </div>
-
-                  <div className="p-8">
-                    <h3 className="text-2xl font-serif font-light mb-2 text-white">{pkg.name}</h3>
-                    <p className="text-3xl font-light text-gold mb-4">{pkg.price}</p>
-                    <p className="text-white/75 mb-6 font-light">{pkg.description}</p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {packages.map((pkg, index) => (
+                <div 
+                  key={index}
+                  className={`relative group ${pkg.featured ? 'lg:scale-105 lg:-mt-4' : ''}`}
+                >
+                  <div className={`bg-gradient-to-b from-primary/80 to-dark-navy border ${pkg.featured ? 'border-gold/50' : 'border-white/10'} rounded-lg overflow-hidden hover:border-gold/30 transition-all duration-500 hover:scale-105`}>
+                    {pkg.featured && (
+                      <div className="bg-gold text-primary text-center py-2 text-sm font-medium tracking-wide">
+                        NEJOBLÍBENĚJŠÍ
+                      </div>
+                    )}
                     
-                    <ul className="space-y-3 mb-8">
-                      {pkg.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-white/85 font-light">
-                          <svg className="w-4 h-4 text-gold mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="aspect-video relative overflow-hidden">
+                      <img 
+                        src={pkg.image}
+                        alt={pkg.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                    </div>
 
-                    <button
-                      onClick={() => scrollToSection('contact')}
-                      className={`w-full py-3 text-center font-medium tracking-wide transition-all duration-300 ${pkg.featured 
-                        ? 'bg-gold hover:bg-gold/90 text-primary' 
-                        : 'border border-gold text-gold hover:bg-gold hover:text-primary'
-                      }`}
-                    >
-                      Request Offer
-                    </button>
+                    <div className="p-8">
+                      <h3 className="text-2xl font-serif font-light mb-2 text-white">{pkg.name}</h3>
+                      <p className="text-3xl font-light text-gold mb-4">{pkg.price}</p>
+                      <p className="text-white/75 mb-6 font-light">{pkg.description}</p>
+                      
+                      <ul className="space-y-3 mb-8">
+                        {pkg.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center text-white/85 font-light">
+                            <svg className="w-4 h-4 text-gold mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <button
+                        onClick={() => scrollToSection('contact')}
+                        className={`w-full py-3 text-center font-medium tracking-wide transition-all duration-300 ${pkg.featured 
+                          ? 'bg-gold hover:bg-gold/90 text-primary' 
+                          : 'border border-gold text-gold hover:bg-gold hover:text-primary'
+                        }`}
+                      >
+                        Požádat o nabídku
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* Gallery Section */}
       <section id="gallery" className="py-20 bg-primary">
