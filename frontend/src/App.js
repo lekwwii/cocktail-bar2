@@ -404,55 +404,55 @@ const App = () => {
           </div>
         </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-b from-primary to-dark-navy">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-serif font-light mb-8 text-white">
-                The Art of <span className="text-gold">Mixology</span>
-              </h2>
-              <div className="h-px w-16 bg-gold mb-8"></div>
-              <p className="text-lg text-white/85 mb-6 leading-relaxed font-light">
-                Based in the heart of Prague, THE BAR. represents the pinnacle of cocktail craftsmanship. We believe that every drink tells a story, and every event deserves perfection.
-              </p>
-              <p className="text-lg text-white/85 mb-6 leading-relaxed font-light">
-                Our passion for mixology goes beyond simple cocktails. We create immersive experiences with signature ice sculptures, premium spirits, and theatrical presentation that transforms any gathering into an unforgettable celebration.
-              </p>
-              <p className="text-lg text-white/85 mb-8 leading-relaxed font-light">
-                From intimate private parties to grand corporate events, we bring the luxury bar experience directly to you, complete with professional bartenders, premium equipment, and uncompromising attention to detail.
-              </p>
-              <div className="flex space-x-8">
-                <div className="text-center">
-                  <div className="text-3xl font-light text-gold mb-2">25+</div>
-                  <div className="text-sm text-white/60 uppercase tracking-wide font-light">Premium Events</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-light text-gold mb-2">15+</div>
-                  <div className="text-sm text-white/60 uppercase tracking-wide font-light">Signature Cocktails</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-light text-gold mb-2">100%</div>
-                  <div className="text-sm text-white/60 uppercase tracking-wide font-light">Client Satisfaction</div>
+        {/* About Section */}
+        <section id="about" className="py-20 bg-gradient-to-b from-primary to-dark-navy">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-serif font-light mb-8 text-white">
+                  Umění <span className="text-gold">mixologie</span>
+                </h2>
+                <div className="h-px w-16 bg-gold mb-8"></div>
+                <p className="text-lg text-white/85 mb-6 leading-relaxed font-light">
+                  Sídlící v srdci Prahy, THE BAR. představuje vrchol koktejlového řemesla. Věříme, že každý nápoj vypráví příběh a každá událost si zaslouží dokonalost.
+                </p>
+                <p className="text-lg text-white/85 mb-6 leading-relaxed font-light">
+                  Naše vášeň pro mixologii jde nad rámec jednoduchých koktejlů. Vytváříme pohlcující zážitky se signature ledovými sochami, prémiovými destiláty a divadelní prezentací, která přemění jakékoli setkání na nezapomenutelnou oslavu.
+                </p>
+                <p className="text-lg text-white/85 mb-8 leading-relaxed font-light">
+                  Od intimních soukromých večírků po velkolepé firemní akce přinášíme luxusní barový zážitek přímo k vám, kompletní s profesionálními barmany, prémiovým vybavením a nekompromisní pozorností k detailům.
+                </p>
+                <div className="flex space-x-8">
+                  <div className="text-center">
+                    <div className="text-3xl font-light text-gold mb-2">25+</div>
+                    <div className="text-sm text-white/60 uppercase tracking-wide font-light">Prémiových akcí</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-light text-gold mb-2">15+</div>
+                    <div className="text-sm text-white/60 uppercase tracking-wide font-light">Signature koktejlů</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-light text-gold mb-2">100%</div>
+                    <div className="text-sm text-white/60 uppercase tracking-wide font-light">Spokojenost klientů</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-square rounded-lg overflow-hidden relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1619296730225-3963e70354ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBjb2NrdGFpbHxlbnwwfHx8YmxhY2t8MTc1MjM1MzAwNXww&ixlib=rb-4.1.0&q=85"
-                  alt="Professional bartender crafting cocktails"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+              <div className="relative">
+                <div className="aspect-square rounded-lg overflow-hidden relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1619296730225-3963e70354ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBjb2NrdGFpbHxlbnwwfHx8YmxhY2t8MTc1MjM1MzAwNXww&ixlib=rb-4.1.0&q=85"
+                    alt="Profesionální barman připravující koktejly"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+                </div>
+                <div className="absolute -bottom-6 -left-6 w-24 h-24 border border-gold/30 rounded-lg"></div>
+                <div className="absolute -top-6 -right-6 w-16 h-16 border border-gold/20 rounded-lg"></div>
               </div>
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 border border-gold/30 rounded-lg"></div>
-              <div className="absolute -top-6 -right-6 w-16 h-16 border border-gold/20 rounded-lg"></div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* Packages Section */}
       <section id="packages" className="py-20 bg-dark-navy">
