@@ -946,7 +946,7 @@ const App = () => {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif font-light mb-6 text-white">
-                Naše <span className="text-gold">balíčky</span>
+                Hotová <span className="text-gold">řešení</span>
               </h2>
               <div className="h-px w-24 bg-gold mx-auto mb-8"></div>
               <p className="text-xl text-white/75 max-w-3xl mx-auto font-light">
