@@ -799,9 +799,8 @@ const App = () => {
                 </div>
               </div>
 
-            {/* Mobile menu button and language switcher */}
+            {/* Mobile menu button */}
             <div className="md:hidden flex items-center space-x-3">
-              <LanguageSwitcher />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white/80 hover:text-gold transition-colors duration-300"
