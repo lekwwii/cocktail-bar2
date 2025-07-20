@@ -181,13 +181,120 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-primary text-white overflow-x-hidden relative">
-      {/* Vignette Frame Effect */}
+      {/* Premium Frame Effects */}
       <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Vignette Effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-transparent to-primary/60"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-primary/30"></div>
+        {/* Elegant Side Lines */}
         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold/20 via-gold/10 to-gold/20"></div>
         <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-gold/20 via-gold/10 to-gold/20"></div>
       </div>
+
+      {/* Popup Modal */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+          <div className="bg-gradient-to-b from-primary to-dark-navy border border-gold/20 rounded-xl max-w-md w-full mx-4 relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-4 right-4 text-white/70 hover:text-gold transition-colors duration-300 z-10"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Header Image */}
+            <div className="h-32 bg-cover bg-center rounded-t-xl relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1619296730225-3963e70354ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBjb2NrdGFpbHxlbnwwfHx8YmxhY2t8MTc1MjM1MzAwNXww&ixlib=rb-4.1.0&q=85"
+                alt="Bartender"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6">
+              <h3 className="text-2xl font-serif font-light mb-4 text-gold text-center">
+                DÁRKOVÉ KOKTEJLY
+              </h3>
+              <p className="text-white/85 text-center mb-6 font-light leading-relaxed">
+                Nejste si jistí, co si vybrat? Vyplňte krátký formulář a pomohu vám s výběrem. 
+                Navíc můžete získat až 10 signature drinků zcela zdarma!
+              </p>
+
+              <form onSubmit={handleFormSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Jméno"
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full bg-primary/50 border border-white/20 rounded px-3 py-2 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Telefon"
+                    value={formData.phone}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full bg-primary/50 border border-white/20 rounded px-3 py-2 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                  />
+                </div>
+                
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full bg-primary/50 border border-white/20 rounded px-3 py-2 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                />
+                
+                <div className="relative">
+                  <input
+                    type="date"
+                    name="date"
+                    placeholder="Datum akce"
+                    value={formData.date}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full bg-primary/50 border border-white/20 rounded px-3 py-2 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                  />
+                </div>
+
+                <select
+                  name="service"
+                  value={formData.service}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full bg-primary/50 border border-white/20 rounded px-3 py-2 text-white focus:border-gold focus:outline-none transition-colors duration-300 font-light text-sm"
+                >
+                  <option value="">Vyberte si službu</option>
+                  <option value="koktejlovy-bar">Koktejlový bar</option>
+                  <option value="pyramida">Elegantní pyramida šampaňského</option>
+                  <option value="welcome-zona">Welcome zóna s ledovým blokem a květinou uvnitř</option>
+                  <option value="bar-welcome">Koktejlový bar + Welcome zóna</option>
+                  <option value="masterclass">MasterClass</option>
+                </select>
+
+                <button
+                  type="submit"
+                  className="w-full bg-gold hover:bg-gold/90 text-primary py-3 font-medium tracking-wide transition-all duration-300 hover:scale-105 rounded"
+                >
+                  ODESLAT
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main Content Container */}
       <div className="relative z-10">
