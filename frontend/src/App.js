@@ -4,6 +4,7 @@ import LanguageSwitcher from './components/LanguageSwitcher';
 import './App.css';
 
 const App = () => {
+  const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState('hero');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
