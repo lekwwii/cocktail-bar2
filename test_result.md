@@ -213,7 +213,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Update testimonial avatars to consistent user icons"
+    - "Implement Wedding Packages (Svatební Balíček) section"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
