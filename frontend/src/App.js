@@ -541,7 +541,6 @@ const App = () => {
       {showPopup && (
         <div 
           className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4 animate-fade-in"
-          onClick={() => setShowPopup(false)}
         >
           <div 
             className="bg-gradient-to-b from-primary to-dark-navy border border-gold/20 rounded-xl max-w-lg w-full mx-4 relative animate-slide-up shadow-2xl"
