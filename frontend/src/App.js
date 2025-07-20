@@ -538,7 +538,7 @@ const App = () => {
                     required
                     className={`w-full bg-primary/50 border ${
                       popupErrors.date ? 'border-red-500' : 'border-white/20'
-                    } rounded-lg px-4 py-3 pr-12 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm date-input`}
+                    } rounded-lg px-4 py-3 pr-12 text-white placeholder-white/50 focus:border-gold focus:outline-none transition-colors duration-300 font-sans font-normal text-sm md:text-sm text-base min-h-12 md:min-h-auto date-input`}
                     style={{
                       colorScheme: 'dark'
                     }}
