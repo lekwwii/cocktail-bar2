@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the newly implemented multilingual functionality on THE BAR luxury cocktail catering website. This is a major new feature that provides full internationalization support for 4 languages: Czech (default), English, Russian, and Ukrainian. Focus on language switcher functionality, content translation, responsive design, and user experience across all supported languages."
+user_problem_statement: "ENHANCED MULTILINGUAL FUNCTIONALITY: Test the comprehensive multilingual implementation on THE BAR luxury cocktail catering website with significantly improved translation quality. The system provides full internationalization support for 4 languages: Czech (default), English, Russian, and Ukrainian. All non-Czech translations have been professionally refined with premium-sounding language, cultural appropriateness, and luxury service industry terminology. Focus on language switcher functionality, enhanced content translation quality, responsive design, and superior user experience across all supported languages."
 
 backend:
   - task: "Backend API endpoints and server functionality"
