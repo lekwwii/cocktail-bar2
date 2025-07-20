@@ -101,3 +101,90 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Fix two critical bugs in the luxury cocktail catering website THE BAR.: 1) Blinking text cursor appearing globally (should only be in input fields), 2) Date picker not closing when clicking outside. Ensure fixes work on desktop and mobile, and Czech diacritics render correctly."
+
+backend:
+  - task: "Backend API endpoints and server functionality"
+    implemented: true
+    working: "NA"
+    file: "N/A - No backend changes needed for cursor/date picker bugs"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "No backend changes were required for these frontend cursor and date picker bugs. Backend needs verification to ensure no regressions."
+
+frontend:
+  - task: "Fix blinking text cursor bug"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.css"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "user"
+        comment: "User reported blinking text cursor appearing globally across the website, even in non-input areas"
+      - working: true
+        agent: "main"
+        comment: "Implemented targeted CSS fixes (lines 15-47 in App.css). Replaced overly aggressive universal selectors with targeted rules: default cursor for most elements, text cursor only for form inputs, pointer cursor for interactive elements. Tested successfully on desktop and mobile."
+
+  - task: "Fix date picker closing behavior"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "user"
+        comment: "Date picker calendar popup does not close when clicking outside, requires explicit click inside field again"
+      - working: true
+        agent: "main"
+        comment: "Improved JavaScript date picker event handling (lines 20-66 in App.js). Added better click outside detection, escape key support, proper event delegation, and cross-browser compatibility. Enhanced CSS styling in App.css (lines 138-191). Tested successfully on desktop and mobile."
+
+  - task: "Czech diacritics font rendering"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.css"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Verified Czech diacritics render correctly with Playfair Display and Inter fonts. Enhanced font-face definitions (lines 416-432) include comprehensive unicode-range for Czech characters. All Czech text elements display properly on desktop and mobile."
+
+  - task: "Mobile responsiveness of bug fixes"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/App.css"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added mobile-specific improvements (lines 184-191) including touch handling, iOS zoom prevention, and mobile date picker optimizations. All bug fixes confirmed working on mobile viewport (375x812 iPhone 12 Pro size)."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.1"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Backend API endpoints and server functionality"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Successfully implemented fixes for both critical bugs: 1) Refined CSS cursor behavior to prevent blinking text cursor in non-input areas while preserving proper functionality, 2) Enhanced JavaScript date picker event handling for reliable outside-click closing. All fixes tested and confirmed working on both desktop (1920x800) and mobile (375x812) viewports. Czech diacritics rendering verified. Ready for backend testing to ensure no regressions."
