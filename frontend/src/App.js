@@ -79,44 +79,44 @@ const App = () => {
   const packages = [
     {
       name: "Signature Experience",
-      price: "From €299",
-      description: "Perfect for intimate gatherings",
+      price: "Od 7.500 Kč",
+      description: "Perfektní pro intimní setkání",
       features: [
-        "3 classic cocktails",
-        "Stylish portable bar setup",
-        "1 professional bartender",
-        "Basic glassware & tools",
-        "2-3 hours service"
+        "3 klasické koktejly",
+        "Stylový přenosný bar",
+        "1 profesionální barman",
+        "Základní sklenice a nástroje",
+        "2-3 hodiny obsluhy"
       ],
       image: "https://images.unsplash.com/photo-1597075687490-8f673c6c17f6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBjb2NrdGFpbHxlbnwwfHx8YmxhY2t8MTc1MjM1MzAwNXww&ixlib=rb-4.1.0&q=85"
     },
     {
       name: "Premium Flair",
-      price: "From €599",
-      description: "Elevated experience for special occasions",
+      price: "Od 15.000 Kč",
+      description: "Vyšší úroveň pro speciální příležitosti",
       features: [
-        "5 signature cocktails",
-        "Premium ice sculptures",
-        "2 professional bartenders", 
-        "Luxury bar decoration",
-        "Premium glassware",
-        "4-5 hours service"
+        "5 signature koktejlů",
+        "Prémiové ledové sochy",
+        "2 profesionální barmani", 
+        "Luxusní výzdoba baru",
+        "Prémiové sklenice",
+        "4-5 hodin obsluhy"
       ],
       image: "https://images.unsplash.com/photo-1705944601084-3d8119490b26?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxjaGFtcGFnbmUlMjBnbGFzc2VzfGVufDB8fHxibGFja3wxNzUyMzUzMDExfDA&ixlib=rb-4.1.0&q=85",
       featured: true
     },
     {
       name: "Ultra Premium Showcase",
-      price: "From €1299",
-      description: "The ultimate luxury cocktail experience",
+      price: "Od 35.000 Kč",
+      description: "Vrcholný luxusní koktejlový zážitek",
       features: [
-        "Full custom cocktail menu",
-        "LED-lit premium bar setup",
-        "Champagne tower service",
-        "Edible flowers & garnishes",
-        "Bartender show & flair",
-        "Personalized service details",
-        "Full event service"
+        "Plně personalizované koktejlové menu",
+        "LED osvícený prémiový bar",
+        "Šampaňská věž",
+        "Jedlé květiny a ozdoby",
+        "Barmanská show a flair",
+        "Personalizované detaily obsluhy",
+        "Kompletní event servis"
       ],
       image: "https://images.unsplash.com/flagged/photo-1571046423953-30c053888852?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBiYXJ8ZW58MHx8fGJsYWNrfDE3NTIzNTM5NTB8MA&ixlib=rb-4.1.0&q=85"
     }
