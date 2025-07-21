@@ -1,5 +1,6 @@
-from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi import FastAPI, APIRouter, HTTPException, Depends
 from fastapi.responses import StreamingResponse
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -9,7 +10,7 @@ from pathlib import Path
 from pydantic import BaseModel, Field, EmailStr
 from typing import List
 import uuid
-from datetime import datetime
+from datetime import datetime, timedelta
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -17,6 +18,8 @@ import asyncio
 import io
 import csv
 import json
+from jose import JWTError, jwt
+from passlib.context import CryptContext
 
 
 ROOT_DIR = Path(__file__).parent
