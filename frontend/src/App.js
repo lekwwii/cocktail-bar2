@@ -1360,9 +1360,14 @@ const App = () => {
                   </div>
                   <button 
                     type="submit"
-                    className="w-full bg-gold hover:bg-gold/90 text-primary py-3 font-medium tracking-wide transition-all duration-300 hover:scale-105"
+                    disabled={isSubmitting}
+                    className={`w-full py-3 font-medium tracking-wide transition-all duration-300 ${
+                      isSubmitting 
+                        ? 'bg-gray-400 cursor-not-allowed' 
+                        : 'bg-gold hover:bg-gold/90 hover:scale-105'
+                    } text-primary`}
                   >
-                    Odeslat zprávu
+                    {isSubmitting ? 'Odesílání...' : 'Odeslat zprávu'}
                   </button>
                 </form>
               </div>
