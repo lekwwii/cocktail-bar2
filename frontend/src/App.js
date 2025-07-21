@@ -4,13 +4,6 @@ import AdminDashboard from './AdminDashboard';
 import './App.css';
 
 const App = () => {
-  // Check if this is admin route
-  const isAdminRoute = window.location.pathname === '/admin';
-  
-  if (isAdminRoute) {
-    return <AdminDashboard />;
-  }
-
   const [activeSection, setActiveSection] = useState('hero');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
