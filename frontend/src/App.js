@@ -274,12 +274,22 @@ const App = () => {
     try {
       // Submit to backend API
       const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+      
+      // Prepare data for API - add missing message field for popup
+      const submissionData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: `Event date: ${formData.date}. Contact request via popup form.`
+      };
+      
       const response = await fetch(`${backendUrl}/api/contact-form`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(submissionData)
       });
       
       if (response.ok) {
