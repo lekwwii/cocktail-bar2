@@ -259,34 +259,64 @@ const App = () => {
     }
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     
     if (!validatePopupForm()) {
       return;
     }
     
-    // Simulate form submission
-    console.log('Popup form submitted:', formData);
+    // Show loading state
+    setIsSubmitting(true);
     
-    // Show success toast
-    showToastNotification('Děkujeme za odeslání! Ozveme se vám co nejdříve.');
-    
-    // Enhanced modal closing animation
-    const modal = document.querySelector('.fixed.inset-0.bg-black\\/80');
-    if (modal) {
-      modal.classList.add('animate-fade-out');
-      setTimeout(() => {
-        setShowPopup(false);
-        // Reset form
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          date: '',
-          service: ''
-        });
-        setPopupErrors({});
+    try {
+      // Submit to backend API
+      const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+      const response = await fetch(`${backendUrl}/api/contact-form`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Popup form submitted successfully:', result);
+        
+        // Show success toast
+        showToastNotification('✅ Děkujeme za odeslání! Ozveme se vám co nejdříve.');
+        
+        // Enhanced modal closing animation
+        const modal = document.querySelector('.fixed.inset-0.bg-black\\/80');
+        if (modal) {
+          modal.classList.add('animate-fade-out');
+          setTimeout(() => {
+            setShowPopup(false);
+            // Reset form
+            setFormData({
+              name: '',
+              phone: '',
+              email: '',
+              date: '',
+              service: ''
+            });
+            setPopupErrors({});
+            
+            // Smooth scroll to top after modal closes
+            setTimeout(smoothScrollToTop, 200);
+          }, 300);
+        }
+      } else {
+        throw new Error('Chyba při odesílání formuláře');
+      }
+    } catch (error) {
+      console.error('Error submitting popup form:', error);
+      showToastNotification('❌ Chyba při odesílání formuláře. Zkuste to prosím znovu.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
         
         // Smooth scroll to top after modal closes
         setTimeout(smoothScrollToTop, 200);
