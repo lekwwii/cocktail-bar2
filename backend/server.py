@@ -34,8 +34,8 @@ email_conf = ConnectionConfig(
     MAIL_FROM=os.environ['MAIL_FROM'],
     MAIL_PORT=int(os.environ['MAIL_PORT']),
     MAIL_SERVER=os.environ['MAIL_SERVER'],
-    MAIL_TLS=True,
-    MAIL_SSL=False,
+    MAIL_STARTTLS=True,
+    MAIL_SSL_TLS=False,
     USE_CREDENTIALS=True,
     VALIDATE_CERTS=True
 )
