@@ -54,6 +54,15 @@ def get_google_sheet():
     sheet = client.open(os.environ['GOOGLE_SHEET_NAME']).sheet1
     return sheet
 
+# Authentication setup
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+security = HTTPBearer()
+
+# JWT Configuration
+SECRET_KEY = os.environ['JWT_SECRET_KEY']
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 24 * 60  # 24 hours
+
 # Create the main app without a prefix
 app = FastAPI()
 
