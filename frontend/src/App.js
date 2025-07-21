@@ -347,7 +347,7 @@ const App = () => {
         email: contactFormData.email,
         phone: contactFormData.phone,
         service: contactFormData.eventType,
-        message: contactFormData.message
+        message: contactFormData.message || 'Contact form submission without message.'
       };
       
       // Submit to backend API
