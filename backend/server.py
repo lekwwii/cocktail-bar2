@@ -184,8 +184,8 @@ async def submit_contact_form(form_data: ContactFormCreate):
         raise HTTPException(status_code=500, detail="Failed to process form submission")
 
 @api_router.get("/contact-submissions", response_model=List[ContactFormSubmission])
-async def get_contact_submissions():
-    """Get all contact form submissions for admin dashboard"""
+async def get_contact_submissions(current_user: str = Depends(verify_token)):
+    """Get all contact form submissions for admin dashboard - PROTECTED"""
     try:
         submissions = await db.contact_submissions.find().sort("submission_date", -1).to_list(1000)
         return [ContactFormSubmission(**submission) for submission in submissions]
@@ -194,8 +194,8 @@ async def get_contact_submissions():
         raise HTTPException(status_code=500, detail="Failed to fetch submissions")
 
 @api_router.get("/export-submissions-csv")
-async def export_submissions_csv():
-    """Export contact submissions to CSV"""
+async def export_submissions_csv(current_user: str = Depends(verify_token)):
+    """Export contact submissions to CSV - PROTECTED"""
     try:
         # Create CSV content
         output = io.StringIO()
@@ -227,6 +227,35 @@ async def export_submissions_csv():
     except Exception as e:
         logger.error(f"Error exporting submissions: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to export submissions")
+
+# Authentication Endpoints
+@api_router.post("/admin/login", response_model=Token)
+async def admin_login(login_data: AdminLogin):
+    """Admin login endpoint"""
+    try:
+        if not authenticate_admin(login_data.email, login_data.password):
+            raise HTTPException(
+                status_code=401,
+                detail="Incorrect email or password"
+            )
+        
+        access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+        access_token = create_access_token(
+            data={"sub": login_data.email}, expires_delta=access_token_expires
+        )
+        logger.info(f"Admin login successful: {login_data.email}")
+        return {"access_token": access_token, "token_type": "bearer"}
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error during admin login: {str(e)}")
+        raise HTTPException(status_code=500, detail="Login failed")
+
+@api_router.get("/admin/verify")
+async def verify_admin_token(current_user: str = Depends(verify_token)):
+    """Verify admin token is valid"""
+    return {"valid": True, "user": current_user}
 
 # Helper functions
 async def send_email_notification(submission: ContactFormSubmission):
