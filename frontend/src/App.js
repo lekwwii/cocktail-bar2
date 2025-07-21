@@ -317,12 +317,6 @@ const App = () => {
       setIsSubmitting(false);
     }
   };
-        
-        // Smooth scroll to top after modal closes
-        setTimeout(smoothScrollToTop, 200);
-      }, 300);
-    }
-  };
 
   const handleContactFormSubmit = async (e) => {
     e.preventDefault();
