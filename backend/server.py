@@ -27,6 +27,30 @@ mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
+# Email configuration
+email_conf = ConnectionConfig(
+    MAIL_USERNAME=os.environ['MAIL_USERNAME'],
+    MAIL_PASSWORD=os.environ['MAIL_PASSWORD'],
+    MAIL_FROM=os.environ['MAIL_FROM'],
+    MAIL_PORT=int(os.environ['MAIL_PORT']),
+    MAIL_SERVER=os.environ['MAIL_SERVER'],
+    MAIL_TLS=True,
+    MAIL_SSL=False,
+    USE_CREDENTIALS=True,
+    VALIDATE_CERTS=True
+)
+
+# Google Sheets configuration
+def get_google_sheet():
+    scope = ['https://spreadsheets.google.com/feeds',
+             'https://www.googleapis.com/auth/spreadsheets',
+             'https://www.googleapis.com/auth/drive']
+    creds_path = ROOT_DIR / os.environ['GOOGLE_CREDENTIALS_PATH']
+    creds = ServiceAccountCredentials.from_json_keyfile_name(str(creds_path), scope)
+    client = gspread.authorize(creds)
+    sheet = client.open(os.environ['GOOGLE_SHEET_NAME']).sheet1
+    return sheet
+
 # Create the main app without a prefix
 app = FastAPI()
 
