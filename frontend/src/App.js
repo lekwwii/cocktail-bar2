@@ -819,9 +819,14 @@ const App = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gold hover:bg-gold/90 text-primary py-3 font-sans font-semibold tracking-wide transition-all duration-300 hover:scale-105 rounded-lg shadow-lg hover:shadow-gold/20"
+                  disabled={isSubmitting}
+                  className={`w-full py-3 font-sans font-semibold tracking-wide transition-all duration-300 rounded-lg shadow-lg ${
+                    isSubmitting 
+                      ? 'bg-gray-400 cursor-not-allowed' 
+                      : 'bg-gold hover:bg-gold/90 hover:scale-105 hover:shadow-gold/20'
+                  } text-primary`}
                 >
-                  ODESLAT
+                  {isSubmitting ? 'ODESÍLÁNÍ...' : 'ODESLAT'}
                 </button>
               </form>
             </div>
