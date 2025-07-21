@@ -24,6 +24,7 @@ const App = () => {
   // Form validation states
   const [popupErrors, setPopupErrors] = useState({});
   const [contactErrors, setContactErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [contactFormData, setContactFormData] = useState({
     name: '',
     email: '',
