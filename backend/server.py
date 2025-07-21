@@ -96,6 +96,51 @@ class ContactFormCreate(BaseModel):
     service: str
     message: str
 
+# Authentication Models
+class AdminLogin(BaseModel):
+    email: str
+    password: str
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+# Authentication functions
+def verify_password(plain_password, hashed_password):
+    return pwd_context.verify(plain_password, hashed_password)
+
+def get_password_hash(password):
+    return pwd_context.hash(password)
+
+def create_access_token(data: dict, expires_delta: timedelta = None):
+    to_encode = data.copy()
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(minutes=15)
+    to_encode.update({"exp": expire})
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    return encoded_jwt
+
+def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    try:
+        token = credentials.credentials
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        email: str = payload.get("sub")
+        if email is None:
+            raise HTTPException(status_code=401, detail="Invalid authentication credentials")
+        return email
+    except JWTError:
+        raise HTTPException(status_code=401, detail="Invalid authentication credentials")
+
+def authenticate_admin(email: str, password: str):
+    admin_email = os.environ['ADMIN_EMAIL']
+    admin_password = os.environ['ADMIN_PASSWORD']
+    
+    if email != admin_email or password != admin_password:
+        return False
+    return True
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
