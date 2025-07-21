@@ -293,31 +293,64 @@ const App = () => {
     }
   };
 
-  const handleContactFormSubmit = (e) => {
+  const handleContactFormSubmit = async (e) => {
     e.preventDefault();
     
     if (!validateContactForm()) {
       return;
     }
     
-    // Simulate form submission
-    console.log('Contact form submitted:', contactFormData);
+    // Show loading state
+    setIsSubmitting(true);
     
-    // Show success toast
-    showToastNotification('Děkujeme za odeslání! Ozveme se vám co nejdříve.');
-    
-    // Reset form
-    setContactFormData({
-      name: '',
-      email: '',
-      phone: '',
-      eventType: '',
-      message: ''
-    });
-    setContactErrors({});
-    
-    // Smooth scroll to top after brief delay
-    setTimeout(smoothScrollToTop, 1000);
+    try {
+      // Prepare data for API (map eventType to service)
+      const submissionData = {
+        name: contactFormData.name,
+        email: contactFormData.email,
+        phone: contactFormData.phone,
+        service: contactFormData.eventType,
+        message: contactFormData.message
+      };
+      
+      // Submit to backend API
+      const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+      const response = await fetch(`${backendUrl}/api/contact-form`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData)
+      });
+      
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Form submitted successfully:', result);
+        
+        // Show success toast
+        showToastNotification('✅ Děkujeme za odeslání! Ozveme se vám co nejdříve.');
+        
+        // Reset form
+        setContactFormData({
+          name: '',
+          email: '',
+          phone: '',
+          eventType: '',
+          message: ''
+        });
+        setContactErrors({});
+        
+        // Smooth scroll to top after brief delay
+        setTimeout(smoothScrollToTop, 1000);
+      } else {
+        throw new Error('Chyba při odesílání formuláře');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      showToastNotification('❌ Chyba při odesílání formuláře. Zkuste to prosím znovu.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const packages = [
